@@ -3,6 +3,12 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import React, { useEffect, useState } from "react";
 
+import profilePic1 from "@/assets/about/lasitha1.jpg";
+import profilePic2 from "@/assets/about/lasitha2.jpg";
+import profilePic3 from "@/assets/about/lasitha3.jpg";
+import profilePic4 from "@/assets/about/lasitha4.jpg";
+import profilePic5 from "@/assets/about/lasitha5.jpg";
+
 const taglines = [
 	{ text: "AI/ML Enthusiast", color: "from-blue-500 to-purple-500" },
 	{ text: "Innovator", color: "from-purple-500 to-green-400" },
@@ -32,12 +38,11 @@ const AnimatedTagline = () => {
 
 // RotatingAvatar component
 const avatarImages = [
-	"/src/assets/about/lasitha (1).jpg",
-	"/src/assets/about/lasitha (2).jpg",
-	"/src/assets/about/lasitha (3).jpg",
-    "/src/assets/about/lasitha (4).jpg",
-    "/src/assets/about/lasitha (5).jpg"
-
+	profilePic1, 
+    profilePic2,
+    profilePic3,
+    profilePic4,
+    profilePic5
 ];
 
 const RotatingAvatar = () => {

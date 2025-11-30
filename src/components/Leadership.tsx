@@ -2,6 +2,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Users, Heart, GraduationCap, Sparkles } from "lucide-react";
 
+import leadership1 from "@/assets/leadership/leadership1.png";
+import leadership2 from "@/assets/leadership/leadership2.png";
+import leadership3 from "@/assets/leadership/leadership3.jpg";
+import leadership4 from "@/assets/leadership/leadership4.jpg";
+import leadership5 from "@/assets/leadership/leadership5.png";
+import leadership6 from "@/assets/leadership/leadership6.png";
+
+
 const leadership = [
 	{
 		title: "Vice President - Spark Branch",
@@ -22,7 +30,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: "/src/assets/leadership/leadership1.png",
+		image: leadership1,
 		tags: [
 			"Leadership",
 			"Innovation",
@@ -48,7 +56,7 @@ const leadership = [
 			</>
 		),
 		icon: GraduationCap,
-		image: "/src/assets/leadership/leadership2.png",
+		image: leadership2,
 		tags: [
 			"Leadership",
 			"Organizing",
@@ -75,7 +83,7 @@ const leadership = [
 			</>
 		),
 		icon: Heart,
-		image: "/src/assets/leadership/leadership3.jpg",
+		image: leadership3,
 		tags: [
 			"Facilitation",
 			"Bootcamp",
@@ -103,7 +111,7 @@ const leadership = [
 			</>
 		),
 		icon: Heart,
-		image: "/src/assets/leadership/leadership5.png",
+		image: leadership5,
 		tags: ["Teaching", "Motivation", "Mentoring", "Donation", "Community"],
 	},
 	{
@@ -125,7 +133,7 @@ const leadership = [
 			</>
 		),
 		icon: Heart,
-		image: "/src/assets/leadership/leadership4.jpg",
+		image: leadership4,
 		tags: ["Teaching", "Motivation", "Mentoring", "Community", "Outreach"],
 	},
 	{
@@ -149,7 +157,7 @@ const leadership = [
 			</>
 		),
 		icon: Heart,
-		image: "/src/assets/leadership/leadership6.png",
+		image: leadership6,
 		tags: [
 			"Motivation",
 			"Teamwork",

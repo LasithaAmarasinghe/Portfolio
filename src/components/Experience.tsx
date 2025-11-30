@@ -2,6 +2,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Briefcase } from "lucide-react";
 
+import uom from "@/assets/about/uom.png";
+import nus from "@/assets/about/nus.png";
+
 const experiences = [
   {
     title: "Research Intern",
@@ -16,7 +19,7 @@ const experiences = [
       "Presented AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University"
     ],
     tags: ["Unity", "Python", "MRTK", "Augmented Reality", "AI", "HCI"],
-    logo: "/src/assets/about/nus.png"
+    logo: nus
   },
   {
     title: "Undergraduate Teaching Assistant",
@@ -30,7 +33,7 @@ const experiences = [
       "Assisted students in understanding IoT concepts and practical implementations"
     ],
     tags: ["Teaching", "Laboratory Practice", "Student Mentoring"],
-    logo: "/src/assets/about/uom.png"
+    logo: uom
   }
 ];
 
