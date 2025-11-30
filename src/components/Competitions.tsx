@@ -1,11 +1,28 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ExternalLink, Trophy } from "lucide-react";
-import imagenetImg from "@/assets/competition-imagenet.jpg";
-import nlpImg from "@/assets/competition-nlp.jpg";
-import timeseriesImg from "@/assets/competition-timeseries.jpg";
-import detectionImg from "@/assets/competition-detection.jpg";
+
+import IEEEXtreme19 from "@/assets/competitions/IEEEXtreme19.0.png";
+import IEEEXtreme18 from "@/assets/competitions/IEEEXtreme18.0.png";
+import TechnoXtreme2023 from "@/assets/competitions/TechnoXtreme2023.png";
+import Cypher from "@/assets/competitions/Cypher.png";
+import AlgoXplore from "@/assets/competitions/AlgoXplore.png";
+import FestX from "@/assets/competitions/FestX.png";
+import ENIGMA from "@/assets/competitions/ENIGMA.png";
+import DataCrunch from "@/assets/competitions/DataCrunch.png";
+import OpenHack from "@/assets/competitions/OpenHack.jpg";
+import RealHack4 from "@/assets/competitions/RealHack4.jpg";
+import ICE from "@/assets/competitions/ICE.png";
+import SLIoT2025 from "@/assets/competitions/SLIoT2025.png";
+import HackDoze from "@/assets/competitions/HackDoze.png";
+import SLIoT2024 from "@/assets/competitions/SLIoT2024.png";
+import SPARK from "@/assets/competitions/SPARK.png";
+import LSEG from "@/assets/competitions/LSEG.png";
+import RealHack5 from "@/assets/competitions/RealHack5.png";
+import CODESPRINT from "@/assets/competitions/CODESPRINT.png";
+import Duothan from "@/assets/competitions/Duothan.png";
+import DataStormV6 from "@/assets/competitions/DataStormV6.png";
+import CodersV10 from "@/assets/competitions/CodersV10.png";
 
 const competitions = [
 	{
@@ -15,7 +32,7 @@ const competitions = [
 		description:
 			"The world’s largest competitive programming competition organized by IEEE, featuring a 24-hour coding challenge with over 8,500 teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/IEEEXtreme19.0.png",
+		image: IEEEXtreme19,
 	},
 	{
 		title: "IEEEXtreme 18.0",
@@ -24,7 +41,7 @@ const competitions = [
 		description:
 			"The world’s largest competitive programming competition organized by IEEE, featuring a 24-hour coding challenge with over 8,500 teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/IEEEXtreme18.0.png",
+		image: IEEEXtreme18,
 	},
 	{
 		title: "Techno Xtreme 2023",
@@ -33,7 +50,7 @@ const competitions = [
 		description:
 			"Team HelloWorld was able to be the champion at Techno Hackathon Xtreme organized by Institute of Engineering Sri Lanka (IESL) surpassing 250+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/TechnoXtreme2023.png",
+		image: TechnoXtreme2023,
 	},
 	{
 		title: "CYPHER 1.0",
@@ -42,7 +59,7 @@ const competitions = [
 		description:
 			"Team HelloWorld was able to be the champion at CYPHER 1.0 organized by IEEE WIE Affinity group of Kothalawala Defence University.",
 		tags: ["Competitive Programming", "Teamwork"],
-		image: "/src/assets/competitions/Cypher.png",
+		image: Cypher,
 	},
 	{
 		title: "AlgoXplore 1.0",
@@ -51,7 +68,7 @@ const competitions = [
 		description:
 			"Team HelloWorld secured 3rd Place at AlgoXplore 1.0 organized by Faculty of Computing of NSBM Green University surpassing 250+ teams.",
 		tags: ["Capture the Flag", "Problem Solving"],
-		image: "/src/assets/competitions/AlgoXplore.png",
+		image: AlgoXplore,
 	},
 	{
 		title: "FestX 4.0",
@@ -60,7 +77,7 @@ const competitions = [
 		description:
 			"I secured 4th Place at FestX 4.0 organized by IEEE WIE Student Branch of the University of Moratuwa with 100+ participants.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/FestX.png",
+		image: FestX,
 	},
   {
 		title: "ENIGMA'24",
@@ -69,7 +86,7 @@ const competitions = [
 		description:
 			"Team TLP secured 5th Place at ENIGMA'24 organized by Mathematics Society of the University of Moratuwa surpassing 200+ teams.",
 		tags: ["Competitive Programming", "Teamwork"],
-		image: "/src/assets/competitions/ENIGMA.png",
+		image: ENIGMA,
 	},
 	
 	{
@@ -79,7 +96,7 @@ const competitions = [
 		description:
 			"Team Helloworld 2.0 secured 5th Place at Data Crunch organized by Department of Computer Engineering, University of Moratuwa with 100+ teams.",
 		tags: ["Data Science", "Machine Learning"],
-		image: "/src/assets/competitions/DataCrunch.png",
+		image: DataCrunch,
 	},
    {
 		title: "Open Hack 2.0",
@@ -88,7 +105,7 @@ const competitions = [
 		description:
 			"Team HelloWorld secured 5th Place at Open Hack 2.0 organized by Mozilla & FOSS community of IIT.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/OpenHack.jpg",
+		image: OpenHack,
 	},
 	
 	{
@@ -98,7 +115,7 @@ const competitions = [
 		description:
 			"Team HelloWorld 1.0 secured 6th Place at Real Hack 4.0 organized by Software Engineering Students’ Association of University of Kelaniya with 200+ teams.",
 		tags: ["Competitive Programming", "Teamwork"],
-		image: "/src/assets/competitions/RealHack4.jpg",
+		image: RealHack4,
 	},
 	{
 		title: "ICE 2025",
@@ -107,7 +124,7 @@ const competitions = [
 		description:
 			"Team Big Hero 7 secured a Top 6 Place at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
 		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
-		image: "/src/assets/competitions/ICE.png",
+		image: ICE,
 	},
 	{
 		title: "SLIoT Challenge 2025",
@@ -116,7 +133,7 @@ const competitions = [
 		description:
 			"Team AURA secured a Top 8 Place at SLIoT Challenge 2025 organized by Department of Computer Science & Engineering, University of Moratuwa.",
 		tags: ["Internet of Things", "Problem Solving"],
-		image: "/src/assets/competitions/SLIoT2025.png",
+		image: SLIoT2025,
 	},
 	{
 		title: "HackDoze 1.0",
@@ -125,7 +142,7 @@ const competitions = [
 		description:
 			"I secured 9th Place at HackDoze 1.0 organized by Faculty of Engineering, University of Ruhuna with 250+ participants.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/HackDoze.png",
+		image: HackDoze,
 	},
 	{
 		title: "SLIoT Challenge 2023/24",
@@ -134,7 +151,7 @@ const competitions = [
 		description:
 			"Team Tronic Pros secured a Top 10 Place at SLIoT Challenge 2023/24 organized by Computer Science & Engineering, University of Moratuwa with 75+ teams.",
 		tags: ["Internet of Things", "Problem Solving"],
-		image: "/src/assets/competitions/SLIoT2024.png",
+		image: SLIoT2024,
 	},
 	{
 		title: "SPARK Challenge 2024",
@@ -143,7 +160,7 @@ const competitions = [
 		description:
 			"Team Masterminds secured a Top 10 Place at SPARK Challenge organized by Department of Electronics & Telecom. Engineering, University of Moratuwa.",
 		tags: ["Sustainabile Development", "Problem Solving"],
-		image: "/src/assets/competitions/SPARK.png",
+		image: SPARK,
 	},
 	{
 		title: "C++ Coding Challenge",
@@ -152,7 +169,7 @@ const competitions = [
 		description:
 			"We completed High-Performance and Mission-Critical Software Development using C++ Challenge organized by London Stock Exchange Group.",
 		tags: ["Software Development", "Programming"],
-		image: "/src/assets/competitions/LSEG.png",
+		image: LSEG,
 	},
   	{
 		title: "Real Hack 5.0",
@@ -161,7 +178,7 @@ const competitions = [
 		description:
 			"Team HelloWorld 1.0 secured a Top 10 Place at Real Hack 5.0 organized by Software Engineering Students’ Association of University of Kelaniya with 200+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/RealHack5.png",
+		image: RealHack5,
 	},
 	{
 		title: "CODESPRINT 8.0",
@@ -170,7 +187,7 @@ const competitions = [
 		description:
 			"Team Tronic Pros secured a Top 10 Place at CODESPRINT 8.0 organized by IEEE Computer Society Student Branch Chapter of IIT with 500+ teams.",
 		tags: ["Problem Solving", "StartUp", "Idea Pitching"],
-		image: "/src/assets/competitions/CODESPRINT.png",
+		image: CODESPRINT,
 	},
 	{
 		title: "Duothan 3.0",
@@ -179,7 +196,7 @@ const competitions = [
 		description:
 			"Team HelloWorld secured a Top 15 Place at Duothan 3.0 organized by IEEE Student Branch of NSBM Green University with 75+ teams.",
 		tags: ["Buildathon", "Teamwork", "Problem Solving"],
-		image: "/src/assets/competitions/Duothan.png",
+		image: Duothan,
 	},
 	{
 		title: "Data Storm V6.0",
@@ -188,7 +205,7 @@ const competitions = [
 		description:
 			"Team Helloworld 2.0 secured a Top 15 Place at Data Storm V6.0 organized by Rotaract Clubs of University of Moratuwa and University of Colombo.",
 		tags: ["Machine Learning", "Data Science", "Teamwork"],
-		image: "/src/assets/competitions/DataStormV6.png",
+		image: DataStormV6,
 	},
 	{
 		title: "Coders V10.0",
@@ -197,7 +214,7 @@ const competitions = [
 		description:
 			"Team Mora Coders secured a Top 20 Place at Coders V10.0 organized by Department of Computer Engineering, University of Peradeniya with 120+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
-		image: "/src/assets/competitions/CodersV10.png",
+		image: CodersV10,
 	}
 	
 	
