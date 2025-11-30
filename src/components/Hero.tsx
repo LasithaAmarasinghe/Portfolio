@@ -1,0 +1,188 @@
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
+import React, { useEffect, useState } from "react";
+
+const taglines = [
+	{ text: "AI/ML Enthusiast", color: "from-blue-500 to-purple-500" },
+	{ text: "Innovator", color: "from-purple-500 to-green-400" },
+	{ text: "Problem Solver", color: "from-blue-500 to-green-400" },
+	{ text: "Tech Enthusiast", color: "from-purple-500 to-blue-500" },
+	{ text: "Developer", color: "from-green-400 to-purple-500" }
+];
+
+const AnimatedTagline = () => {
+	const [index, setIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setIndex((prev) => (prev + 1) % taglines.length);
+		}, 2000);
+		return () => clearInterval(interval);
+	}, []);
+
+	return (
+		<span
+			className={`bg-gradient-to-r ${taglines[index].color} bg-clip-text text-transparent transition-all duration-500 ease-in-out`}
+		>
+			{taglines[index].text}
+		</span>
+	);
+};
+
+// RotatingAvatar component
+const avatarImages = [
+	"/lasitha (1).jpg",
+	"/lasitha (2).jpg",
+	"/lasitha (3).jpg",
+    "/lasitha (4).jpg",
+    "/lasitha (5).jpg"
+
+];
+
+const RotatingAvatar = () => {
+	const [index, setIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setIndex((prev) => (prev + 1) % avatarImages.length);
+		}, 2000);
+		return () => clearInterval(interval);
+	}, []);
+
+	return (
+		<div className="w-[320px] h-[400px] flex items-center justify-center overflow-hidden rounded-2xl bg-background/60">
+			<img
+				src={avatarImages[index]}
+				alt="Lasitha Amarasinghe"
+				className="w-full h-full object-cover rounded-2xl shadow-xl border-4 transition-all duration-300"
+				style={{ minWidth: '320px', minHeight: '400px', maxWidth: '320px', maxHeight: '400px', borderImage: 'linear-gradient(to right, #3b82f6, #a21caf) 1' }}
+			/>
+		</div>
+	);
+};
+
+const Hero = () => {
+	return (
+		<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+			{/* Background Image with Overlay */}
+			<div
+				className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+				style={{ backgroundImage: `url(${heroBg})` }}
+			>
+				<div className="absolute inset-0 bg-gradient-hero" />
+			</div>
+
+			{/* Glassmorphism Hero Layout */}
+			<div className="relative z-10 container mx-auto px-6 py-32 animate-fade-in">
+				<div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
+					{/* Left: Glassmorphism Avatar Card with Big Image */}
+					<div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/2">
+						<div
+							className="relative p-2 rounded-3xl bg-white/10 backdrop-blur-lg shadow-2xl border-2 border-white/20 group hover:border-primary transition-all duration-300"
+							style={{ maxWidth: "400px" }}
+						>
+							<div className="absolute inset-0 rounded-3xl border-4 border-gradient-to-r from-blue-500 via-purple-500 to-green-400 animate-pulse opacity-60 pointer-events-none"></div>
+							<RotatingAvatar />
+						</div>
+					</div>
+					{/* Right: Hero Text Content */}
+					<div className="w-full md:w-1/2 text-center md:text-left">
+						<h1
+							className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-green-400 bg-clip-text text-transparent animate-fade-in leading-loose"
+							style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
+						>
+							Lasitha Amarasinghe
+						</h1>
+						<div className="mb-6">
+							<span className="text-3xl md:text-5xl font-bold animate-fade-in-delay">
+								<AnimatedTagline />
+							</span>
+						</div>
+						<p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl animate-fade-in-delay">
+							Specializing in machine learning, deep learning, <br />
+							and AI-powered solutions. <br />
+							Transforming complex data into Innovative products.
+						</p>
+						<div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in-delay">
+							<a href="#projects">
+								<Button
+									variant="hero"
+									size="lg"
+									className="transition-colors duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white"
+								>
+									View Projects
+								</Button>
+							</a>
+							<a href="#contact">
+								<Button variant="outline" size="lg">
+									<Mail className="mr-2" />
+									Get In Touch
+								</Button>
+							</a>
+						</div>
+						<div className="flex gap-6 justify-center md:justify-start mt-12 animate-fade-in-delay">
+							<a
+								href="https://github.com/LasithaAmarasinghe"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-125 hover:drop-shadow-glow duration-300"
+								aria-label="GitHub"
+							>
+								<Github className="h-6 w-6" />
+							</a>
+							<a
+								href="https://linkedin.com/in/lasithaamarasinghe"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-125 hover:drop-shadow-glow duration-300"
+								aria-label="LinkedIn"
+							>
+								<Linkedin className="h-6 w-6" />
+							</a>
+							<a
+								href="#contact"
+								className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-125 hover:drop-shadow-glow duration-300"
+								aria-label="Email"
+							>
+								<Mail className="h-6 w-6" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{/* Custom Animated Scroll Indicator with smooth scroll */}
+			<button
+				className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20 focus:outline-none group"
+				aria-label="Scroll Down"
+				onClick={() => {
+					const nextSection = document.querySelector(
+						"#about, #experience, #projects, #education, #competitions, #leadership, #contact"
+					);
+					if (nextSection) {
+						nextSection.scrollIntoView({ behavior: "smooth" });
+					}
+				}}
+			>
+				<div className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-primary/60 bg-background/70 shadow-xl group-hover:border-primary group-hover:shadow-glow-primary transition-all duration-300">
+					<svg
+						className="w-7 h-7 text-primary animate-bounce group-hover:text-secondary transition-colors duration-300"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						viewBox="0 0 24 24"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M19 9l-7 7-7-7"
+						/>
+					</svg>
+				</div>
+			</button>
+		</section>
+	);
+};
+
+export default Hero;
