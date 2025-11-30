@@ -22,8 +22,8 @@ const Index = () => {
       <Contact />
       
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border bg-card">
-        <div className="container mx-auto text-center text-muted-foreground">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border bg-card">
+        <div className="container mx-auto text-center text-muted-foreground text-sm sm:text-base">
           <p>&copy; {new Date().getFullYear()} Lasitha Amarasinghe</p>
         </div>
       </footer>

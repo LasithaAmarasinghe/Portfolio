@@ -170,21 +170,21 @@ const leadership = [
 
 const Leadership = () => {
 	return (
-		<section className="py-24 px-6 bg-muted/30" id="leadership">
+		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="leadership">
 			<div className="container mx-auto max-w-7xl">
-				<div className="text-center mb-16 animate-fade-in">
+				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
 					<h2
-						className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-loose"
+						className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-tight sm:leading-loose"
 						style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 					>
 						Leadership & Volunteering
 					</h2>
-					<p className="text-muted-foreground text-lg leading-relaxed">
+					<p className="text-muted-foreground text-base sm:text-lg leading-relaxed px-4">
 						Contributing to the community through leadership and volunteer efforts
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
 					{leadership.map((item, index) => {
 						const IconComponent = item.icon;
 						return (
@@ -207,7 +207,7 @@ const Leadership = () => {
 											<IconComponent className="h-8 w-8 text-primary" />
 										</div>
 									)}
-									<CardTitle className="text-xl mb-1">
+									<CardTitle className="text-lg sm:text-xl mb-1">
 										{item.title}
 									</CardTitle>
 									<div className="flex flex-wrap gap-2 items-center text-sm text-muted-foreground mb-2">
