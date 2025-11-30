@@ -16,7 +16,7 @@ const experiences = [
       "Presented AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University"
     ],
     tags: ["Unity", "Python", "MRTK", "Augmented Reality", "AI", "HCI"],
-    logo: "/nus.png"
+    logo: "/src/assets/about/nus.png"
   },
   {
     title: "Undergraduate Teaching Assistant",
@@ -30,7 +30,7 @@ const experiences = [
       "Assisted students in understanding IoT concepts and practical implementations"
     ],
     tags: ["Teaching", "Laboratory Practice", "Student Mentoring"],
-    logo: "/uom.png"
+    logo: "/src/assets/about/uom.png"
   }
 ];
 

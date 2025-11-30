@@ -32,11 +32,11 @@ const AnimatedTagline = () => {
 
 // RotatingAvatar component
 const avatarImages = [
-	"/lasitha (1).jpg",
-	"/lasitha (2).jpg",
-	"/lasitha (3).jpg",
-    "/lasitha (4).jpg",
-    "/lasitha (5).jpg"
+	"/src/assets/about/lasitha (1).jpg",
+	"/src/assets/about/lasitha (2).jpg",
+	"/src/assets/about/lasitha (3).jpg",
+    "/src/assets/about/lasitha (4).jpg",
+    "/src/assets/about/lasitha (5).jpg"
 
 ];
 

@@ -22,7 +22,7 @@ const educationData = [
       "Data Structures & Algorithms",
       "Software Design"
     ],
-    logo: "/uom.png"
+    logo: "/src/assets/about/uom.png"
   },
   {
     title: "G.C.E. Advanced Level Examination",
@@ -32,7 +32,7 @@ const educationData = [
     description: "Grade: AAA , Z-Score: 2.5972",
     achievements: ["Island Rank: 100/35000 ( Top 0.3% )"],
     tags: ["Combined Mathematics", "Physics", "Chemistry"],
-    logo: "/dharmaraja.jpg"
+    logo: "/src/assets/about/dharmaraja.jpg"
   }
 ];
 
