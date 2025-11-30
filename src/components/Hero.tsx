@@ -56,12 +56,12 @@ const RotatingAvatar = () => {
 	}, []);
 
 	return (
-		<div className="w-[320px] h-[400px] flex items-center justify-center overflow-hidden rounded-2xl bg-background/60">
+		<div className="w-full aspect-[4/5] max-w-[320px] flex items-center justify-center overflow-hidden rounded-2xl bg-background/60">
 			<img
 				src={avatarImages[index]}
 				alt="Lasitha Amarasinghe"
 				className="w-full h-full object-cover rounded-2xl shadow-xl border-4 transition-all duration-300"
-				style={{ minWidth: '320px', minHeight: '400px', maxWidth: '320px', maxHeight: '400px', borderImage: 'linear-gradient(to right, #3b82f6, #a21caf) 1' }}
+				style={{ borderImage: 'linear-gradient(to right, #3b82f6, #a21caf) 1' }}
 			/>
 		</div>
 	);
@@ -109,24 +109,24 @@ const Hero = () => {
 							and AI-powered solutions. <br />
 							Transforming complex data into Innovative products.
 						</p>
-						<div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in-delay">
-							<a href="#projects">
+						<div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start animate-fade-in-delay">
+							<a href="#projects" className="w-full sm:w-auto">
 								<Button
 									variant="hero"
 									size="lg"
-									className="transition-colors duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white"
+									className="w-full sm:w-auto transition-colors duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white"
 								>
 									View Projects
 								</Button>
 							</a>
-							<a href="#contact">
-								<Button variant="outline" size="lg">
+							<a href="#contact" className="w-full sm:w-auto">
+								<Button variant="outline" size="lg" className="w-full sm:w-auto">
 									<Mail className="mr-2" />
 									Get In Touch
 								</Button>
 							</a>
 						</div>
-						<div className="flex gap-6 justify-center md:justify-start mt-12 animate-fade-in-delay">
+						<div className="flex gap-6 justify-center md:justify-start mt-8 sm:mt-12 animate-fade-in-delay">
 							<a
 								href="https://github.com/LasithaAmarasinghe"
 								target="_blank"

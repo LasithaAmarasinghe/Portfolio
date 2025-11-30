@@ -8,7 +8,7 @@ const skills = [
 
 const About = () => {
   return (
-    <section className="py-24 px-6 bg-background" id="about">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="about">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
@@ -32,8 +32,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
               <Brain className="h-8 w-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">Machine Learning</h3>
               <p className="text-sm text-muted-foreground">Advanced ML algorithms & model optimization</p>

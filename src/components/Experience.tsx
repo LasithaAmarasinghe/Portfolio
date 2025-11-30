@@ -39,14 +39,12 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="py-24 px-6 bg-background" id="experience">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="experience">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
-            Work Experience
-          </h2>
-          
-        </div>
+				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+						Work Experience
+					</h2>        </div>
 
         <div className="space-y-6">
           {experiences.map((exp, index) => (
@@ -56,8 +54,8 @@ const Experience = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10 flex flex-col items-center justify-center">
+                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 rounded-lg bg-primary/10 flex flex-col items-center justify-center">
                     {exp.logo ? (
                       <img
                         src={exp.logo}
@@ -69,10 +67,10 @@ const Experience = () => {
                       <Briefcase className="h-6 w-6 text-primary" />
                     )}
                   </div>
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
+                  <div className="flex-1 w-full">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                       <div>
-                        <CardTitle className="text-2xl mb-1">{exp.title}</CardTitle>
+                        <CardTitle className="text-xl sm:text-2xl mb-1">{exp.title}</CardTitle>
                         <div className="flex flex-wrap gap-2 items-center text-muted-foreground">
                           <span className="font-semibold text-foreground">{exp.company}</span>
                           <span>•</span>

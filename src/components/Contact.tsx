@@ -4,20 +4,18 @@ import { Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="py-24 px-6 bg-background" id="contact">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="contact">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Let's Connect
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Interested in collaboration or have a project in mind? Let's talk!
-          </p>
-        </div>
-
-        <Card className="bg-gradient-card border-border shadow-glow-primary animate-fade-in-delay">
-          <CardContent className="p-8">
-            <div className="grid md:grid-cols-2 gap-8">
+				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+						Let's Connect
+					</h2>
+					<p className="text-muted-foreground text-base sm:text-lg px-4">
+						Interested in collaboration or have a project in mind? Let's talk!
+					</p>
+				</div>				<Card className="bg-gradient-card border-border shadow-glow-primary animate-fade-in-delay">
+          <CardContent className="p-4 sm:p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center">
