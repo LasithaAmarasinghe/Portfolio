@@ -16,14 +16,16 @@ const educationData = [
       "Linear Algebra",
       "Calculus",
       "Statistics",
-      "Robotics",
       "Signals & Systems",
+      "Neural Networks",
       "Pattern Recognition",
       "Image Processing",
       "Computer Vision",
       "Deep Learning",
-      "Data Structures & Algorithms",
-      "Software Design"
+      "Robotics",
+      "Data Structures",
+      "Software Design",
+      
     ],
     logo: uom
   },
@@ -34,7 +36,7 @@ const educationData = [
     period: "Jan 2012 - Dec 2020",
     description: "Grade: AAA , Z-Score: 2.5972",
     achievements: ["Island Rank: 100/35000 ( Top 0.3% )"],
-    tags: ["Combined Mathematics", "Physics", "Chemistry"],
+    tags: ["Physics", "Chemistry","Combined Mathematics"],
     logo: dharmaraja
   }
 ];

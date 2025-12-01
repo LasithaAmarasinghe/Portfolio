@@ -2,8 +2,8 @@ import { Badge } from "@/components/ui/badge";
 import { Brain, Code, Database, GitBranch } from "lucide-react";
 
 const skills = [
-  "Python", "TensorFlow", "PyTorch", "Scikit-learn", "Keras","Machine Learning",
-  "Deep Learning", "NLP", "Computer Vision", "MLOps","Git", "SQL"
+  "Python", "TensorFlow", "PyTorch", "Scikit-learn", "Keras", "MLOps", "Machine Learning",
+  "Deep Learning", "NLP", "Computer Vision", "Git", "SQL", "Java"
 ];
 
 const About = () => {
@@ -27,8 +27,8 @@ const About = () => {
   
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              With a strong foundation in mathematics and statistics, I focus on creating robust, 
-              production-ready AI solutions that drive business value and improve user experiences.
+              With a strong foundation in mathematics and statistics, I focus on creating 
+              production ready AI solutions that drive business value and improve user experiences.
             </p>
           </div>
 

@@ -197,7 +197,7 @@ const projects = [
   { 
     title: "StudyMate",
     description: "StudyMate is a web application designed to help students track and manage their academic progress. It provides a centralized platform where students can monitor their coursework, assignments, deadline. This reduces the stress of managing heavy workloads.",
-    tags: ["Next.js", "Material UI", "Web Development"],
+    tags: ["React.js", "Tailwind CSS", "Web Development"],
     image: studymate,
     gallery: [studymate1, studymate2, studymate3, studymate4, studymate5, studymate6], 
     github: "https://github.com/LasithaAmarasinghe/StudyMate",
