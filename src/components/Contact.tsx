@@ -65,7 +65,7 @@ const Contact = () => {
 
               <div className="flex flex-col justify-center space-y-4">
                 <p className="text-foreground mb-4">
-                  Open to freelance opportunities, full-time positions, and interesting AI/ML projects.
+                  Open to freelance opportunities, full-time positions, and AI/ML projects.
                 </p>
                 <a
                   href="https://wa.me/94717577914"

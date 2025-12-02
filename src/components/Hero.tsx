@@ -104,7 +104,7 @@ const Hero = () => {
 								<AnimatedTagline />
 							</span>
 						</div>
-						<p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl animate-fade-in-delay text-justify sm:text-left">
+						<p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl animate-fade-in-delay text-center sm:text-left">
 							Specializing in <span className="whitespace-nowrap">machine learning</span>, <span className="whitespace-nowrap">deep learning</span>, <br className="hidden sm:block" />
 							and AI-powered solutions. <br className="hidden sm:block" />
 							Transforming data into Innovative products.

@@ -1,6 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Heart, GraduationCap, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import GalleryDialog from "@/components/ui/gallery-dialog";
+import { Users, Image as ImageIcon } from "lucide-react";
 
 import leadership1 from "@/assets/leadership/leadership1.png";
 import leadership2 from "@/assets/leadership/leadership2.png";
@@ -9,6 +11,40 @@ import leadership4 from "@/assets/leadership/leadership4.jpg";
 import leadership5 from "@/assets/leadership/leadership5.png";
 import leadership6 from "@/assets/leadership/leadership6.png";
 
+import rep1 from "@/assets/leadership/rep1.jpg";
+import rep2 from "@/assets/leadership/rep2.jpg";
+import rep3 from "@/assets/leadership/rep3.jpg";
+import rep4 from "@/assets/leadership/rep4.jpg";
+import rep5 from "@/assets/leadership/rep5.jpg";
+
+import spark1 from "@/assets/leadership/spark1.jpg";
+import spark2 from "@/assets/leadership/spark2.jpg";
+import spark3 from "@/assets/leadership/spark3.jpg";
+import spark4 from "@/assets/leadership/spark4.jpg";
+import spark5 from "@/assets/leadership/spark5.jpg";
+
+import kemess1 from "@/assets/leadership/kemess1.jpg";
+import kemess2 from "@/assets/leadership/kemess2.jpg";	
+import kemess3 from "@/assets/leadership/kemess3.jpg";
+import kemess4 from "@/assets/leadership/kemess4.jpg";
+import kemess5 from "@/assets/leadership/kemess5.jpg";	
+
+import bootcamp1 from "@/assets/leadership/bootcamp1.jpg";
+import bootcamp2 from "@/assets/leadership/bootcamp2.jpg";
+import bootcamp3 from "@/assets/leadership/bootcamp3.jpg";
+import bootcamp4 from "@/assets/leadership/bootcamp4.jpg";
+import bootcamp5 from "@/assets/leadership/bootcamp5.jpg";
+
+import gavel1 from "@/assets/leadership/gavel1.jpg";
+import gavel2 from "@/assets/leadership/gavel2.jpg";
+import gavel3 from "@/assets/leadership/gavel3.jpg";
+import gavel4 from "@/assets/leadership/gavel4.jpg";
+import gavel5 from "@/assets/leadership/gavel5.jpg";
+
+import sasnaka1 from "@/assets/leadership/sasnaka1.jpg";
+import sasnaka2 from "@/assets/leadership/sasnaka2.jpg";
+import sasnaka3 from "@/assets/leadership/sasnaka3.jpg";
+import sasnaka4 from "@/assets/leadership/sasnaka4.jpg";
 
 const leadership = [
 	{
@@ -23,8 +59,8 @@ const leadership = [
 						development of undergraduates.
 					</li>
 					<li>
-						Organized Spark Challenge featuring Sri Lanka’s highest prize pool in
-						university competitions.
+						Organized Spark Challenge featuring Sri Lanka's highest prize pool in
+						university competitions with 120 teams and 600 participants.
 					</li>
 				</ul>
 			</>
@@ -33,11 +69,10 @@ const leadership = [
 		image: leadership1,
 		tags: [
 			"Leadership",
-			"Innovation",
-			"Teamwork",
-			"Sustainability",
 			"Event Management",
+			"Teamwork",
 		],
+		gallery: [spark1, spark2, spark3, spark4, spark5]
 	},
 	{
 		title: "Department Representative",
@@ -49,26 +84,26 @@ const leadership = [
 					<li>
 						Provided leadership in organizing and coordinating flagship department
 						events, including EXMO 23, Abhina, SLRC, Tronic Awurudu, Trip Tronic,
-						Mewisuru, Tronic Dansal, and Career Fair.
+						Mewisuru, Tronic Dansal, & Career Fair.
 					</li>
-					<li>Acted as a liaison between students and staff, addressing student concerns.</li>
+					<li>Acted as a liaison between students and staff.</li>
 				</ul>
 			</>
 		),
-		icon: GraduationCap,
+		icon: Users,
 		image: leadership2,
 		tags: [
 			"Leadership",
 			"Organizing",
 			"Teamwork",
-			"Coordination",
-			"Communication",
+			
 		],
+		gallery: [rep1, rep2, rep3, rep4, rep5]
 	},
 	{
 		title: "Event Facilitator",
-		organization: "Smart Systems Institute - National University of Singapore",
-		period: "2025",
+		organization: "Smart Systems Institute ",
+		period: "National University of Singapore • 2025",
 		description: (
 			<>
 				<ul className="list-disc pl-5 mb-2">
@@ -82,18 +117,17 @@ const leadership = [
 				</ul>
 			</>
 		),
-		icon: Heart,
+		icon: Users,
 		image: leadership3,
 		tags: [
 			"Facilitation",
-			"Bootcamp",
-			"Technology",
 			"Event Management",
-			"Multicultural",
+			"Multiculture",
 		],
+		gallery: [bootcamp1, bootcamp2, bootcamp3, bootcamp4, bootcamp5]
 	},
 	{
-		title: "Core Team Member",
+		title: "Coordinator",
 		organization: "Kegalle Medicine Engineering Students Society",
 		period: "2021-2023",
 		description: (
@@ -110,9 +144,10 @@ const leadership = [
 				</ul>
 			</>
 		),
-		icon: Heart,
+		icon: Users,
 		image: leadership5,
-		tags: ["Teaching", "Motivation", "Mentoring", "Donation", "Community"],
+		tags: ["Teaching", "Motivation", "Donation"],
+		gallery: [kemess1, kemess2, kemess3, kemess4, kemess5]
 	},
 	{
 		title: "Volunteer",
@@ -132,9 +167,10 @@ const leadership = [
 				</ul>
 			</>
 		),
-		icon: Heart,
+		icon: Users,
 		image: leadership4,
-		tags: ["Teaching", "Motivation", "Mentoring", "Community", "Outreach"],
+		tags: ["Teaching", "Mentoring", "Community"],
+		gallery: [sasnaka1, sasnaka2, sasnaka3, sasnaka4]
 	},
 	{
 		title: "Member",
@@ -151,24 +187,25 @@ const leadership = [
 						Contributed to the organization of club events and activities.
 					</li>
 					<li>
-						Assisted in mentoring new members, providing guidance and feedback.
+						Assisted in mentoring new members.
 					</li>
 				</ul>
 			</>
 		),
-		icon: Heart,
+		icon: Users,
 		image: leadership6,
 		tags: [
-			"Motivation",
-			"Teamwork",
-			"Organizing",
 			"Public Speaking",
+			"Organizing",
 			"Communication",
 		],
+		gallery: [gavel1, gavel2, gavel3, gavel4, gavel5]
 	},
 ];
 
 const Leadership = () => {
+	// global list of leadership images (used as fallback when item-level galleries aren't provided)
+	const leadershipGallery = leadership.filter((i) => i.image).map((i) => i.image);
 	return (
 		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="leadership">
 			<div className="container mx-auto max-w-7xl">
@@ -184,9 +221,28 @@ const Leadership = () => {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 					{leadership.map((item, index) => {
 						const IconComponent = item.icon;
+
+						// If the item provides its own gallery array, use it directly.
+						// Otherwise, fall back to the global leadershipGallery and rotate
+						// so the card's image appears first.
+						const itemGallery = Array.isArray((item as any).gallery) && (item as any).gallery.length
+							? (item as any).gallery
+							: null;
+
+						let orderedGallery: string[] = [];
+						if (itemGallery) {
+							orderedGallery = itemGallery;
+						} else if (item.image) {
+							const idx = leadershipGallery.indexOf(item.image);
+							orderedGallery = idx >= 0
+								? [leadershipGallery[idx], ...leadershipGallery.slice(idx + 1), ...leadershipGallery.slice(0, idx)]
+								: leadershipGallery;
+						} else {
+							orderedGallery = leadershipGallery;
+						}
 						return (
 							<Card
 								key={index}
@@ -231,6 +287,20 @@ const Leadership = () => {
 											</Badge>
 										))}
 									</div>
+										<div className="mt-4 flex gap-3">
+											{orderedGallery.length > 0 && (
+												<GalleryDialog
+													title={item.title}
+													images={orderedGallery}
+													trigger={
+														<Button variant="hero" size="sm" className="w-full flex items-center justify-center gap-2 border-2 border-primary/60 shadow-lg">
+															<ImageIcon className="h-4 w-4" />
+															Gallery
+														</Button>
+													}
+												/>
+											)}
+										</div>
 								</CardContent>
 							</Card>
 						);
