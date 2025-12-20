@@ -81,10 +81,9 @@ import convnext from "/src/assets/projects/convnext.png";
 import convnext1 from "/src/assets/projects/convnext1.png";
 import convnext2 from "/src/assets/projects/convnext2.png";
 import convnext3 from "/src/assets/projects/convnext3.png";
+import convnext4 from "/src/assets/projects/convnext4.jpg";
 import whatsappbot from "/src/assets/projects/disaster-bot.png";
 import whatsappbot1 from "/src/assets/projects/disaster-bot.gif";
-import workoutbuddy from "/src/assets/projects/workout-buddy.png";
-import workoutbuddy1 from "/src/assets/projects/workout-buddy.gif";
 
 const projects = [
   {
@@ -126,7 +125,7 @@ const projects = [
     description: "The original ConvNeXt is enhanced by replacing the standard 7×7 depthwise convolution with a multi-scale depthwise convolution module. This improvement captures features at multiple receptive field scales simultaneously.",
     tags: ["CNN", "Deep Learning", "Image Classification"],
     image: convnext,
-    gallery: [convnext1, convnext2, convnext3], 
+    gallery: [convnext1, convnext2, convnext3, convnext4], 
     github: "https://github.com/LasithaAmarasinghe/ConvNeXt-Improved",
   },
   { 
@@ -226,15 +225,7 @@ const projects = [
     gallery: [whatsappbot], 
     github: "https://github.com/LasithaAmarasinghe/Disaster-Response-WhatsApp-Bot",
   },
-  { 
-    title: "Workout Buddy",
-    description: "Workout Buddy is a fitness tracking app built with the MERN (MongoDB, Express, React, Node.js) stack. It helps users log their workouts and track the exercises they perform, including loads and reps. This allows users to add & delete new exercises in workout logs.",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    image: workoutbuddy,
-    gif: workoutbuddy1,
-    gallery: [workoutbuddy], 
-    github: "https://github.com/LasithaAmarasinghe/Workout-Buddy",
-  },
+  
 ];
 
 const Projects = () => {
