@@ -84,6 +84,13 @@ import convnext3 from "/src/assets/projects/convnext3.png";
 import convnext4 from "/src/assets/projects/convnext4.jpg";
 import whatsappbot from "/src/assets/projects/disaster-bot.png";
 import whatsappbot1 from "/src/assets/projects/disaster-bot.gif";
+import finance from "/src/assets/projects/finance-agent.png";
+import finance1 from "/src/assets/projects/finance-agent1.png";
+import finance2 from "/src/assets/projects/finance-agent2.png";
+import finance3 from "/src/assets/projects/finance-agent3.png";
+import finance4 from "/src/assets/projects/finance-agent4.png";
+
+
 
 const projects = [
   {
@@ -128,6 +135,14 @@ const projects = [
     gallery: [convnext1, convnext2, convnext3, convnext4], 
     github: "https://github.com/LasithaAmarasinghe/ConvNeXt-Improved",
   },
+  {
+    title: "CSE Smart Scout",
+    description: "A latency-optimized, autonomous AI agent that performs real-time technical analysis and news synthesis for the Colombo Stock Exchange (CSE). This solves the CSE data accessibility gap by implementing a cyclic ReAct workflow with Tavily Search.",
+    tags: ["Agents", "LangGraph", "Llama", "Groq LPU"],
+    image: finance,
+    gallery: [finance1, finance2, finance3, finance4], 
+    github: "https://github.com/LasithaAmarasinghe/CSE-Smart-Scout",
+  },
   { 
     title: "YouTube Comment Analysis",
     description: "This project analyzes the sentiment of YouTube comments, categorizing them as positive, negative, or neutral. It fetches up to 1000 comments, performs sentiment analysis using VaderSentiment, and visualizes the results through bar and pie charts.",
@@ -143,14 +158,6 @@ const projects = [
     image: flower,
     gallery: [flower1, flower2], 
     github: "https://github.com/LasithaAmarasinghe/Flower-Exchange",
-  },
-  {
-    title: "Freezer Gambit",
-    description: "This time series forecasting system predicts weekly fresh fruits, vegetables prices up to 4 weeks ahead using historical weather and price data. It dynamically incorporates new data through APIs and provides actionable insights to optimize cold storage strategy.",
-    tags: ["Time Series Forecasting", "Recommendation System"],
-    image: freezer,
-    gallery: [freezer1, freezer2],
-    github: "https://github.com/LasithaAmarasinghe/Freezer-Gambit-Data-Crunch",
   },
   { 
     title: "Fertilizer App",
@@ -225,6 +232,15 @@ const projects = [
     gallery: [whatsappbot], 
     github: "https://github.com/LasithaAmarasinghe/Disaster-Response-WhatsApp-Bot",
   },
+  {
+    title: "Freezer Gambit",
+    description: "This time series forecasting system predicts weekly fresh fruits, vegetables prices up to 4 weeks ahead using historical weather and price data. It dynamically incorporates new data through APIs and provides actionable insights to optimize cold storage strategy.",
+    tags: ["Time Series Forecasting", "Recommendation System"],
+    image: freezer,
+    gallery: [freezer1, freezer2],
+    github: "https://github.com/LasithaAmarasinghe/Freezer-Gambit-Data-Crunch",
+  },
+  
   
 ];
 
