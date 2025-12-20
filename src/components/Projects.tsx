@@ -77,7 +77,14 @@ import studymate3 from "/src/assets/projects/studymate3.png";
 import studymate4 from "/src/assets/projects/studymate4.png";
 import studymate5 from "/src/assets/projects/studymate5.png";
 import studymate6 from "/src/assets/projects/studymate6.png";
-
+import convnext from "/src/assets/projects/convnext.png";
+import convnext1 from "/src/assets/projects/convnext1.png";
+import convnext2 from "/src/assets/projects/convnext2.png";
+import convnext3 from "/src/assets/projects/convnext3.png";
+import whatsappbot from "/src/assets/projects/disaster-bot.png";
+import whatsappbot1 from "/src/assets/projects/disaster-bot.gif";
+import workoutbuddy from "/src/assets/projects/workout-buddy.png";
+import workoutbuddy1 from "/src/assets/projects/workout-buddy.gif";
 
 const projects = [
   {
@@ -115,12 +122,12 @@ const projects = [
     github: "https://github.com/LasithaAmarasinghe/ACTURA",
   },
   {
-    title: "Agent Performance Analysis",
-    description: "This system predicts insurance agent performance using machine learning algorithms. It employs K-means clustering and PCA for data analysis and dimensionality reduction. This provides real-time predictions and dynamic performance analysis charts.",
-    tags: ["Unsupervised Learning", "Data Visualization"],
-    image: agent,
-    gallery: [agent1, agent2, agent3, agent4], 
-    github: "https://github.com/LasithaAmarasinghe/Agent-Performance-Analysis-Data-Storm",
+    title: "Enhanced ConvNeXt",
+    description: "The original ConvNeXt is enhanced by replacing the standard 7×7 depthwise convolution with a multi-scale depthwise convolution module. This improvement captures features at multiple receptive field scales simultaneously.",
+    tags: ["CNN", "Deep Learning", "Image Classification"],
+    image: convnext,
+    gallery: [convnext1, convnext2, convnext3], 
+    github: "https://github.com/LasithaAmarasinghe/ConvNeXt-Improved",
   },
   { 
     title: "YouTube Comment Analysis",
@@ -201,6 +208,32 @@ const projects = [
     image: studymate,
     gallery: [studymate1, studymate2, studymate3, studymate4, studymate5, studymate6], 
     github: "https://github.com/LasithaAmarasinghe/StudyMate",
+  },
+   {
+    title: "Agent Performance Analysis",
+    description: "This system predicts insurance agent performance using machine learning algorithms. It employs K-means clustering and PCA for data analysis and dimensionality reduction. This provides real-time predictions and dynamic performance analysis charts.",
+    tags: ["Unsupervised Learning", "Data Visualization"],
+    image: agent,
+    gallery: [agent1, agent2, agent3, agent4], 
+    github: "https://github.com/LasithaAmarasinghe/Agent-Performance-Analysis-Data-Storm",
+  },
+  {
+    title: "Disaster Response Bot",
+    description: "A WhatsApp integrated system that monitors public groups in real-time to track emergency requests during floods and landslides in Sri Lanka 2025, converting message streams into a structured dashboard for effective response.",
+    tags: ["Node.js", "Disaster Management", "WhatsApp"],
+    image: whatsappbot,
+    gif: whatsappbot1,
+    gallery: [whatsappbot], 
+    github: "https://github.com/LasithaAmarasinghe/Disaster-Response-WhatsApp-Bot",
+  },
+  { 
+    title: "Workout Buddy",
+    description: "Workout Buddy is a fitness tracking app built with the MERN (MongoDB, Express, React, Node.js) stack. It helps users log their workouts and track the exercises they perform, including loads and reps. This allows users to add & delete new exercises in workout logs.",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
+    image: workoutbuddy,
+    gif: workoutbuddy1,
+    gallery: [workoutbuddy], 
+    github: "https://github.com/LasithaAmarasinghe/Workout-Buddy",
   },
 ];
 
