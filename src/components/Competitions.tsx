@@ -62,6 +62,15 @@ const competitions = [
 		image: Cypher,
 	},
 	{
+		title: "ICE 2025",
+		platform: ["AH Lab","NUS"],
+		rank: "Best Team Dynamics Award",
+		description:
+			"Team Big Hero 7 secured a Top 6 Place at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
+		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
+		image: ICE,
+	},
+	{
 		title: "AlgoXplore 1.0",
 		platform: ["FOC","NSBM"],
 		rank: "3rd Place",
@@ -117,15 +126,7 @@ const competitions = [
 		tags: ["Competitive Programming", "Teamwork"],
 		image: RealHack4,
 	},
-	{
-		title: "ICE 2025",
-		platform: ["AH Lab","NUS"],
-		rank: "Top 6",
-		description:
-			"Team Big Hero 7 secured a Top 6 Place at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
-		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
-		image: ICE,
-	},
+	
 	{
 		title: "SLIoT Challenge 2025",
 		platform: ["CSE","UOM"],
@@ -225,8 +226,8 @@ const Competitions = () => {
 		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="competitions">
 			<div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
-						Competitions & Awards
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+						Achievements
 					</h2>
 					<p className="text-muted-foreground text-base sm:text-lg px-4">
 						Achievements in competitive programming and machine learning challenges

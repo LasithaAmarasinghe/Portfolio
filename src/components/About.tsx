@@ -11,7 +11,7 @@ const About = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="about">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-500">
             About Me
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

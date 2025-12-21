@@ -10,11 +10,11 @@ import profilePic4 from "@/assets/about/lasitha4.jpg";
 import profilePic5 from "@/assets/about/lasitha5.jpg";
 
 const taglines = [
-	{ text: "AI/ML Enthusiast", color: "from-blue-500 to-purple-500" },
-	{ text: "Innovator", color: "from-purple-500 to-green-400" },
-	{ text: "Problem Solver", color: "from-blue-500 to-green-400" },
-	{ text: "Tech Enthusiast", color: "from-purple-500 to-blue-500" },
-	{ text: "Developer", color: "from-green-400 to-purple-500" }
+	{ text: "AI/ML Enthusiast" },
+	{ text: "Innovator" },
+	{ text: "Problem Solver" },
+	{ text: "Tech Enthusiast" },
+	{ text: "Developer" }
 ];
 
 const AnimatedTagline = () => {
@@ -29,7 +29,7 @@ const AnimatedTagline = () => {
 
 	return (
 		<span
-			className={`bg-gradient-to-r ${taglines[index].color} bg-clip-text text-transparent transition-all duration-500 ease-in-out`}
+			className="text-purple-500 transition-all duration-500 ease-in-out"
 		>
 			{taglines[index].text}
 		</span>
@@ -94,7 +94,7 @@ const Hero = () => {
 					{/* Right: Hero Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left">
 						<h1
-							className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-green-400 bg-clip-text text-transparent animate-fade-in leading-loose"
+							className="text-5xl md:text-7xl font-bold mb-6 text-blue-500 animate-fade-in leading-loose"
 							style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 						>
 							Lasitha Amarasinghe
@@ -114,7 +114,7 @@ const Hero = () => {
 								<Button
 									variant="hero"
 									size="lg"
-									className="w-full sm:w-auto transition-colors duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white"
+									className="w-full sm:w-auto bg-blue-500 text-white hover:bg-purple-600 transition-colors duration-300"
 								>
 									View Projects
 								</Button>

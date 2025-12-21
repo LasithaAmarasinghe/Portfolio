@@ -249,7 +249,7 @@ const Projects = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="projects">
       <div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
             Featured Projects
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg px-4">

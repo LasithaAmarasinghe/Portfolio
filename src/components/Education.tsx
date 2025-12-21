@@ -46,7 +46,7 @@ const Education = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="education">
       <div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500">
             Education
           </h2>
         </div>

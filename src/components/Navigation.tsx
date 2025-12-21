@@ -7,7 +7,7 @@ const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
-  { label: "Competitions", href: "#competitions" },
+  { label: "Achievements", href: "#competitions" },
   { label: "Leadership", href: "#leadership" },
   { label: "Contact", href: "#contact" },
 ];
@@ -58,7 +58,7 @@ const Navigation = () => {
       >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-14 sm:h-16\">
-            <div className="font-bold text-lg sm:text-xl bg-gradient-primary bg-clip-text text-transparent truncate max-w-[60%] sm:max-w-none">
+            <div className="font-bold text-lg sm:text-xl text-blue-500 truncate max-w-[60%] sm:max-w-none">
               Lasitha Amarasinghe
             </div>
 
