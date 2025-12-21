@@ -1,11 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Brain, Code, Database, GitBranch } from "lucide-react";
 
-const skills = [
-  "Python", "TensorFlow", "PyTorch", "Scikit-learn", "Keras", "MLOps", "Machine Learning",
-  "Deep Learning", "NLP", "Computer Vision", "Git", "SQL", "Java"
-];
-
 const About = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="about">
@@ -53,22 +48,6 @@ const About = () => {
               <h3 className="font-semibold mb-2">MLOps</h3>
               <p className="text-sm text-muted-foreground">Model deployment & monitoring</p>
             </div>
-          </div>
-        </div>
-
-        {/* Skills */}
-        <div className="animate-fade-in-delay">
-          <h3 className="text-2xl font-bold mb-6 text-center">Technical Skills</h3>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {skills.map((skill) => (
-              <Badge 
-                key={skill} 
-                variant="secondary" 
-                className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
-              >
-                {skill}
-              </Badge>
-            ))}
           </div>
         </div>
       </div>
