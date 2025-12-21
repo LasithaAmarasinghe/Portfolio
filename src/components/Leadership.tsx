@@ -122,7 +122,7 @@ const leadership = [
 		tags: [
 			"Facilitation",
 			"Event Management",
-			"Multiculture",
+			"Cross-Cultural",
 		],
 		gallery: [bootcamp1, bootcamp2, bootcamp3, bootcamp4, bootcamp5]
 	},

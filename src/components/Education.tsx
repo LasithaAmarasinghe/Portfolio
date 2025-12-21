@@ -11,7 +11,7 @@ const educationData = [
     location: "Sri Lanka",
     period: "Mar 2022 - Present",
     description: "CGPA: 3.86/4.00",
-    achievements: ["Dean's List Award - Semesters 1,2,4,5,6", "Minor in Mathematics"],
+    achievements: ["Dean's List Award - Semesters 1, 2, 4, 5, 6", "Minor in Mathematics"],
     tags: [
       "Linear Algebra",
       "Calculus",
@@ -34,7 +34,7 @@ const educationData = [
     institution: "Dharmaraja College, Kandy",
     location: "Kandy, Sri Lanka",
     period: "Jan 2012 - Dec 2020",
-    description: "Grade: AAA , Z-Score: 2.5972",
+    description: "Grade: AAA, Z-Score: 2.5972",
     achievements: ["Island Rank: 100/35000 ( Top 0.3% )"],
     tags: ["Physics", "Chemistry","Combined Mathematics"],
     logo: dharmaraja

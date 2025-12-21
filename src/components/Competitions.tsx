@@ -66,7 +66,7 @@ const competitions = [
 		platform: ["AH Lab","NUS"],
 		rank: "Best Team Dynamics Award",
 		description:
-			"Team Big Hero 7 secured a Top 6 Place at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
+			"Team Big Hero 7 secured Best Team Dynamics Award at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
 		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
 		image: ICE,
 	},
@@ -160,7 +160,7 @@ const competitions = [
 		rank: "Top 10",
 		description:
 			"Team Masterminds secured a Top 10 Place at SPARK Challenge organized by Department of Electronics & Telecom. Engineering, University of Moratuwa.",
-		tags: ["Sustainabile Development", "Problem Solving"],
+		tags: ["Sustainable Development", "Problem Solving"],
 		image: SPARK,
 	},
 	{

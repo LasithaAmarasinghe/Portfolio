@@ -65,7 +65,7 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="skills">
+    <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-background" id="skills">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-blue-500">Skills</h2>
