@@ -1,9 +1,18 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GalleryDialog from "@/components/ui/gallery-dialog";
+import { Button } from "@/components/ui/button";
+import { Image as ImageIcon, Import } from "lucide-react";
 import { Briefcase } from "lucide-react";
 
 import uom from "@/assets/about/uom.png";
 import nus from "@/assets/about/nus.png";
+import nus1 from "@/assets/experience/nus1.jpg";
+import nus2 from "@/assets/experience//nus2.jpg";
+import nus3 from "@/assets/experience/nus3.jpg";
+import nus4 from "@/assets/experience/nus4.jpg";
+import nus5 from "@/assets/experience/nus5.jpg";
+import nus6 from "@/assets/experience/nus6.jpg";
 
 const experiences = [
   {
@@ -11,15 +20,18 @@ const experiences = [
     company: "National University of Singapore",
     location: "Singapore",
     period: "Dec 2024 - May 2025",
-    description: "Worked on the TOM project, developing an AI assistant platform for Augmented Reality glasses. Implemented AiGet service to enable users to engage with dynamic knowledge in their environment.",
+    description: "Worked on the TOM project, developing an AI assistant platform for Augmented Reality glasses.",
     achievements: [
       "Developed AiGet service enabling dynamic knowledge interaction in AR environment",
-      "Contributed to Unity client and Python server architecture for TOM project",
+      "Optimized a low-latency Unity client- Python server architecture using WebSockets & Protobufs",
       "Utilized MRTK (Mixed Reality Toolkit) to enhance AR interactions and user experience",
+      " Implemented multimodal interaction pipeline fusing voice, vision, gaze inputs of users",
+      "Actively participated in code reviews and writing unit tests to minimize deployment bugs",
       "Presented AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University"
     ],
     tags: ["Unity", "Python", "MRTK", "Augmented Reality", "AI", "HCI"],
-    logo: nus
+    logo: nus,
+    gallery: [nus1, nus2, nus3, nus4, nus5, nus6],
   },
   {
     title: "Undergraduate Teaching Assistant",
@@ -78,9 +90,23 @@ const Experience = () => {
                           <span>{exp.location}</span>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="text-sm whitespace-nowrap">
-                        {exp.period}
-                      </Badge>
+                      <div className="flex items-center gap-3">
+                        {exp.gallery && exp.gallery.length > 0 && (
+                          <GalleryDialog
+                            title={exp.title}
+                            images={exp.gallery}
+                            trigger={
+                                <Button variant="default" size="sm" className="px-6">
+                                  <ImageIcon className="h-4 w-4 mr-2" />
+                                  <span>Gallery</span>
+                                </Button>
+                              }
+                          />
+                        )}
+                        <Badge variant="secondary" className="text-sm whitespace-nowrap">
+                          {exp.period}
+                        </Badge>
+                      </div>
                     </div>
                     <CardDescription className="text-base mb-4">
                       {exp.description}
@@ -104,6 +130,7 @@ const Experience = () => {
                         </Badge>
                       ))}
                     </div>
+                    
                   </div>
                 </div>
               </CardHeader>
