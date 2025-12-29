@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ExternalLink, Github, Image as ImageIcon } from "lucide-react";
+import { ExternalLink, Github, Image as ImageIcon, Video } from "lucide-react";
 
 import neocare from "@/assets/projects/neocare.png";
 import neocare1 from "@/assets/projects/neocare1.png";
@@ -118,14 +118,13 @@ const projects = [
     gallery: [uav], 
     github: "https://github.com/LasithaAmarasinghe/IEEE-VIP-Cup-2025-Multimodal-UAV-Detection-Tracking-and-Payload-Identification",
   },
-  {
-    title: "Actura",
-    description: "ACTURA is a Virtual Reality application built with Unity to help users overcome stage‑fright and practice public speaking in realistic, simulated environments. Users can rehearse speeches or presentations on virtual stages in front of a virtual audience.",
-    tags: ["Virtual Reality", "Unity", "Machine Learning"],
-    image: actura,
-    gif: actura1,
-    gallery: [actura], 
-    github: "https://github.com/LasithaAmarasinghe/ACTURA",
+   {
+    title: "CSE Smart Scout",
+    description: "A latency-optimized, autonomous AI agent that performs real-time technical analysis and news synthesis for the Colombo Stock Exchange (CSE). This solves the CSE data accessibility gap by implementing a cyclic ReAct workflow with Tavily Search.",
+    tags: ["Agents", "LangGraph", "Llama", "Groq LPU"],
+    image: finance,
+    gallery: [finance1, finance2, finance3, finance4], 
+    github: "https://github.com/LasithaAmarasinghe/CSE-Smart-Scout",
   },
   {
     title: "Enhanced ConvNeXt",
@@ -136,12 +135,13 @@ const projects = [
     github: "https://github.com/LasithaAmarasinghe/ConvNeXt-Improved",
   },
   {
-    title: "CSE Smart Scout",
-    description: "A latency-optimized, autonomous AI agent that performs real-time technical analysis and news synthesis for the Colombo Stock Exchange (CSE). This solves the CSE data accessibility gap by implementing a cyclic ReAct workflow with Tavily Search.",
-    tags: ["Agents", "LangGraph", "Llama", "Groq LPU"],
-    image: finance,
-    gallery: [finance1, finance2, finance3, finance4], 
-    github: "https://github.com/LasithaAmarasinghe/CSE-Smart-Scout",
+    title: "Actura",
+    description: "ACTURA is a Virtual Reality application built with Unity to help users overcome stage‑fright and practice public speaking in realistic, simulated environments. Users can rehearse speeches or presentations on virtual stages in front of a virtual audience.",
+    tags: ["Virtual Reality", "Unity", "Machine Learning"],
+    image: actura,
+    gif: actura1,
+    gallery: [actura], 
+    github: "https://github.com/LasithaAmarasinghe/ACTURA",
   },
   { 
     title: "YouTube Comment Analysis",
@@ -306,7 +306,11 @@ const Projects = () => {
                         size="sm" 
                         className="flex-1"
                       >
-                        <ImageIcon className="h-4 w-4 mr-2" />
+                        {project.gif ? (
+                          <Video className="h-4 w-4 mr-2" />
+                        ) : (
+                          <ImageIcon className="h-4 w-4 mr-2" />
+                        )}
                         {project.gif ? "Preview" : "Gallery"}
                       </Button>
                     </DialogTrigger>

@@ -21,7 +21,7 @@ const About = () => {
               My work spans across deep learning, computer vision, and data engineering.
   
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               With a strong foundation in mathematics and statistics, I focus on creating 
               production-ready AI solutions that drive business value and improve user experiences.
             </p>

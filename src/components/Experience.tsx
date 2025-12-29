@@ -29,7 +29,7 @@ const experiences = [
       "Actively participated in code reviews and writing unit tests to minimize deployment bugs",
       "Presented AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University"
     ],
-    tags: ["Unity", "Python", "MRTK", "Augmented Reality", "AI", "HCI"],
+    tags: ["Unity", "Python", "MRTK", "Augmented Reality", "LangChain", "HCI"],
     logo: nus,
     gallery: [nus1, nus2, nus3, nus4, nus5, nus6],
   },

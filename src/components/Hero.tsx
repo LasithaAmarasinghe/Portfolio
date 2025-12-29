@@ -60,8 +60,7 @@ const RotatingAvatar = () => {
 			<img
 				src={avatarImages[index]}
 				alt="Lasitha Amarasinghe"
-				className="w-full h-full object-cover rounded-2xl shadow-xl border-4 transition-all duration-300"
-				style={{ borderImage: 'linear-gradient(to right, #3b82f6, #a21caf) 1' }}
+				className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
 			/>
 		</div>
 	);
