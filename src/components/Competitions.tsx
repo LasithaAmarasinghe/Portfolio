@@ -29,6 +29,7 @@ const competitions = [
 		title: "IEEEXtreme 19.0",
 		platform: ["IEEE"],
 		rank: "Sri Lanka Rank - 4 | World Rank - 76",
+		highlight: true,
 		description:
 			"The world’s largest competitive programming competition organized by IEEE, featuring a 24-hour coding challenge with over 8,500 teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
@@ -38,6 +39,7 @@ const competitions = [
 		title: "IEEEXtreme 18.0",
 		platform: ["IEEE"],
 		rank: "Sri Lanka Rank - 8 | World Rank - 129",
+		highlight: true,
 		description:
 			"The world’s largest competitive programming competition organized by IEEE, featuring a 24-hour coding challenge with over 8,500 teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
@@ -251,10 +253,10 @@ const Competitions = () => {
 							<CardHeader>
 								<div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-2">
 									<div className="flex items-center gap-2">
-										<Trophy className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+										<Trophy className={`h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 ${competition.highlight ? "text-amber-400" : "text-primary"}`} />
 										<Badge
 											variant="outline"
-											className="text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+											className={`text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200 ${competition.highlight ? "border-amber-400 text-amber-300 bg-amber-500/10" : "border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary"}`}
 										>
 											{competition.rank}
 										</Badge>

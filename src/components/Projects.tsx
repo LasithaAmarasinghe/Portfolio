@@ -22,11 +22,6 @@ import uav from "@/assets/projects/uav.png";
 import uav1 from "@/assets/projects/uav1.gif";
 import actura from "@/assets/projects/actura.png";
 import actura1 from "@/assets/projects/actura1.gif";
-import agent from "@/assets/projects/agent.png";
-import agent1 from "@/assets/projects/agent1.png";
-import agent2 from "@/assets/projects/agent2.png";
-import agent3 from "@/assets/projects/agent3.png";
-import agent4 from "@/assets/projects/agent4.png";
 import youtube from "@/assets/projects/youtube.png";
 import youtube1 from "@/assets/projects/youtube1.png";
 import youtube2 from "@/assets/projects/youtube2.png";
@@ -90,6 +85,8 @@ import whatsappbot4 from "/src/assets/projects/disaster-bot4.png";
 import finance from "/src/assets/projects/finance-agent.png";
 import finance1 from "/src/assets/projects/finance-agent1.png";
 import finance2 from "/src/assets/projects/finance-agent2.png";
+import ragAssistant from "/src/assets/projects/rag-assistant.png";
+import ragAssistant1 from "/src/assets/projects/rag-assistant.gif";
 
 
 const projects = [
@@ -109,15 +106,7 @@ const projects = [
     gallery: [transformer1, transformer2, transformer3, transformer4, transformer5, transformer6], 
     github: "https://github.com/Web-Wizards-ENTC/Transformer",
   },
-  {
-    title: "UAV Surveillance System",
-    description: "Multimodal UAV surveillance system that fuses RGB and IR imagery to detect, track, and classify drones and payloads in real time using YOLOv8, BoT-SORT.",
-    tags: ["YOLO", "Computer Vision", "Image Fusion"],
-    image: uav,
-    gif: uav1,
-    gallery: [uav], 
-    github: "https://github.com/LasithaAmarasinghe/IEEE-VIP-Cup-2025-Multimodal-UAV-Detection-Tracking-and-Payload-Identification",
-  },
+  
    {
     title: "CSE Smart Scout",
     description: "A hierarchical multi-agent system that orchestrates specialized AI workers to perform real-time analysis & market research for Colombo Stock Exchange.",
@@ -127,6 +116,15 @@ const projects = [
     github: "https://github.com/LasithaAmarasinghe/CSE-Smart-Scout",
   },
   {
+    title: "UAV Surveillance System",
+    description: "Multimodal UAV surveillance system that fuses RGB and IR imagery to detect, track, and classify drones and payloads in real time using YOLOv8, BoT-SORT.",
+    tags: ["YOLO", "Computer Vision", "Image Fusion"],
+    image: uav,
+    gif: uav1,
+    gallery: [uav], 
+    github: "https://github.com/LasithaAmarasinghe/IEEE-VIP-Cup-2025-Multimodal-UAV-Detection-Tracking-and-Payload-Identification",
+  },
+  {
     title: "Enhanced ConvNeXt",
     description: "Improved ConvNeXt architecture by replacing 7×7 depthwise convolution with a multi-scale module to capture features at multiple receptive field scales.",
     tags: ["CNN", "Deep Learning", "Image Classification"],
@@ -134,7 +132,16 @@ const projects = [
     gallery: [convnext1, convnext2, convnext3, convnext4], 
     github: "https://github.com/LasithaAmarasinghe/ConvNeXt-Improved",
   },
- {
+  {
+    title: "Hybrid Agentic RAG Assistant",
+    description: "A retrieval-augmented generation (RAG) system engineered for high-accuracy document analysis with source verification with a hybrid agentic architecture.",
+    tags: ["LangChain", "ChromaDB", "Groq LPU", "Docker"],
+    image: ragAssistant,
+    gif: ragAssistant1,
+    gallery: [ragAssistant],
+    github: "https://github.com/LasithaAmarasinghe/Verifiable-RAG-Assistant",
+  },
+  {
     title: "Flower Exchange",
     description: "Object-oriented trading simulator where traders submit flower buy and sell orders that are matched in an order book and executed by an exchange engine.",
     tags: ["Object Oriented Programming", "Trading", "C++"],
@@ -142,15 +149,7 @@ const projects = [
     gallery: [flower1, flower2], 
     github: "https://github.com/LasithaAmarasinghe/Flower-Exchange",
   },
-  { 
-    title: "YouTube Comment Analysis",
-    description: "Analyzes up to 1000 YouTube comments with VaderSentiment and visualizes positive, negative, and neutral trends using bar and pie charts.",
-    tags: ["Sentiment Analysis", "Data Visualization"],
-    image: youtube,
-    gallery: [youtube1, youtube2], 
-    github: "https://github.com/LasithaAmarasinghe/YouTube-Comment-Analysis",
-  },
-   {
+  {
     title: "Actura",
     description: "Virtual Reality app built with Unity that helps users overcome stage fright by practicing public speaking on realistic virtual stages with a simulated audience.",
     tags: ["Virtual Reality", "Unity", "Machine Learning"],
@@ -159,7 +158,6 @@ const projects = [
     gallery: [actura], 
     github: "https://github.com/LasithaAmarasinghe/ACTURA",
   },
-  
   { 
     title: "Fertilizer App",
     description: "CNN-based tool that detects potato leaf diseases such as Early and Late Blight from images, using data augmentation and recommending suitable fertilizers.",
@@ -216,13 +214,13 @@ const projects = [
     gallery: [studymate1, studymate2, studymate3, studymate4, studymate5, studymate6], 
     github: "https://github.com/LasithaAmarasinghe/StudyMate",
   },
-   {
-    title: "Agent Performance Analysis",
-    description: "Machine learning system that predicts insurance agent performance using K-means clustering, PCA, and interactive charts for real-time performance insights.",
-    tags: ["Unsupervised Learning", "Data Visualization"],
-    image: agent,
-    gallery: [agent1, agent2, agent3, agent4], 
-    github: "https://github.com/LasithaAmarasinghe/Agent-Performance-Analysis-Data-Storm",
+  { 
+    title: "YouTube Comment Analysis",
+    description: "Analyzes up to 1000 YouTube comments with VaderSentiment and visualizes positive, negative, and neutral trends using bar and pie charts.",
+    tags: ["Sentiment Analysis", "Data Visualization"],
+    image: youtube,
+    gallery: [youtube1, youtube2], 
+    github: "https://github.com/LasithaAmarasinghe/YouTube-Comment-Analysis",
   },
   {
     title: "Disaster Response Bot",
@@ -297,7 +295,7 @@ const Projects = () => {
                     onClick={() => window.open(project.github, '_blank')}
                   >
                     <Github className="h-4 w-4 mr-2" />
-                    Code
+                    GitHub
                   </Button>
                   <Dialog>
                     <DialogTrigger asChild>

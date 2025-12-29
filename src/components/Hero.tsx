@@ -155,36 +155,6 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-
-			{/* Custom Animated Scroll Indicator with smooth scroll */}
-			<button
-				className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20 focus:outline-none group"
-				aria-label="Scroll Down"
-				onClick={() => {
-					const nextSection = document.querySelector(
-						"#about, #experience, #projects, #education, #competitions, #leadership, #contact"
-					);
-					if (nextSection) {
-						nextSection.scrollIntoView({ behavior: "smooth" });
-					}
-				}}
-			>
-				<div className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-primary/60 bg-background/70 shadow-xl group-hover:border-primary group-hover:shadow-glow-primary transition-all duration-300">
-					<svg
-						className="w-7 h-7 text-primary animate-bounce group-hover:text-secondary transition-colors duration-300"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2"
-						viewBox="0 0 24 24"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							d="M19 9l-7 7-7-7"
-						/>
-					</svg>
-				</div>
-			</button>
 		</section>
 	);
 };
