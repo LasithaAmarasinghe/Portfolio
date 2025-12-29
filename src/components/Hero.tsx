@@ -83,7 +83,7 @@ const Hero = () => {
 					{/* Left: Glassmorphism Avatar Card with Big Image */}
 					<div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/2">
 						<div
-							className="relative p-2 rounded-3xl bg-white/10 backdrop-blur-lg shadow-2xl border-2 border-white/20 group hover:border-primary transition-all duration-300"
+							className="relative p-2 rounded-3xl bg-white/10 backdrop-blur-lg shadow-2xl border-2 border-primary/80 transition-all duration-300"
 							style={{ maxWidth: "400px" }}
 						>
 							<div className="absolute inset-0 rounded-3xl border-4 border-gradient-to-r from-blue-500 via-purple-500 to-green-400 animate-pulse opacity-60 pointer-events-none"></div>

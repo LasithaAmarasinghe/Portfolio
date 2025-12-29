@@ -83,7 +83,10 @@ import convnext2 from "/src/assets/projects/convnext2.png";
 import convnext3 from "/src/assets/projects/convnext3.png";
 import convnext4 from "/src/assets/projects/convnext4.jpg";
 import whatsappbot from "/src/assets/projects/disaster-bot.png";
-import whatsappbot1 from "/src/assets/projects/disaster-bot.gif";
+import whatsappbot1 from "/src/assets/projects/disaster-bot1.png";
+import whatsappbot2 from "/src/assets/projects/disaster-bot2.png";
+import whatsappbot3 from "/src/assets/projects/disaster-bot3.png";
+import whatsappbot4 from "/src/assets/projects/disaster-bot4.png";
 import finance from "/src/assets/projects/finance-agent.png";
 import finance1 from "/src/assets/projects/finance-agent1.png";
 import finance2 from "/src/assets/projects/finance-agent2.png";
@@ -226,8 +229,7 @@ const projects = [
     description: "WhatsApp-integrated bot that monitors public groups real time during floods & landslides in Sri Lanka, turning messages into a structured dashboard.",
     tags: ["Node.js", "Disaster Management", "WhatsApp"],
     image: whatsappbot,
-    gif: whatsappbot1,
-    gallery: [whatsappbot], 
+    gallery: [whatsappbot1, whatsappbot2, whatsappbot3, whatsappbot4], 
     github: "https://github.com/LasithaAmarasinghe/Disaster-Response-WhatsApp-Bot",
   },
   {
