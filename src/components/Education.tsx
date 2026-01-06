@@ -10,8 +10,8 @@ const educationData = [
     institution: "University of Moratuwa, Sri Lanka",
     location: "Sri Lanka",
     period: "Mar 2022 - Present",
-    description: "CGPA: 3.86/4.00",
-    achievements: ["Dean's List Award - Semesters 1, 2, 4, 5, 6", "Minor in Mathematics"],
+    description: "CGPA: 3.88/4.00",
+    achievements: ["Dean's List Award - 6/7 Semesters", "Minor in Mathematics"],
     tags: [
       "Linear Algebra",
       "Calculus",
