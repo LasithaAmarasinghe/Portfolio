@@ -1,8 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GalleryDialog from "@/components/ui/gallery-dialog";
-import { Button } from "@/components/ui/button";
-import { Image as ImageIcon, Import } from "lucide-react";
 import { Briefcase } from "lucide-react";
 
 import uom from "@/assets/about/uom.png";
@@ -13,6 +11,8 @@ import nus3 from "@/assets/experience/nus3.jpg";
 import nus4 from "@/assets/experience/nus4.jpg";
 import nus5 from "@/assets/experience/nus5.jpg";
 import nus6 from "@/assets/experience/nus6.jpg";
+import nus7 from "@/assets/experience/nus7.jpeg";
+import nus8 from "@/assets/experience/nus8.jpeg";
 import kaya from "@/assets/about/Kaya.jpeg";
 
 const experiences = [
@@ -46,7 +46,7 @@ const experiences = [
     ],
     tags: ["Unity", "Python", "MRTK", "Augmented Reality", "LangChain", "HCI"],
     logo: nus,
-    gallery: [nus1, nus2, nus3, nus4, nus5, nus6],
+    gallery: [nus1, nus2, nus3, nus4, nus5, nus6, nus7, nus8],
   },
   {
     title: "Undergraduate Teaching Assistant",
@@ -106,18 +106,6 @@ const Experience = () => {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        {exp.gallery && exp.gallery.length > 0 && (
-                          <GalleryDialog
-                            title={exp.title}
-                            images={exp.gallery}
-                            trigger={
-                                <Button variant="default" size="sm" className="px-6">
-                                  <ImageIcon className="h-4 w-4 mr-2" />
-                                  <span>Gallery</span>
-                                </Button>
-                              }
-                          />
-                        )}
                         <Badge variant="secondary" className="text-sm whitespace-nowrap">
                           {exp.period}
                         </Badge>
@@ -145,7 +133,27 @@ const Experience = () => {
                         </Badge>
                       ))}
                     </div>
-                    
+
+                    {exp.gallery && exp.gallery.length > 0 && (
+                      <div className="mt-4">
+                        <GalleryDialog
+                          title={exp.title}
+                          images={exp.gallery}
+                          trigger={
+                            <div className="flex flex-wrap gap-3 cursor-pointer">
+                              {exp.gallery.map((img, imgIndex) => (
+                                <img
+                                  key={imgIndex}
+                                  src={img}
+                                  alt={`${exp.title} photo ${imgIndex + 1}`}
+                                  className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200"
+                                />
+                              ))}
+                            </div>
+                          }
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </CardHeader>

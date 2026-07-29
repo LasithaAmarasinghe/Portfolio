@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Brain, Code, Database, GitBranch } from "lucide-react";
+import { Brain, Code, Bot, GitBranch } from "lucide-react";
 
 const About = () => {
   return (
@@ -39,9 +39,9 @@ const About = () => {
               <p className="text-sm text-muted-foreground">Neural Networks, Transformers & Vision Models</p>
             </div>
             <div className="bg-card p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
-              <Database className="h-8 w-8 text-accent mb-4" />
-              <h3 className="font-semibold mb-2">Data Engineering</h3>
-              <p className="text-sm text-muted-foreground">Pipeline Design & Data Processing</p>
+              <Bot className="h-8 w-8 text-accent mb-4" />
+              <h3 className="font-semibold mb-2">AI Agents</h3>
+              <p className="text-sm text-muted-foreground">Multi-Agent Systems & Orchestration</p>
             </div>
             <div className="bg-card p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
               <GitBranch className="h-8 w-8 text-primary mb-4" />
