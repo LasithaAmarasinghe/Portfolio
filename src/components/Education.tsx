@@ -11,7 +11,7 @@ const educationData = [
     location: "Sri Lanka",
     period: "Mar 2022 - Present",
     description: "CGPA: 3.88/4.00",
-    achievements: ["Dean's List Award - 6/7 Semesters", "Minor in Mathematics"],
+    achievements: ["Dean's List Award - 7 Semesters", "Batch Rank - 10/100", "Minor in Mathematics"],
     tags: [
       "Linear Algebra",
       "Calculus",

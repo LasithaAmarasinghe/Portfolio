@@ -13,8 +13,23 @@ import nus3 from "@/assets/experience/nus3.jpg";
 import nus4 from "@/assets/experience/nus4.jpg";
 import nus5 from "@/assets/experience/nus5.jpg";
 import nus6 from "@/assets/experience/nus6.jpg";
+import kaya from "@/assets/about/Kaya.jpeg";
 
 const experiences = [
+  {
+    title: "Software Engineer ( AI / ML )",
+    company: "Kaya",
+    location: "USA (Remote)",
+    period: "Jun 2026 - Present",
+    description: "Developed a full-stack AI hiring automation platform that automates candidate sourcing, CV scoring, and shortlisting.",
+    achievements: [
+      "Integrated with Zoho Recruit and built a custom multi-agentic CV-scoring workflow through the Kaya platform",
+      "Owned the core scoring and request orchestration domain logic and threshold-based fate engine (shortlist/reject/hold)",
+      "Built the background worker pipeline enabling reliable, asynchronous processing of candidate pools scaling to thousands of applicants per job search"
+    ],
+    tags: ["AI Agents", "Next.js", "React", "TypeScript", "FastAPI", "Python", "Celery", "PostgreSQL", "Redis", "Docker"],
+    logo: kaya,
+  },
   {
     title: "Research Intern",
     company: "National University of Singapore",
