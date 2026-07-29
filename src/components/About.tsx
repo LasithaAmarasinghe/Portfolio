@@ -17,7 +17,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-6">
           <div className="space-y-6 animate-fade-in">
             <p className="text-foreground leading-relaxed">
-              I'm an software engineer (AI/ML) with expertise in developing machine learning models.
+              I am a Software Engineer (AI/ML) with expertise in developing machine learning models.
               My work spans across deep learning, computer vision, and AI agents.
   
             </p>

@@ -1,8 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GalleryDialog from "@/components/ui/gallery-dialog";
 
 import uom from "@/assets/about/uom.png";
 import dharmaraja from "@/assets/about/dharmaraja.jpg";
+import uom1 from "@/assets/education/uom1.jpg";
+import uom2 from "@/assets/education/uom2.jpg";
+import uom3 from "@/assets/education/uom3.jpg";
+import uom4 from "@/assets/education/uom4.jpg";
+import uom5 from "@/assets/education/uom5.jpg";
+import uom6 from "@/assets/education/uom6.jpg";
+import uom7 from "@/assets/education/uom7.jpg";
+import uom8 from "@/assets/education/uom8.jpg";
 
 const educationData = [
   {
@@ -24,10 +33,10 @@ const educationData = [
       "Deep Learning",
       "Robotics",
       "Data Structures",
-      "Software Design",
-      
+      "Software Design" 
     ],
-    logo: uom
+    logo: uom,
+    gallery: [uom3, uom2, uom1, uom4, uom5, uom7, uom6, uom8],
   },
   {
     title: "G.C.E. Advanced Level Examination",
@@ -105,6 +114,27 @@ const Education = () => {
                         </Badge>
                       ))}
                     </div>
+
+                    {edu.gallery && edu.gallery.length > 0 && (
+                      <div className="mt-4">
+                        <GalleryDialog
+                          title={edu.institution}
+                          images={edu.gallery}
+                          trigger={
+                            <div className="flex flex-wrap gap-3 cursor-pointer">
+                              {edu.gallery.map((img, imgIndex) => (
+                                <img
+                                  key={imgIndex}
+                                  src={img}
+                                  alt={`${edu.institution} photo ${imgIndex + 1}`}
+                                  className="h-40 w-40 sm:h-56 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200"
+                                />
+                              ))}
+                            </div>
+                          }
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </CardHeader>
