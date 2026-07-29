@@ -6,9 +6,10 @@ type Props = {
   title: string;
   images: string[];
   trigger: React.ReactNode;
+  startIndex?: number;
 };
 
-const GalleryDialog: React.FC<Props> = ({ title, images, trigger }) => {
+const GalleryDialog: React.FC<Props> = ({ title, images, trigger, startIndex = 0 }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
@@ -16,7 +17,7 @@ const GalleryDialog: React.FC<Props> = ({ title, images, trigger }) => {
         <DialogHeader>
           <DialogTitle>{title} - Gallery</DialogTitle>
         </DialogHeader>
-        <Carousel className="w-full">
+        <Carousel className="w-full" opts={{ startIndex }}>
           <CarouselContent>
             {images.map((img, imgIndex) => (
               <CarouselItem key={imgIndex}>

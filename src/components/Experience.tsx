@@ -135,23 +135,22 @@ const Experience = () => {
                     </div>
 
                     {exp.gallery && exp.gallery.length > 0 && (
-                      <div className="mt-4">
-                        <GalleryDialog
-                          title={exp.title}
-                          images={exp.gallery}
-                          trigger={
-                            <div className="flex flex-wrap gap-3 cursor-pointer">
-                              {exp.gallery.map((img, imgIndex) => (
-                                <img
-                                  key={imgIndex}
-                                  src={img}
-                                  alt={`${exp.title} photo ${imgIndex + 1}`}
-                                  className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200"
-                                />
-                              ))}
-                            </div>
-                          }
-                        />
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        {exp.gallery.map((img, imgIndex) => (
+                          <GalleryDialog
+                            key={imgIndex}
+                            title={exp.title}
+                            images={exp.gallery}
+                            startIndex={imgIndex}
+                            trigger={
+                              <img
+                                src={img}
+                                alt={`${exp.title} photo ${imgIndex + 1}`}
+                                className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                              />
+                            }
+                          />
+                        ))}
                       </div>
                     )}
                   </div>
