@@ -81,6 +81,8 @@ const Skills = () => {
                       <img
                         src={skill.imgSrc}
                         alt={skill.name}
+                        loading="lazy"
+                        decoding="async"
                         className="h-10 w-10 object-contain"
                         style={skill.invert ? { filter: 'invert(1) brightness(1.4)' } : undefined}
                         onError={(e) => {
