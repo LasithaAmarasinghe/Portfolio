@@ -8,6 +8,8 @@ import profilePic2 from "@/assets/about/lasitha2.jpg";
 import profilePic3 from "@/assets/about/lasitha3.jpg";
 import profilePic4 from "@/assets/about/lasitha4.jpg";
 import profilePic5 from "@/assets/about/lasitha5.jpg";
+import profilePic6 from "@/assets/about/lasitha6.jpg";
+import profilePic7 from "@/assets/about/lasitha7.jpg";
 
 const taglines = [
 	{ text: "AI/ML Enthusiast" },
@@ -29,7 +31,7 @@ const AnimatedTagline = () => {
 
 	return (
 		<span
-			className="text-purple-500 transition-all duration-500 ease-in-out"
+			className="text-secondary transition-all duration-500 ease-in-out"
 		>
 			{taglines[index].text}
 		</span>
@@ -42,7 +44,9 @@ const avatarImages = [
     profilePic2,
     profilePic3,
     profilePic4,
-    profilePic5
+    profilePic5,
+    profilePic6,
+    profilePic7
 ];
 
 const RotatingAvatar = () => {
@@ -83,17 +87,17 @@ const Hero = () => {
 					{/* Left: Glassmorphism Avatar Card with Big Image */}
 					<div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/2">
 						<div
-							className="relative p-2 rounded-3xl bg-white/10 backdrop-blur-lg shadow-2xl border-2 border-primary/80 transition-all duration-300"
+							className="relative p-2 rounded-3xl bg-[hsl(var(--glass))] backdrop-blur-lg shadow-2xl border-2 border-primary/80 transition-all duration-300"
 							style={{ maxWidth: "400px" }}
 						>
-							<div className="absolute inset-0 rounded-3xl border-4 border-gradient-to-r from-blue-500 via-purple-500 to-green-400 animate-pulse opacity-60 pointer-events-none"></div>
+							<div className="absolute inset-0 rounded-3xl border-4 border-primary/50 animate-pulse opacity-60 pointer-events-none"></div>
 							<RotatingAvatar />
 						</div>
 					</div>
 					{/* Right: Hero Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left">
 						<h1
-							className="text-5xl md:text-7xl font-bold mb-6 text-blue-500 animate-fade-in leading-loose"
+							className="text-5xl md:text-7xl font-bold mb-6 text-primary animate-fade-in leading-loose"
 							style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 						>
 							Lasitha Amarasinghe
@@ -113,7 +117,7 @@ const Hero = () => {
 								<Button
 									variant="hero"
 									size="lg"
-									className="w-full sm:w-auto bg-blue-500 text-white hover:bg-purple-600 transition-colors duration-300"
+									className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-secondary transition-colors duration-300"
 								>
 									View Projects
 								</Button>

@@ -35,8 +35,8 @@ const skillGroups = [
     title: 'Generative AI & LLMs',
     skills: [
       { name: 'Hugging Face', icon: <SiHuggingface size={40} color="#FFD21F" /> },
-      { name: 'LangChain', imgSrc: langchainLogo, fallback: 'LC', invert: true },
-      { name: 'LangGraph', imgSrc: langgraphLogo, fallback: 'LG', invert: true },
+      { name: 'LangChain', imgSrc: langchainLogo, fallback: 'LC', monochrome: true },
+      { name: 'LangGraph', imgSrc: langgraphLogo, fallback: 'LG', monochrome: true },
       { name: 'ChromaDB', imgSrc: chromadbLogo, fallback: 'Chroma' },
     ],
   },
@@ -68,12 +68,12 @@ const Skills = () => {
     <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-background" id="skills">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-blue-500">Skills</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">Skills</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillGroups.map((group) => (
             <div key={group.title} className="bg-card rounded-2xl p-6 border border-border shadow-md hover:shadow-glow-primary transition-all duration-300 flex flex-col items-center">
-                <h3 className="text-lg font-bold mb-6 text-purple-500 tracking-wide uppercase">{group.title}</h3>
+                <h3 className="text-lg font-bold mb-6 text-secondary tracking-wide uppercase">{group.title}</h3>
               <div className="flex flex-wrap justify-center gap-8 mb-2">
                 {group.skills.map((skill) => (
                   <div key={skill.name} className="flex flex-col items-center min-w-[80px]">
@@ -83,8 +83,11 @@ const Skills = () => {
                         alt={skill.name}
                         loading="lazy"
                         decoding="async"
-                        className="h-10 w-10 object-contain"
-                        style={skill.invert ? { filter: 'invert(1) brightness(1.4)' } : undefined}
+                        className={`h-10 w-10 object-contain ${
+                          // Black-on-transparent logos: flip to white for the dark
+                          // theme only, so they stay visible on the light card.
+                          skill.monochrome ? 'dark:invert' : ''
+                        }`}
                         onError={(e) => {
                           const el = e.currentTarget as HTMLImageElement;
                           el.style.display = 'none';

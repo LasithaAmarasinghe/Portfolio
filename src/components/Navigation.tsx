@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -58,8 +59,8 @@ const Navigation = () => {
         className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-transform duration-300 translate-y-0 shadow-sm"
       >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-14 sm:h-16\">
-            <div className="font-bold text-lg sm:text-xl text-blue-500 truncate max-w-[60%] sm:max-w-none">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            <div className="font-bold text-lg sm:text-xl text-primary truncate max-w-[60%] sm:max-w-none">
               Lasitha Amarasinghe
             </div>
 
@@ -78,17 +79,16 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
+              <ThemeToggle className="ml-2" />
             </div>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+            {/* Mobile Controls */}
+            <div className="flex items-center gap-1 md:hidden">
+              <ThemeToggle />
+              <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </Button>
+            </div>
           </div>
         </div>
       </nav>

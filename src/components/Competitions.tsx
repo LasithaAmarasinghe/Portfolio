@@ -235,7 +235,7 @@ const Competitions = () => {
 		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="competitions">
 			<div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
 						Achievements
 					</h2>
 					<p className="text-muted-foreground text-base sm:text-lg px-4">
@@ -262,10 +262,10 @@ const Competitions = () => {
 							<CardHeader>
 								<div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-2">
 									<div className="flex items-center gap-2">
-										<Trophy className={`h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 ${competition.highlight ? "text-amber-400" : "text-primary"}`} />
+										<Trophy className={`h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 ${competition.highlight ? "text-[hsl(var(--highlight))]" : "text-primary"}`} />
 										<Badge
 											variant="outline"
-											className={`text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200 ${competition.highlight ? "border-amber-400 text-amber-300 bg-amber-500/10" : "border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary"}`}
+											className={`text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200 ${competition.highlight ? "border-[hsl(var(--highlight))] text-[hsl(var(--highlight-strong))] bg-[hsl(var(--highlight-soft))]" : "border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary"}`}
 										>
 											{competition.rank}
 										</Badge>

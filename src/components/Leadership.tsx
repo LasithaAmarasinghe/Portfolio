@@ -209,7 +209,7 @@ const Leadership = () => {
 			<div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
 					<h2
-						className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose"
+						className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose"
 						style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 					>
 						Leadership & Volunteering
@@ -281,7 +281,7 @@ const Leadership = () => {
 											<Badge
 												key={tag}
 												variant="outline"
-												className="text-xs px-3 py-1 rounded-full font-semibold border-2 border-primary/60 bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+												className="text-xs px-3 py-1 rounded-full font-semibold border-2 border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
 											>
 												{tag}
 											</Badge>

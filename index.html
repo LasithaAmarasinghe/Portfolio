@@ -16,6 +16,20 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@LasithaRandula" />
     <meta name="twitter:image" content="https://www.lasithaamarasinghe.com/preview.png" />
+
+    <!-- Applies the saved theme before first paint so there is no flash of the
+         wrong colours. Defaults to light when nothing has been chosen. -->
+    <script>
+      (function () {
+        try {
+          var isDark = localStorage.getItem("theme") === "dark";
+          document.documentElement.classList.toggle("dark", isDark);
+          document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+        } catch (e) {
+          document.documentElement.style.colorScheme = "light";
+        }
+      })();
+    </script>
   </head>
 
   <body>
