@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ExternalLink, Github, Image as ImageIcon, Video } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Github, Image as ImageIcon, Video } from "lucide-react";
 
 import neocare from "@/assets/projects/neocare.png";
 import neocare1 from "@/assets/projects/neocare1.png";
@@ -92,7 +93,7 @@ import ragAssistant1 from "/src/assets/projects/rag-assistant.gif";
 const projects = [
   {
     title: "NeoCare",
-    description: "Non-invasive neonatal monitoring system using rPPG and facial video to estimate HR, SpO2, and jaundice, optimizing models for low latency mobile inference.",
+    description: "Non-invasive neonatal monitoring system using rPPG and facial video to estimate HR, SpO2, and jaundice, quantizing models for mobile inference.",
     tags: ["Python", "PyTorch", "OpenCV", "TFLite"],
     image: neocare,
     gallery: [neocare1, neocare2, neocare3, neocare4, neocare5], 
@@ -101,7 +102,7 @@ const projects = [
   {
     title: "Transformer Management System",
     description: "Scalable inspection platform utilizing a Java-Python microservice architecture to automate thermal anomaly detection via Computer Vision.",
-    tags: ["React.js", "Java Spring", "PostgreSQL", "Python"],
+    tags: ["React.js", "Java Spring", "PostgreSQL"],
     image: transform,
     gallery: [transformer1, transformer2, transformer3, transformer4, transformer5, transformer6], 
     github: "https://github.com/Web-Wizards-ENTC/Transformer",
@@ -110,7 +111,7 @@ const projects = [
    {
     title: "CSE Smart Scout",
     description: "A hierarchical multi-agent system that orchestrates specialized AI workers to perform real-time analysis & market research for Colombo Stock Exchange.",
-    tags: ["Agents", "LangGraph", "Python","REST APIs"],
+    tags: ["Agents", "LangGraph", "REST APIs"],
     image: finance,
     gallery: [finance1, finance2], 
     github: "https://github.com/LasithaAmarasinghe/CSE-Smart-Scout",
@@ -134,8 +135,8 @@ const projects = [
   },
   {
     title: "Hybrid Agentic RAG Assistant",
-    description: "A retrieval-augmented generation (RAG) system engineered for high-accuracy document analysis with source verification with a hybrid agentic architecture.",
-    tags: ["LangChain", "ChromaDB", "Groq LPU", "Docker"],
+    description: "A retrieval-augmented generation (RAG) system for high-accuracy document analysis with source verification with a hybrid agentic architecture.",
+    tags: ["LangChain", "ChromaDB", "Docker"],
     image: ragAssistant,
     gif: ragAssistant1,
     gallery: [ragAssistant],
@@ -143,8 +144,8 @@ const projects = [
   },
   {
     title: "Flower Exchange",
-    description: "Object-oriented trading simulator where traders submit flower buy and sell orders that are matched in an order book and executed by an exchange engine.",
-    tags: ["Object Oriented Programming", "Trading", "C++"],
+    description: "Trading simulator where traders submit flower buy and sell orders that are matched in an order book and executed by an exchange engine.",
+    tags: ["Object Oriented Programming", "C++"],
     image: flower,
     gallery: [flower1, flower2], 
     github: "https://github.com/LasithaAmarasinghe/Flower-Exchange",
@@ -160,7 +161,7 @@ const projects = [
   },
   { 
     title: "Fertilizer App",
-    description: "CNN-based tool that detects potato leaf diseases such as Early and Late Blight from images, using data augmentation and recommending suitable fertilizers.",
+    description: "CNN-based model that detects potato leaf diseases such as Early and Late Blight from images and recommending suitable fertilizers.",
     tags: ["Computer Vision", "Deep Learning"],
     image: fertilizer,
     gallery: [fertilizer1, fertilizer2, fertilizer3, fertilizer4, fertilizer5], 
@@ -242,7 +243,12 @@ const projects = [
   
 ];
 
+const INITIAL_VISIBLE_COUNT = 9;
+
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_VISIBLE_COUNT);
+
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="projects">
       <div className="container mx-auto max-w-7xl">
@@ -256,7 +262,7 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <Card 
               key={index} 
               className="bg-gradient-card border-border hover:shadow-glow-primary transition-all duration-300 hover:scale-105 animate-fade-in overflow-hidden"
@@ -354,6 +360,27 @@ const Projects = () => {
             </Card>
           ))}
         </div>
+
+        {projects.length > INITIAL_VISIBLE_COUNT && (
+          <div className="flex justify-center mt-10 sm:mt-12">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="gap-2"
+            >
+              {showAll ? (
+                <>
+                  Show Less <ChevronUp className="h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  Show More Projects <ChevronDown className="h-4 w-4" />
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

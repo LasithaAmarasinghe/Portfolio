@@ -31,6 +31,20 @@ const experiences = [
     logo: kaya,
   },
   {
+    title: "Undergraduate Teaching Assistant",
+    company: "University of Moratuwa",
+    location: "Sri Lanka",
+    period: "Sep 2025 - Dec 2025",
+    description: "Supporting undergraduate students in practical laboratory sessions for Internet of Things and Laboratory Practice modules.",
+    achievements: [
+      "Conducted lab sessions under EN3251 - Internet of Things module",
+      "Facilitated hands-on learning in EN1094 - Laboratory Practice module",
+      "Assisted students in understanding IoT concepts and practical implementations"
+    ],
+    tags: ["Teaching", "Laboratory Practice", "Student Mentoring"],
+    logo: uom
+  },
+  {
     title: "Research Intern",
     company: "National University of Singapore",
     location: "Singapore",
@@ -47,21 +61,8 @@ const experiences = [
     tags: ["Unity", "Python", "MRTK", "Augmented Reality", "LangChain", "HCI"],
     logo: nus,
     gallery: [nus1, nus2, nus3, nus4, nus5, nus6, nus7, nus8],
-  },
-  {
-    title: "Undergraduate Teaching Assistant",
-    company: "University of Moratuwa",
-    location: "Moratuwa, Sri Lanka",
-    period: "Sep 2025 - Present",
-    description: "Supporting undergraduate students in practical laboratory sessions for Internet of Things and Laboratory Practice modules.",
-    achievements: [
-      "Conducted lab sessions under EN3251 - Internet of Things module",
-      "Facilitated hands-on learning in EN1094 - Laboratory Practice module",
-      "Assisted students in understanding IoT concepts and practical implementations"
-    ],
-    tags: ["Teaching", "Laboratory Practice", "Student Mentoring"],
-    logo: uom
   }
+  
 ];
 
 const Experience = () => {
@@ -135,7 +136,11 @@ const Experience = () => {
                     </div>
 
                     {exp.gallery && exp.gallery.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-3">
+                      <div className="mt-4 pt-4 border-t border-border">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+                          Photos
+                        </p>
+                        <div className="flex flex-wrap gap-3">
                         {exp.gallery.map((img, imgIndex) => (
                           <GalleryDialog
                             key={imgIndex}
@@ -146,11 +151,12 @@ const Experience = () => {
                               <img
                                 src={img}
                                 alt={`${exp.title} photo ${imgIndex + 1}`}
-                                className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                                className="h-36 w-45 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
                               />
                             }
                           />
                         ))}
+                        </div>
                       </div>
                     )}
                   </div>

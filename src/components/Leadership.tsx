@@ -50,7 +50,7 @@ const leadership = [
 	{
 		title: "Vice President - Spark Branch",
 		organization: "Electronic Club of University of Moratuwa",
-		period: "2024 - Present",
+		period: "2025 - 2026",
 		description: (
 			<>
 				<ul className="list-disc pl-5 mb-2">
@@ -84,7 +84,7 @@ const leadership = [
 					<li>
 						Provided leadership in organizing and coordinating flagship department
 						events, including EXMO 23, Abhina, SLRC, Tronic Awurudu, Trip Tronic,
-						Mewisuru, Tronic Dansal, & Career Fair.
+						Mewisuru, Tronic Dansal.
 					</li>
 					<li>Acted as a liaison between students and staff.</li>
 				</ul>
@@ -122,7 +122,7 @@ const leadership = [
 		tags: [
 			"Facilitation",
 			"Event Management",
-			"Cross-Cultural",
+			
 		],
 		gallery: [bootcamp1, bootcamp2, bootcamp3, bootcamp4, bootcamp5]
 	},
@@ -151,7 +151,7 @@ const leadership = [
 	},
 	{
 		title: "Volunteer",
-		organization: "Sasnaka Sandara Foundation",
+		organization: "Sasnaka Sansada Foundation",
 		period: "2021-2023",
 		description: (
 			<>
@@ -186,9 +186,6 @@ const leadership = [
 					<li>
 						Contributed to the organization of club events and activities.
 					</li>
-					<li>
-						Assisted in mentoring new members.
-					</li>
 				</ul>
 			</>
 		),
@@ -196,7 +193,6 @@ const leadership = [
 		image: leadership6,
 		tags: [
 			"Public Speaking",
-			"Organizing",
 			"Communication",
 		],
 		gallery: [gavel1, gavel2, gavel3, gavel4, gavel5]

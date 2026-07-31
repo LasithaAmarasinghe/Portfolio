@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Trophy } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp, ExternalLink, Trophy } from "lucide-react";
 
 import IEEEXtreme19 from "@/assets/competitions/IEEEXtreme19.0.png";
 import IEEEXtreme18 from "@/assets/competitions/IEEEXtreme18.0.png";
@@ -50,7 +52,7 @@ const competitions = [
 		platform: ["IEEE","IESL"],
 		rank: "1st Place",
 		description:
-			"Team HelloWorld was able to be the champion at Techno Hackathon Xtreme organized by Institute of Engineering Sri Lanka (IESL) surpassing 250+ teams.",
+			"Team HelloWorld became champions at Techno Hackathon Xtreme organized by IESL surpassing 250+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
 		image: TechnoXtreme2023,
 	},
@@ -59,16 +61,16 @@ const competitions = [
 		platform: ["WIE","KDU"],
 		rank: "1st Place",
 		description:
-			"Team HelloWorld was able to be the champion at CYPHER 1.0 organized by IEEE WIE Affinity group of Kothalawala Defence University.",
+			"Team HelloWorld became champions at CYPHER 1.0 organized by IEEE WIE Affinity group of Kothalawala Defence University.",
 		tags: ["Competitive Programming", "Teamwork"],
 		image: Cypher,
 	},
 	{
 		title: "ICE 2025",
 		platform: ["AH Lab","NUS"],
-		rank: "Best Team Dynamics Award",
+		rank: "Best Team Dynamics",
 		description:
-			"Team Big Hero 7 secured Best Team Dynamics Award at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
+			"Team Big Hero 7 secured Best Team Dynamics Award at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by AH Lab, NUS.",
 		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
 		image: ICE,
 	},
@@ -105,7 +107,7 @@ const competitions = [
 		platform: ["CSE","UOM"],
 		rank: "5th Place",
 		description:
-			"Team Helloworld 2.0 secured 5th Place at Data Crunch organized by Department of Computer Engineering, University of Moratuwa with 100+ teams.",
+			"Team Helloworld 2.0 secured 5th Place at Data Crunch organized by Department of Computer Science & Engineering, University of Moratuwa.",
 		tags: ["Data Science", "Machine Learning"],
 		image: DataCrunch,
 	},
@@ -114,7 +116,7 @@ const competitions = [
 		platform: "IIT",
 		rank: "5th Place",
 		description:
-			"Team HelloWorld secured 5th Place at Open Hack 2.0 organized by Mozilla & FOSS community of IIT.",
+			"Team HelloWorld secured 5th Place at Open Hack 2.0 organized by Mozilla & FOSS community of Informatics Institute of Technology (IIT).",
 		tags: ["Competitive Programming", "Problem Solving"],
 		image: OpenHack,
 	},
@@ -124,7 +126,7 @@ const competitions = [
 		platform: ["SESA","UOK"],
 		rank: "6th Place",
 		description:
-			"Team HelloWorld 1.0 secured 6th Place at Real Hack 4.0 organized by Software Engineering Students’ Association of University of Kelaniya with 200+ teams.",
+			"Team HelloWorld 1.0 secured 6th Place at Real Hack 4.0 organized by Software Engineering Students’ Association, University of Kelaniya with 200+ teams.",
 		tags: ["Competitive Programming", "Teamwork"],
 		image: RealHack4,
 	},
@@ -134,7 +136,7 @@ const competitions = [
 		platform: ["CSE","UOM"],
 		rank: "Top 8",
 		description:
-			"Team AURA secured a Top 8 Place at SLIoT Challenge 2025 organized by Department of Computer Science & Engineering, University of Moratuwa.",
+			"Team AURA secured a Top 8 Place at SLIoT Challenge 2025 organized by Dept. of Computer Science & Engineering, University of Moratuwa.",
 		tags: ["Internet of Things", "Problem Solving"],
 		image: SLIoT2025,
 	},
@@ -148,11 +150,11 @@ const competitions = [
 		image: HackDoze,
 	},
 	{
-		title: "SLIoT Challenge 2023/24",
+		title: "SLIoT Challenge 2024",
 		platform: ["CSE","UOM"],
 		rank: "Top 10",
 		description:
-			"Team Tronic Pros secured a Top 10 Place at SLIoT Challenge 2023/24 organized by Computer Science & Engineering, University of Moratuwa with 75+ teams.",
+			"Team Tronic Pros secured a Top 10 Place at SLIoT Challenge 2024 organized by Dept. of Computer Science & Engineering, University of Moratuwa.",
 		tags: ["Internet of Things", "Problem Solving"],
 		image: SLIoT2024,
 	},
@@ -179,7 +181,7 @@ const competitions = [
 		platform: ["SESA","UOK"],
 		rank: "Top 10",
 		description:
-			"Team HelloWorld 1.0 secured a Top 10 Place at Real Hack 5.0 organized by Software Engineering Students’ Association of University of Kelaniya with 200+ teams.",
+			"Team HelloWorld 1.0 secured a Top 10 Place at Real Hack 5.0 organized by SESA of University of Kelaniya with 200+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
 		image: RealHack5,
 	},
@@ -188,7 +190,7 @@ const competitions = [
 		platform: ["IEEE","IIT"],
 		rank: "Top 10",
 		description:
-			"Team Tronic Pros secured a Top 10 Place at CODESPRINT 8.0 organized by IEEE Computer Society Student Branch Chapter of IIT with 500+ teams.",
+			"Team Tronic Pros secured a Top 10 Place at CODESPRINT 8.0 organized by IEEE Computer Society of IIT with 500+ teams.",
 		tags: ["Problem Solving", "StartUp", "Idea Pitching"],
 		image: CODESPRINT,
 	},
@@ -207,7 +209,7 @@ const competitions = [
 		rank: "Top 15",
 		description:
 			"Team Helloworld 2.0 secured a Top 15 Place at Data Storm V6.0 organized by Rotaract Clubs of University of Moratuwa and University of Colombo.",
-		tags: ["Machine Learning", "Data Science", "Teamwork"],
+		tags: ["Machine Learning", "Data Science"],
 		image: DataStormV6,
 	},
 	{
@@ -215,7 +217,7 @@ const competitions = [
 		platform: ["ACES","UOP"],
 		rank: "Top 20",
 		description:
-			"Team Mora Coders secured a Top 20 Place at Coders V10.0 organized by Department of Computer Engineering, University of Peradeniya with 120+ teams.",
+			"Team Mora Coders secured a Top 20 Place at Coders V10.0 organized by Computer Engineering, University of Peradeniya with 120+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
 		image: CodersV10,
 	}
@@ -223,7 +225,12 @@ const competitions = [
 	
 ];
 
+const INITIAL_VISIBLE_COUNT = 9;
+
 const Competitions = () => {
+	const [showAll, setShowAll] = useState(false);
+	const visibleCompetitions = showAll ? competitions : competitions.slice(0, INITIAL_VISIBLE_COUNT);
+
 	return (
 		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="competitions">
 			<div className="container mx-auto max-w-7xl">
@@ -237,7 +244,7 @@ const Competitions = () => {
 				</div>
 
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-					{competitions.map((competition, index) => (
+					{visibleCompetitions.map((competition, index) => (
 						<Card
 							key={index}
 							className="bg-gradient-card border-border hover:shadow-glow-primary transition-all duration-300 hover:scale-105 animate-fade-in overflow-hidden"
@@ -294,6 +301,27 @@ const Competitions = () => {
 						</Card>
 					))}
 				</div>
+
+				{competitions.length > INITIAL_VISIBLE_COUNT && (
+					<div className="flex justify-center mt-10 sm:mt-12">
+						<Button
+							variant="outline"
+							size="lg"
+							onClick={() => setShowAll((prev) => !prev)}
+							className="gap-2"
+						>
+							{showAll ? (
+								<>
+									Show Less <ChevronUp className="h-4 w-4" />
+								</>
+							) : (
+								<>
+									Show More Achievements <ChevronDown className="h-4 w-4" />
+								</>
+							)}
+						</Button>
+					</div>
+				)}
 			</div>
 		</section>
 	);

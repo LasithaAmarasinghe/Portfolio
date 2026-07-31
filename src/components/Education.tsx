@@ -18,7 +18,7 @@ const educationData = [
     title: "B.Sc. Eng.(Hons.) in Electronic & Telecommunication Engineering",
     institution: "University of Moratuwa, Sri Lanka",
     location: "Sri Lanka",
-    period: "Mar 2022 - Present",
+    period: "Mar 2022 - Jun 2026",
     description: "CGPA: 3.88/4.00",
     achievements: ["Dean's List Award - 7 Semesters", "Batch Rank - 10/100", "Minor in Mathematics"],
     tags: [
@@ -116,22 +116,27 @@ const Education = () => {
                     </div>
 
                     {edu.gallery && edu.gallery.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-3">
-                        {edu.gallery.map((img, imgIndex) => (
-                          <GalleryDialog
-                            key={imgIndex}
-                            title={edu.institution}
-                            images={edu.gallery}
-                            startIndex={imgIndex}
-                            trigger={
-                              <img
-                                src={img}
-                                alt={`${edu.institution} photo ${imgIndex + 1}`}
-                                className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
-                              />
-                            }
-                          />
-                        ))}
+                      <div className="mt-4 pt-4 border-t border-border">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+                          Photos
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                          {edu.gallery.map((img, imgIndex) => (
+                            <GalleryDialog
+                              key={imgIndex}
+                              title={edu.institution}
+                              images={edu.gallery}
+                              startIndex={imgIndex}
+                              trigger={
+                                <img
+                                  src={img}
+                                  alt={`${edu.institution} photo ${imgIndex + 1}`}
+                                  className="h-36 w-45 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                                />
+                              }
+                            />
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
