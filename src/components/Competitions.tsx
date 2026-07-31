@@ -29,6 +29,7 @@ const competitions = [
 		title: "IEEEXtreme 19.0",
 		platform: ["IEEE"],
 		rank: "Sri Lanka Rank - 4 | World Rank - 76",
+		highlight: true,
 		description:
 			"The world’s largest competitive programming competition organized by IEEE, featuring a 24-hour coding challenge with over 8,500 teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
@@ -38,6 +39,7 @@ const competitions = [
 		title: "IEEEXtreme 18.0",
 		platform: ["IEEE"],
 		rank: "Sri Lanka Rank - 8 | World Rank - 129",
+		highlight: true,
 		description:
 			"The world’s largest competitive programming competition organized by IEEE, featuring a 24-hour coding challenge with over 8,500 teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
@@ -60,6 +62,15 @@ const competitions = [
 			"Team HelloWorld was able to be the champion at CYPHER 1.0 organized by IEEE WIE Affinity group of Kothalawala Defence University.",
 		tags: ["Competitive Programming", "Teamwork"],
 		image: Cypher,
+	},
+	{
+		title: "ICE 2025",
+		platform: ["AH Lab","NUS"],
+		rank: "Best Team Dynamics Award",
+		description:
+			"Team Big Hero 7 secured Best Team Dynamics Award at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
+		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
+		image: ICE,
 	},
 	{
 		title: "AlgoXplore 1.0",
@@ -117,15 +128,7 @@ const competitions = [
 		tags: ["Competitive Programming", "Teamwork"],
 		image: RealHack4,
 	},
-	{
-		title: "ICE 2025",
-		platform: ["AH Lab","NUS"],
-		rank: "Top 6",
-		description:
-			"Team Big Hero 7 secured a Top 6 Place at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by Augmented Human Lab, NUS.",
-		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
-		image: ICE,
-	},
+	
 	{
 		title: "SLIoT Challenge 2025",
 		platform: ["CSE","UOM"],
@@ -159,7 +162,7 @@ const competitions = [
 		rank: "Top 10",
 		description:
 			"Team Masterminds secured a Top 10 Place at SPARK Challenge organized by Department of Electronics & Telecom. Engineering, University of Moratuwa.",
-		tags: ["Sustainabile Development", "Problem Solving"],
+		tags: ["Sustainable Development", "Problem Solving"],
 		image: SPARK,
 	},
 	{
@@ -225,8 +228,8 @@ const Competitions = () => {
 		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="competitions">
 			<div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
-						Competitions & Awards
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+						Achievements
 					</h2>
 					<p className="text-muted-foreground text-base sm:text-lg px-4">
 						Achievements in competitive programming and machine learning challenges
@@ -250,10 +253,10 @@ const Competitions = () => {
 							<CardHeader>
 								<div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-2">
 									<div className="flex items-center gap-2">
-										<Trophy className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+										<Trophy className={`h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 ${competition.highlight ? "text-amber-400" : "text-primary"}`} />
 										<Badge
 											variant="outline"
-											className="text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+											className={`text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200 ${competition.highlight ? "border-amber-400 text-amber-300 bg-amber-500/10" : "border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary"}`}
 										>
 											{competition.rank}
 										</Badge>

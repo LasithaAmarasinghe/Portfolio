@@ -7,9 +7,9 @@ const Contact = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="contact">
       <div className="container mx-auto max-w-4xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-						Let's Connect
-					</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500">
+            Let's Connect
+          </h2>
 					<p className="text-muted-foreground text-base sm:text-lg px-4">
 						Interested in collaboration or have a project in mind? Let's talk!
 					</p>

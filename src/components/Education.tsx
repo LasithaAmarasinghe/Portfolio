@@ -1,8 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GalleryDialog from "@/components/ui/gallery-dialog";
 
 import uom from "@/assets/about/uom.png";
 import dharmaraja from "@/assets/about/dharmaraja.jpg";
+import uom1 from "@/assets/education/uom1.jpg";
+import uom2 from "@/assets/education/uom2.jpg";
+import uom3 from "@/assets/education/uom3.jpg";
+import uom4 from "@/assets/education/uom4.jpg";
+import uom5 from "@/assets/education/uom5.jpg";
+import uom6 from "@/assets/education/uom6.jpg";
+import uom7 from "@/assets/education/uom7.jpg";
+import uom8 from "@/assets/education/uom8.jpg";
 
 const educationData = [
   {
@@ -10,8 +19,8 @@ const educationData = [
     institution: "University of Moratuwa, Sri Lanka",
     location: "Sri Lanka",
     period: "Mar 2022 - Present",
-    description: "CGPA: 3.86/4.00",
-    achievements: ["Dean's List Award - Semesters 1,2,4,5,6"],
+    description: "CGPA: 3.88/4.00",
+    achievements: ["Dean's List Award - 7 Semesters", "Batch Rank - 10/100", "Minor in Mathematics"],
     tags: [
       "Linear Algebra",
       "Calculus",
@@ -24,17 +33,17 @@ const educationData = [
       "Deep Learning",
       "Robotics",
       "Data Structures",
-      "Software Design",
-      
+      "Software Design" 
     ],
-    logo: uom
+    logo: uom,
+    gallery: [uom3, uom2, uom1, uom4, uom5, uom7, uom6, uom8],
   },
   {
     title: "G.C.E. Advanced Level Examination",
     institution: "Dharmaraja College, Kandy",
     location: "Kandy, Sri Lanka",
     period: "Jan 2012 - Dec 2020",
-    description: "Grade: AAA , Z-Score: 2.5972",
+    description: "Grade: AAA, Z-Score: 2.5972",
     achievements: ["Island Rank: 100/35000 ( Top 0.3% )"],
     tags: ["Physics", "Chemistry","Combined Mathematics"],
     logo: dharmaraja
@@ -46,7 +55,7 @@ const Education = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="education">
       <div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500">
             Education
           </h2>
         </div>
@@ -105,6 +114,26 @@ const Education = () => {
                         </Badge>
                       ))}
                     </div>
+
+                    {edu.gallery && edu.gallery.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        {edu.gallery.map((img, imgIndex) => (
+                          <GalleryDialog
+                            key={imgIndex}
+                            title={edu.institution}
+                            images={edu.gallery}
+                            startIndex={imgIndex}
+                            trigger={
+                              <img
+                                src={img}
+                                alt={`${edu.institution} photo ${imgIndex + 1}`}
+                                className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                              />
+                            }
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </CardHeader>

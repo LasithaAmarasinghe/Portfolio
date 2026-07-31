@@ -1,25 +1,52 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GalleryDialog from "@/components/ui/gallery-dialog";
 import { Briefcase } from "lucide-react";
 
 import uom from "@/assets/about/uom.png";
 import nus from "@/assets/about/nus.png";
+import nus1 from "@/assets/experience/nus1.jpg";
+import nus2 from "@/assets/experience//nus2.jpg";
+import nus3 from "@/assets/experience/nus3.jpg";
+import nus4 from "@/assets/experience/nus4.jpg";
+import nus5 from "@/assets/experience/nus5.jpg";
+import nus6 from "@/assets/experience/nus6.jpg";
+import nus7 from "@/assets/experience/nus7.jpeg";
+import nus8 from "@/assets/experience/nus8.jpeg";
+import kaya from "@/assets/about/Kaya.jpeg";
 
 const experiences = [
+  {
+    title: "Software Engineer ( AI / ML )",
+    company: "Kaya",
+    location: "USA (Remote)",
+    period: "Jun 2026 - Present",
+    description: "Developed a full-stack AI hiring automation platform that automates candidate sourcing, CV scoring, and shortlisting.",
+    achievements: [
+      "Integrated with Zoho Recruit and built a custom multi-agentic CV-scoring workflow through the Kaya platform",
+      "Owned the core scoring and request orchestration domain logic and threshold-based fate engine (shortlist/reject/hold)",
+      "Built the background worker pipeline enabling reliable, asynchronous processing of candidate pools scaling to thousands of applicants per job search"
+    ],
+    tags: ["AI Agents", "Next.js", "React", "TypeScript", "FastAPI", "Python", "Celery", "PostgreSQL", "Redis", "Docker"],
+    logo: kaya,
+  },
   {
     title: "Research Intern",
     company: "National University of Singapore",
     location: "Singapore",
     period: "Dec 2024 - May 2025",
-    description: "Worked on the TOM project, developing an AI assistant platform for Augmented Reality glasses. Implemented AiGet service to enable users to engage with dynamic knowledge in their environment.",
+    description: "Worked on the TOM project, developing an AI assistant platform for Augmented Reality glasses.",
     achievements: [
       "Developed AiGet service enabling dynamic knowledge interaction in AR environment",
-      "Contributed to Unity client and Python server architecture for TOM project",
+      "Optimized a low-latency Unity client- Python server architecture using WebSockets & Protobufs",
       "Utilized MRTK (Mixed Reality Toolkit) to enhance AR interactions and user experience",
+      " Implemented multimodal interaction pipeline fusing voice, vision, gaze inputs of users",
+      "Actively participated in code reviews and writing unit tests to minimize deployment bugs",
       "Presented AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University"
     ],
-    tags: ["Unity", "Python", "MRTK", "Augmented Reality", "AI", "HCI"],
-    logo: nus
+    tags: ["Unity", "Python", "MRTK", "Augmented Reality", "LangChain", "HCI"],
+    logo: nus,
+    gallery: [nus1, nus2, nus3, nus4, nus5, nus6, nus7, nus8],
   },
   {
     title: "Undergraduate Teaching Assistant",
@@ -41,10 +68,11 @@ const Experience = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="experience">
       <div className="container mx-auto max-w-7xl">
-				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
-						Work Experience
-					</h2>        </div>
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+            Work Experience
+          </h2>
+        </div>
 
         <div className="space-y-6">
           {experiences.map((exp, index) => (
@@ -77,9 +105,11 @@ const Experience = () => {
                           <span>{exp.location}</span>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="text-sm whitespace-nowrap">
-                        {exp.period}
-                      </Badge>
+                      <div className="flex items-center gap-3">
+                        <Badge variant="secondary" className="text-sm whitespace-nowrap">
+                          {exp.period}
+                        </Badge>
+                      </div>
                     </div>
                     <CardDescription className="text-base mb-4">
                       {exp.description}
@@ -103,6 +133,26 @@ const Experience = () => {
                         </Badge>
                       ))}
                     </div>
+
+                    {exp.gallery && exp.gallery.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        {exp.gallery.map((img, imgIndex) => (
+                          <GalleryDialog
+                            key={imgIndex}
+                            title={exp.title}
+                            images={exp.gallery}
+                            startIndex={imgIndex}
+                            trigger={
+                              <img
+                                src={img}
+                                alt={`${exp.title} photo ${imgIndex + 1}`}
+                                className="h-35 w-40 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                              />
+                            }
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </CardHeader>

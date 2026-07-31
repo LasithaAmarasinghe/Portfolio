@@ -10,11 +10,11 @@ import profilePic4 from "@/assets/about/lasitha4.jpg";
 import profilePic5 from "@/assets/about/lasitha5.jpg";
 
 const taglines = [
-	{ text: "AI/ML Enthusiast", color: "from-blue-500 to-purple-500" },
-	{ text: "Innovator", color: "from-purple-500 to-green-400" },
-	{ text: "Problem Solver", color: "from-blue-500 to-green-400" },
-	{ text: "Tech Enthusiast", color: "from-purple-500 to-blue-500" },
-	{ text: "Developer", color: "from-green-400 to-purple-500" }
+	{ text: "AI/ML Enthusiast" },
+	{ text: "Innovator" },
+	{ text: "Problem Solver" },
+	{ text: "Tech Enthusiast" },
+	{ text: "Developer" }
 ];
 
 const AnimatedTagline = () => {
@@ -29,7 +29,7 @@ const AnimatedTagline = () => {
 
 	return (
 		<span
-			className={`bg-gradient-to-r ${taglines[index].color} bg-clip-text text-transparent transition-all duration-500 ease-in-out`}
+			className="text-purple-500 transition-all duration-500 ease-in-out"
 		>
 			{taglines[index].text}
 		</span>
@@ -60,8 +60,7 @@ const RotatingAvatar = () => {
 			<img
 				src={avatarImages[index]}
 				alt="Lasitha Amarasinghe"
-				className="w-full h-full object-cover rounded-2xl shadow-xl border-4 transition-all duration-300"
-				style={{ borderImage: 'linear-gradient(to right, #3b82f6, #a21caf) 1' }}
+				className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
 			/>
 		</div>
 	);
@@ -84,7 +83,7 @@ const Hero = () => {
 					{/* Left: Glassmorphism Avatar Card with Big Image */}
 					<div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/2">
 						<div
-							className="relative p-2 rounded-3xl bg-white/10 backdrop-blur-lg shadow-2xl border-2 border-white/20 group hover:border-primary transition-all duration-300"
+							className="relative p-2 rounded-3xl bg-white/10 backdrop-blur-lg shadow-2xl border-2 border-primary/80 transition-all duration-300"
 							style={{ maxWidth: "400px" }}
 						>
 							<div className="absolute inset-0 rounded-3xl border-4 border-gradient-to-r from-blue-500 via-purple-500 to-green-400 animate-pulse opacity-60 pointer-events-none"></div>
@@ -94,7 +93,7 @@ const Hero = () => {
 					{/* Right: Hero Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left">
 						<h1
-							className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-green-400 bg-clip-text text-transparent animate-fade-in leading-loose"
+							className="text-5xl md:text-7xl font-bold mb-6 text-blue-500 animate-fade-in leading-loose"
 							style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 						>
 							Lasitha Amarasinghe
@@ -114,7 +113,7 @@ const Hero = () => {
 								<Button
 									variant="hero"
 									size="lg"
-									className="w-full sm:w-auto transition-colors duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white"
+									className="w-full sm:w-auto bg-blue-500 text-white hover:bg-purple-600 transition-colors duration-300"
 								>
 									View Projects
 								</Button>
@@ -156,36 +155,6 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-
-			{/* Custom Animated Scroll Indicator with smooth scroll */}
-			<button
-				className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20 focus:outline-none group"
-				aria-label="Scroll Down"
-				onClick={() => {
-					const nextSection = document.querySelector(
-						"#about, #experience, #projects, #education, #competitions, #leadership, #contact"
-					);
-					if (nextSection) {
-						nextSection.scrollIntoView({ behavior: "smooth" });
-					}
-				}}
-			>
-				<div className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-primary/60 bg-background/70 shadow-xl group-hover:border-primary group-hover:shadow-glow-primary transition-all duration-300">
-					<svg
-						className="w-7 h-7 text-primary animate-bounce group-hover:text-secondary transition-colors duration-300"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2"
-						viewBox="0 0 24 24"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							d="M19 9l-7 7-7-7"
-						/>
-					</svg>
-				</div>
-			</button>
 		</section>
 	);
 };
