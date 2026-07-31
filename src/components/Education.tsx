@@ -135,7 +135,7 @@ const Education = () => {
                                   alt={`${edu.institution} photo ${imgIndex + 1}`}
                                   loading="lazy"
                                   decoding="async"
-                                  className="h-36 w-45 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                                  className="h-40 w-48 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
                                 />
                               }
                             />

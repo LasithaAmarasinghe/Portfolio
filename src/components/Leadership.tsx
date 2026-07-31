@@ -22,6 +22,8 @@ import spark2 from "@/assets/leadership/spark2.jpg";
 import spark3 from "@/assets/leadership/spark3.jpg";
 import spark4 from "@/assets/leadership/spark4.jpg";
 import spark5 from "@/assets/leadership/spark5.jpg";
+import spark6 from "@/assets/leadership/spark6.jpg";
+import spark7 from "@/assets/leadership/spark7.jpg";
 
 import kemess1 from "@/assets/leadership/kemess1.jpg";
 import kemess2 from "@/assets/leadership/kemess2.jpg";	
@@ -66,13 +68,13 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership1,
+		image: spark1,
 		tags: [
 			"Leadership",
 			"Event Management",
 			"Teamwork",
 		],
-		gallery: [spark1, spark2, spark3, spark4, spark5]
+		gallery: [spark1, spark2, spark3, spark4, spark5, spark6, spark7]
 	},
 	{
 		title: "Department Representative",
@@ -91,7 +93,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership2,
+		image: rep1,
 		tags: [
 			"Leadership",
 			"Organizing",
@@ -118,7 +120,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership3,
+		image: bootcamp1,
 		tags: [
 			"Facilitation",
 			"Event Management",
@@ -145,7 +147,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership5,
+		image: kemess2,
 		tags: ["Teaching", "Motivation", "Donation"],
 		gallery: [kemess1, kemess2, kemess3, kemess4, kemess5]
 	},
@@ -168,7 +170,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership4,
+		image: sasnaka3,
 		tags: ["Teaching", "Mentoring", "Community"],
 		gallery: [sasnaka1, sasnaka2, sasnaka3, sasnaka4]
 	},
@@ -190,7 +192,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership6,
+		image: gavel2,
 		tags: [
 			"Public Speaking",
 			"Communication",
