@@ -41,12 +41,12 @@ const AnimatedTagline = () => {
 // RotatingAvatar component
 const avatarImages = [
 	profilePic1, 
-    profilePic2,
+    profilePic7,
     profilePic3,
     profilePic4,
     profilePic5,
     profilePic6,
-    profilePic7
+    profilePic2
 ];
 
 const RotatingAvatar = () => {
