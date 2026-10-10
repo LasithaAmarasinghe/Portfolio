@@ -27,7 +27,7 @@ const experiences = [
       "Owned the core scoring and request orchestration domain logic and threshold-based fate engine (shortlist/reject/hold)",
       "Built the background worker pipeline enabling reliable, asynchronous processing of candidate pools scaling to thousands of applicants per job search"
     ],
-    tags: ["AI Agents", "Next.js", "React", "TypeScript", "FastAPI", "Python", "Celery", "PostgreSQL", "Redis", "Docker"],
+    tags: ["AI Agents", "Next.js", "React.js", "TypeScript", "FastAPI", "Python", "Celery", "PostgreSQL", "Redis", "Docker"],
     logo: kaya,
   },
   {

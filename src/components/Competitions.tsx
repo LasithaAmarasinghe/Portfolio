@@ -25,6 +25,7 @@ import CODESPRINT from "@/assets/competitions/CODESPRINT.png";
 import Duothan from "@/assets/competitions/Duothan.png";
 import DataStormV6 from "@/assets/competitions/DataStormV6.png";
 import CodersV10 from "@/assets/competitions/CodersV10.png";
+import Brainstorm from "@/assets/competitions/Brainstorm.jpg";
 
 const competitions = [
 	{
@@ -64,6 +65,15 @@ const competitions = [
 			"Team HelloWorld became champions at CYPHER 1.0 organized by IEEE WIE Affinity group of Kothalawala Defence University.",
 		tags: ["Competitive Programming", "Teamwork"],
 		image: Cypher,
+	},
+	{
+		title: "Brainstorm 2026",
+		platform: ["EMBS","UOM"],
+		rank: "1st Place",
+		description:
+			"Team NeoCare became champions at Brainstorm organized by IEEE EMBS Student Branch Chapter of the University of Moratuwa.",
+		tags: ["Healthcare", "Innovation", "Problem Solving"], 
+		image: Brainstorm,
 	},
 	{
 		title: "ICE 2025",
