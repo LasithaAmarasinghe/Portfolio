@@ -280,8 +280,7 @@ const Leadership = () => {
 										{item.tags.map((tag) => (
 											<Badge
 												key={tag}
-												variant="outline"
-												className="text-xs px-3 py-1 rounded-full font-semibold border-2 border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+												variant="tag"
 											>
 												{tag}
 											</Badge>
