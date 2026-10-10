@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { SiMedium } from "react-icons/si";
 import heroBg from "@/assets/hero-bg.jpg";
 import React, { useEffect, useState } from "react";
 
@@ -110,7 +111,7 @@ const Hero = () => {
 						<p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl animate-fade-in-delay text-center sm:text-left">
 							Specializing in <span className="whitespace-nowrap">machine learning</span>, <span className="whitespace-nowrap">deep learning</span>, <br className="hidden sm:block" />
 							and AI-powered solutions. <br className="hidden sm:block" />
-							Transforming data into Innovative products.
+							Engineering intelligent systems that solve<br className="hidden sm:block" /> real-world problems.
 						</p>
 						<div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start animate-fade-in-delay">
 							<a href="#projects" className="w-full sm:w-auto">
@@ -147,6 +148,15 @@ const Hero = () => {
 								aria-label="LinkedIn"
 							>
 								<Linkedin className="h-6 w-6" />
+							</a>
+							<a
+								href="https://medium.com/@amarasinghelra"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-125 hover:drop-shadow-glow duration-300"
+								aria-label="Medium"
+							>
+								<SiMedium className="h-6 w-6" />
 							</a>
 							<a
 								href="#contact"
