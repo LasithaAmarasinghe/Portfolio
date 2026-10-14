@@ -20,9 +20,11 @@ import transformer4 from "@/assets/projects/transformer4.png";
 import transformer5 from "@/assets/projects/transformer5.png";
 import transformer6 from "@/assets/projects/transformer6.png";
 import uav from "@/assets/projects/uav.png";
-import uav1 from "@/assets/projects/uav1.gif";
+import uav1 from "@/assets/projects/uav1.webm";
+import uav1Mp4 from "@/assets/projects/uav1.mp4";
 import actura from "@/assets/projects/actura.png";
-import actura1 from "@/assets/projects/actura1.gif";
+import actura1 from "@/assets/projects/actura1.webm";
+import actura1Mp4 from "@/assets/projects/actura1.mp4";
 import youtube from "@/assets/projects/youtube.png";
 import youtube1 from "@/assets/projects/youtube1.png";
 import youtube2 from "@/assets/projects/youtube2.png";
@@ -87,7 +89,8 @@ import finance from "/src/assets/projects/finance-agent.png";
 import finance1 from "/src/assets/projects/finance-agent1.png";
 import finance2 from "/src/assets/projects/finance-agent2.png";
 import ragAssistant from "/src/assets/projects/rag-assistant.png";
-import ragAssistant1 from "/src/assets/projects/rag-assistant.gif";
+import ragAssistant1 from "/src/assets/projects/rag-assistant.webm";
+import ragAssistant1Mp4 from "/src/assets/projects/rag-assistant.mp4";
 
 
 const projects = [
@@ -121,7 +124,8 @@ const projects = [
     description: "Multimodal UAV surveillance system that fuses RGB and IR imagery to detect, track, and classify drones and payloads in real time using YOLOv8, BoT-SORT.",
     tags: ["YOLO", "Computer Vision", "Image Fusion"],
     image: uav,
-    gif: uav1,
+    preview: uav1,
+    previewMp4: uav1Mp4,
     gallery: [uav], 
     github: "https://github.com/LasithaAmarasinghe/IEEE-VIP-Cup-2025-Multimodal-UAV-Detection-Tracking-and-Payload-Identification",
   },
@@ -138,7 +142,8 @@ const projects = [
     description: "A retrieval-augmented generation (RAG) system for high-accuracy document analysis with source verification with a hybrid agentic architecture.",
     tags: ["LangChain", "ChromaDB", "Docker"],
     image: ragAssistant,
-    gif: ragAssistant1,
+    preview: ragAssistant1,
+    previewMp4: ragAssistant1Mp4,
     gallery: [ragAssistant],
     github: "https://github.com/LasithaAmarasinghe/Verifiable-RAG-Assistant",
   },
@@ -155,7 +160,8 @@ const projects = [
     description: "Virtual Reality app built with Unity that helps users overcome stage fright by practicing public speaking on realistic virtual stages with a simulated audience.",
     tags: ["Virtual Reality", "Unity", "Machine Learning"],
     image: actura,
-    gif: actura1,
+    preview: actura1,
+    previewMp4: actura1Mp4,
     gallery: [actura], 
     github: "https://github.com/LasithaAmarasinghe/ACTURA",
   },
@@ -311,25 +317,35 @@ const Projects = () => {
                         size="sm" 
                         className="flex-1"
                       >
-                        {project.gif ? (
+                        {project.preview ? (
                           <Video className="h-4 w-4 mr-2" />
                         ) : (
                           <ImageIcon className="h-4 w-4 mr-2" />
                         )}
-                        {project.gif ? "Preview" : "Gallery"}
+                        {project.preview ? "Preview" : "Gallery"}
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl">
                       <DialogHeader>
-                        <DialogTitle>{project.title} - {project.gif ? "Preview" : "Gallery"}</DialogTitle>
+                        <DialogTitle>{project.title} - {project.preview ? "Preview" : "Gallery"}</DialogTitle>
                       </DialogHeader>
-                      {project.gif ? (
+                      {project.preview ? (
                         <div className="w-full flex items-center justify-center">
-                          <img
-                            src={project.gif}
-                            alt={`${project.title} preview`}
+                          <video
+                            aria-label={`${project.title} preview`}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            controls
+                            poster={project.image}
                             className="w-full h-auto rounded-lg object-contain max-h-[70vh]"
-                          />
+                          >
+                            <source src={project.preview} type="video/webm" />
+                            {"previewMp4" in project && project.previewMp4 && (
+                              <source src={project.previewMp4} type="video/mp4" />
+                            )}
+                          </video>
                         </div>
                       ) : (
                         <Carousel className="w-full">
