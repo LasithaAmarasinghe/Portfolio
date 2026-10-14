@@ -84,9 +84,9 @@ const Hero = () => {
 
 			{/* Glassmorphism Hero Layout */}
 			<div className="relative z-10 container mx-auto px-6 py-32 animate-fade-in">
-				<div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
+				<div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto">
 					{/* Left: Glassmorphism Avatar Card with Big Image */}
-					<div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/2">
+					<div className="flex-shrink-0 flex justify-center items-center w-full lg:w-1/2">
 						<div
 							className="relative p-2 rounded-3xl bg-[hsl(var(--glass))] backdrop-blur-lg shadow-2xl border-2 border-primary/80 transition-all duration-300"
 							style={{ maxWidth: "400px" }}
@@ -96,24 +96,24 @@ const Hero = () => {
 						</div>
 					</div>
 					{/* Right: Hero Text Content */}
-					<div className="w-full md:w-1/2 text-center md:text-left">
+					<div className="w-full lg:w-1/2 text-center lg:text-left">
 						<h1
-							className="text-5xl md:text-7xl font-bold mb-6 text-primary animate-fade-in leading-loose"
+							className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary animate-fade-in leading-tight"
 							style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 						>
 							Lasitha Amarasinghe
 						</h1>
 						<div className="mb-6">
-							<span className="text-3xl md:text-5xl font-bold animate-fade-in-delay">
+							<span className="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-in-delay">
 								<AnimatedTagline />
 							</span>
 						</div>
-						<p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl animate-fade-in-delay text-center sm:text-left">
+						<p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto lg:mx-0 animate-fade-in-delay text-center lg:text-left">
 							Specializing in <span className="whitespace-nowrap">machine learning</span>, <span className="whitespace-nowrap">deep learning</span>, <br className="hidden sm:block" />
 							and AI-powered solutions. <br className="hidden sm:block" />
 							Engineering intelligent systems that solve<br className="hidden sm:block" /> real-world problems.
 						</p>
-						<div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start animate-fade-in-delay">
+						<div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-in-delay">
 							<a href="#projects" className="w-full sm:w-auto">
 								<Button
 									variant="hero"
@@ -130,7 +130,7 @@ const Hero = () => {
 								</Button>
 							</a>
 						</div>
-						<div className="flex gap-6 justify-center md:justify-start mt-8 sm:mt-12 animate-fade-in-delay">
+						<div className="flex gap-6 justify-center lg:justify-start mt-8 sm:mt-12 animate-fade-in-delay">
 							<a
 								href="https://github.com/LasithaAmarasinghe"
 								target="_blank"
