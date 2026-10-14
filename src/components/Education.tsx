@@ -20,7 +20,7 @@ const educationData = [
     location: "Sri Lanka",
     period: "Mar 2022 - Jun 2026",
     description: "CGPA: 3.88/4.00",
-    achievements: ["Dean's List Award - 7 Semesters", "Batch Rank - 10/100", "Minor in Mathematics"],
+    achievements: ["Dean's List Award - 7 Semesters", "Batch Rank - 10/100", "Minor in Mathematics", "Most Outstanding Graduate, Engineering Faculty (2026) - Nominee"],
     tags: [
       "Linear Algebra",
       "Calculus",
@@ -55,7 +55,7 @@ const Education = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="education">
       <div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary">
             Education
           </h2>
         </div>
@@ -73,6 +73,8 @@ const Education = () => {
                       <img
                         src={edu.logo}
                         alt={edu.institution + " logo"}
+                        loading="lazy"
+                        decoding="async"
                         className="h-10 w-10 object-contain mb-2 rounded"
                         style={{ background: '#fff' }}
                       />
@@ -107,8 +109,7 @@ const Education = () => {
                       {edu.tags.map((tag) => (
                         <Badge
                           key={tag}
-                          variant="outline"
-                          className="text-xs px-3 py-1 rounded-full font-semibold border-2 border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+                          variant="tag"
                         >
                           {tag}
                         </Badge>
@@ -131,7 +132,9 @@ const Education = () => {
                                 <img
                                   src={img}
                                   alt={`${edu.institution} photo ${imgIndex + 1}`}
-                                  className="h-36 w-45 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                                  loading="lazy"
+                                  decoding="async"
+                                  className="h-40 w-48 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
                                 />
                               }
                             />

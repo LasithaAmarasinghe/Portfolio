@@ -178,7 +178,7 @@ const projects = [
   {
     title: "Analog Wall Following Robot",
     description: "Analog robot that follows a centerline between two walls using Sharp IR sensors, PID control, and PWM motor drive for precise movement and speed control.",
-    tags: ["Electronics", "Control Systems", "PCB Designing"],
+    tags: ["Electronics", "Control Systems", "PCB Design"],
     image: wallFollow,
     gallery: [wallFollow1, wallFollow2, wallFollow3, wallFollow4, wallFollow5], 
     github: "https://github.com/LasithaAmarasinghe/Analog-Wall-Follow-Robot",
@@ -193,8 +193,8 @@ const projects = [
   },
   {
     title: "AURA",
-    description: "Multi-room audio system for seamless playback across rooms, with FLAC support, low-latency processing, & synchronized, high-fidelity sound for smart homes.",
-    tags: ["PCB Designing", "Internet of Things", "Solidworks"],
+    description: "Multi-room audio system for seamless playback across rooms, with low-latency processing, & synchronized, high-fidelity sound for smart homes.",
+    tags: ["PCB Designing", "IoT", "Solidworks"],
     image: aura,
     gallery: [aura1, aura2, aura3, aura4, aura5], 
     github: "https://github.com/Multi-Room-Sound-System-AURA",
@@ -202,7 +202,7 @@ const projects = [
   {
     title: "Smarty Plug",
     description: "IoT-powered smart extension cord with ESP8266 and ATmega328 that lets users remotely monitor and switch appliances on or off via a mobile app.",
-    tags: ["PCB Designing", "Internet of Things", "Solidworks"],
+    tags: ["PCB Designing", "IoT", "Solidworks"],
     image: smartPlug,
     gallery: [smartPlug1, smartPlug2, smartPlug3, smartPlug4, smartPlug5], 
     github: "https://github.com/LasithaAmarasinghe/Smarty-Plug",
@@ -225,16 +225,16 @@ const projects = [
   },
   {
     title: "Disaster Response Bot",
-    description: "WhatsApp-integrated bot that monitors public groups real time during floods & landslides in Sri Lanka, turning messages into a structured dashboard.",
-    tags: ["Node.js", "Disaster Management", "WhatsApp"],
+    description: "WhatsApp-integrated bot that monitors public groups real time during floods in Sri Lanka, turning messages into a structured dashboard.",
+    tags: ["Node.js", "Disaster Management", "Bot"],
     image: whatsappbot,
     gallery: [whatsappbot1, whatsappbot2, whatsappbot3, whatsappbot4], 
     github: "https://github.com/LasithaAmarasinghe/Disaster-Response-WhatsApp-Bot",
   },
   {
     title: "Freezer Gambit",
-    description: "Time-series forecasting tool that predicts weekly fruit & vegetable prices up to 4 weeks ahead from weather & price data to optimize cold-storage strategy.",
-    tags: ["Time Series Forecasting", "Recommendation System"],
+    description: "Time-series forecasting tool that predicts weekly vegetable prices up to 4 weeks ahead from weather & price data to optimize cold-storage strategy.",
+    tags: ["Time Series", "Recommendation System"],
     image: freezer,
     gallery: [freezer1, freezer2],
     github: "https://github.com/LasithaAmarasinghe/Freezer-Gambit-Data-Crunch",
@@ -253,7 +253,7 @@ const Projects = () => {
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="projects">
       <div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
             Featured Projects
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg px-4">
@@ -269,9 +269,11 @@ const Projects = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="aspect-video w-full overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>
@@ -286,8 +288,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <Badge
                       key={tag}
-                      variant="outline"
-                      className="text-xs px-3 py-1 rounded-full font-semibold border-2 border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+                      variant="tag"
                     >
                       {tag}
                     </Badge>

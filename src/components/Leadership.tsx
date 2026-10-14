@@ -22,6 +22,8 @@ import spark2 from "@/assets/leadership/spark2.jpg";
 import spark3 from "@/assets/leadership/spark3.jpg";
 import spark4 from "@/assets/leadership/spark4.jpg";
 import spark5 from "@/assets/leadership/spark5.jpg";
+import spark6 from "@/assets/leadership/spark6.jpg";
+import spark7 from "@/assets/leadership/spark7.jpg";
 
 import kemess1 from "@/assets/leadership/kemess1.jpg";
 import kemess2 from "@/assets/leadership/kemess2.jpg";	
@@ -66,13 +68,13 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership1,
+		image: spark1,
 		tags: [
 			"Leadership",
 			"Event Management",
 			"Teamwork",
 		],
-		gallery: [spark1, spark2, spark3, spark4, spark5]
+		gallery: [spark1, spark2, spark3, spark4, spark5, spark6, spark7]
 	},
 	{
 		title: "Department Representative",
@@ -91,7 +93,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership2,
+		image: rep1,
 		tags: [
 			"Leadership",
 			"Organizing",
@@ -118,7 +120,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership3,
+		image: bootcamp1,
 		tags: [
 			"Facilitation",
 			"Event Management",
@@ -145,7 +147,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership5,
+		image: kemess2,
 		tags: ["Teaching", "Motivation", "Donation"],
 		gallery: [kemess1, kemess2, kemess3, kemess4, kemess5]
 	},
@@ -168,7 +170,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership4,
+		image: sasnaka3,
 		tags: ["Teaching", "Mentoring", "Community"],
 		gallery: [sasnaka1, sasnaka2, sasnaka3, sasnaka4]
 	},
@@ -190,7 +192,7 @@ const leadership = [
 			</>
 		),
 		icon: Users,
-		image: leadership6,
+		image: gavel2,
 		tags: [
 			"Public Speaking",
 			"Communication",
@@ -207,7 +209,7 @@ const Leadership = () => {
 			<div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
 					<h2
-						className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500 leading-tight sm:leading-loose"
+						className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose"
 						style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
 					>
 						Leadership & Volunteering
@@ -251,6 +253,8 @@ const Leadership = () => {
 											<img
 												src={item.image}
 												alt={item.title}
+												loading="lazy"
+												decoding="async"
 												className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
 											/>
 										</div>
@@ -276,8 +280,7 @@ const Leadership = () => {
 										{item.tags.map((tag) => (
 											<Badge
 												key={tag}
-												variant="outline"
-												className="text-xs px-3 py-1 rounded-full font-semibold border-2 border-primary/60 bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-primary shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"
+												variant="tag"
 											>
 												{tag}
 											</Badge>

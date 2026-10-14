@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MessageSquare } from "lucide-react";
+import { SiMedium } from "react-icons/si";
 
 const Contact = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="contact">
       <div className="container mx-auto max-w-4xl">
 				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-500">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary">
             Let's Connect
           </h2>
 					<p className="text-muted-foreground text-base sm:text-lg px-4">
@@ -33,7 +34,7 @@ const Contact = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center">
                     <MessageSquare className="h-5 w-5 mr-2 text-secondary" />
-                    Social & Phone
+                    Social Links
                   </h3>
                   <div className="space-y-3">
                     <a 
@@ -53,11 +54,13 @@ const Contact = () => {
                       linkedin.com/in/lasithaamarasinghe
                     </a>
                     <a
-                      href="tel:+94717577914"
+                      href="https://medium.com/@amarasinghelra"
                       className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <Phone className="h-5 w-5 mr-3" />
-                      +94 71 757 7914
+                      <SiMedium className="h-5 w-5 mr-3" />
+                      medium.com/@amarasinghelra
                     </a>
                   </div>
                 </div>

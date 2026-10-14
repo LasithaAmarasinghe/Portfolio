@@ -7,7 +7,57 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* Light theme (white + blue). Applied when <html> has no `.dark` class. */
   :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 262 72% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 40%;
+
+    --accent: 190 95% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 89%;
+    --input: 214 32% 89%;
+    --ring: 217 91% 45%;
+
+    /* Highlight / award accent (the "trophy" colour) */
+    --highlight: 38 92% 40%;
+    --highlight-strong: 32 95% 34%;
+    --highlight-soft: 38 92% 40% / 0.1;
+
+    /* Translucent panel fill for glassmorphism over imagery */
+    --glass: 217 91% 45% / 0.06;
+
+    --radius: 0.75rem;
+
+    /* Custom AI/ML Portfolio Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 45%), hsl(262 72% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 40% 98% / 0.92), hsl(0 0% 100% / 0.97));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --glow-primary: 0 8px 30px hsl(217 91% 45% / 0.18);
+    --glow-accent: 0 8px 30px hsl(190 95% 33% / 0.18);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Dark theme — the site's original palette. */
+  .dark {
     --background: 222 47% 6%;
     --foreground: 210 40% 98%;
 
@@ -36,7 +86,11 @@ All colors MUST be HSL.
     --input: 222 47% 15%;
     --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --highlight: 43 96% 56%;
+    --highlight-strong: 48 96% 68%;
+    --highlight-soft: 43 96% 56% / 0.1;
+
+    --glass: 0 0% 100% / 0.1;
 
     /* Custom AI/ML Portfolio Tokens */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
@@ -44,7 +98,6 @@ All colors MUST be HSL.
     --gradient-card: linear-gradient(135deg, hsl(222 47% 8%), hsl(222 47% 10%));
     --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
     --glow-accent: 0 0 40px hsl(180 100% 50% / 0.3);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -83,6 +136,25 @@ All colors MUST be HSL.
   /* Prevent text size adjustment on orientation change */
   html {
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* Cross-fade colours while switching themes. The class is added by
+     ThemeProvider only for the duration of the swap, so it never interferes
+     with hover/scroll transitions during normal use. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.theme-transition,
+    html.theme-transition *,
+    html.theme-transition *::before,
+    html.theme-transition *::after {
+      transition:
+        background-color 250ms ease,
+        border-color 250ms ease,
+        color 250ms ease,
+        fill 250ms ease,
+        stroke 250ms ease,
+        box-shadow 250ms ease !important;
+      transition-delay: 0ms !important;
+    }
   }
 }
 
