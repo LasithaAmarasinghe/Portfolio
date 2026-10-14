@@ -17,17 +17,31 @@ import kaya from "@/assets/about/Kaya.jpeg";
 
 const experiences = [
   {
-    title: "Software Engineer ( AI / ML )",
+    title: "Software Engineer (AI/ML)",
     company: "Kaya",
     location: "USA (Remote)",
     period: "Jun 2026 - Present",
-    description: "Developed a full-stack AI hiring automation platform that automates candidate sourcing, CV scoring, and shortlisting.",
-    achievements: [
-      "Integrated with Zoho Recruit and built a custom multi-agentic CV-scoring workflow through the Kaya platform",
-      "Owned the core scoring and request orchestration domain logic and threshold-based fate engine (shortlist/reject/hold)",
-      "Built the background worker pipeline enabling reliable, asynchronous processing of candidate pools scaling to thousands of applicants per job search"
+    description: "",
+    projects: [
+      {
+        name: "AI-Agentic Hiring Automation Platform",
+        bullets: [
+          "Automated candidate sourcing, CV scoring, and shortlisting with Zoho Recruit integration",
+          "Engineered multi-agent CV-scoring workflows on the Kaya AI platform with custom scoring logic and threshold-based filtering",
+          "Built asynchronous request orchestration to process large candidate pools",
+        ],
+      },
+      {
+        name: "AI-Agentic Healthcare Provider Data Management Platform",
+        bullets: [
+          "Developed backend services automating provider roster ingestion, validation, and transformation for a US client",
+          "Built and extended agentic AI workflows for document classification, data validation, rule execution, and status reporting, reducing manual effort.",
+          "Integrated external verification services and enterprise systems into agentic workflows",
+          "Collaborated with cross-functional teams in an Agile environment",
+        ],
+      },
     ],
-    tags: ["AI Agents", "Next.js", "React.js", "TypeScript", "FastAPI", "Python", "Celery", "PostgreSQL", "Redis", "Docker"],
+    tags: ["AI Agents", "Python", "FastAPI", "Next.js", "React.js", "TypeScript", "Celery", "PostgreSQL", "Redis", "Docker"],
     logo: kaya,
   },
   {
@@ -35,11 +49,16 @@ const experiences = [
     company: "University of Moratuwa",
     location: "Sri Lanka",
     period: "Sep 2025 - Dec 2025",
-    description: "Supporting undergraduate students in practical laboratory sessions for Internet of Things and Laboratory Practice modules.",
-    achievements: [
-      "Conducted lab sessions under EN3251 - Internet of Things module",
-      "Facilitated hands-on learning in EN1094 - Laboratory Practice module",
-      "Assisted students in understanding IoT concepts and practical implementations"
+    description: "",
+    projects: [
+      {
+        name: "Undergraduate Laboratory Teaching and Mentoring",
+        bullets: [
+          "Conducted laboratory sessions for EN3251 - Internet of Things",
+          "Facilitated hands-on learning for EN1094 - Laboratory Practice",
+          "Assisted students in understanding IoT concepts and practical implementations",
+        ],
+      },
     ],
     tags: ["Teaching", "Laboratory Practice", "Student Mentoring"],
     logo: uom
@@ -49,14 +68,19 @@ const experiences = [
     company: "National University of Singapore",
     location: "Singapore",
     period: "Dec 2024 - May 2025",
-    description: "Worked on the TOM project, developing an AI assistant platform for Augmented Reality glasses.",
-    achievements: [
-      "Developed AiGet service enabling dynamic knowledge interaction in AR environment",
-      "Optimized a low-latency Unity client- Python server architecture using WebSockets & Protobufs",
-      "Utilized MRTK (Mixed Reality Toolkit) to enhance AR interactions and user experience",
-      " Implemented multimodal interaction pipeline fusing voice, vision, gaze inputs of users",
-      "Actively participated in code reviews and writing unit tests to minimize deployment bugs",
-      "Presented AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University"
+    description: "",
+    projects: [
+      {
+        name: "TOM Project - AI Assistant for Augmented Reality Glasses",
+        bullets: [
+          "Developed the AiGet service enabling dynamic knowledge interaction in an augmented reality environment",
+          "Optimized a low-latency Unity client-Python server architecture using WebSockets and Protobufs",
+          "Utilized MRTK (Mixed Reality Toolkit) to enhance augmented reality interactions and user experience",
+          "Implemented a multimodal interaction pipeline fusing users' voice, vision, and gaze inputs",
+          "Participated in code reviews and wrote unit tests to minimize deployment bugs",
+          "Presented the AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University",
+        ],
+      },
     ],
     tags: ["Unity", "Python", "MRTK", "Augmented Reality", "LangChain", "HCI"],
     logo: nus,
@@ -71,7 +95,7 @@ const Experience = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
-            Work Experience
+            Professional Experience
           </h2>
         </div>
 
@@ -114,14 +138,25 @@ const Experience = () => {
                         </Badge>
                       </div>
                     </div>
-                    <CardDescription className="text-base mb-4">
-                      {exp.description}
-                    </CardDescription>
-                    <div className="space-y-2 mb-4">
-                      {exp.achievements.map((achievement, idx) => (
-                        <div key={idx} className="flex gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary">•</span>
-                          <span>{achievement}</span>
+                    {exp.description && (
+                      <CardDescription className="text-base mb-4">
+                        {exp.description}
+                      </CardDescription>
+                    )}
+                    <div className="space-y-5 mb-4">
+                      {exp.projects.map((project) => (
+                        <div key={project.name}>
+                          <h3 className="font-semibold text-foreground mb-2">
+                            {project.name}
+                          </h3>
+                          <div className="space-y-2">
+                            {project.bullets.map((bullet) => (
+                              <div key={bullet} className="flex gap-2 text-sm text-muted-foreground">
+                                <span className="text-primary">•</span>
+                                <span>{bullet}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>
