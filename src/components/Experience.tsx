@@ -18,7 +18,7 @@ import kaya from "@/assets/about/Kaya.jpeg";
 const experiences = [
   {
     title: "Software Engineer (AI/ML)",
-    company: "Kaya",
+    company: "Kaya Intelligence",
     location: "USA (Remote)",
     period: "Jun 2026 - Present",
     description: "",

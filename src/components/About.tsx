@@ -17,7 +17,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-6">
           <div className="space-y-6 animate-fade-in">
             <p className="text-foreground leading-relaxed">
-              I'm an AI/ML Software Engineer at Kaya, where I build multi-agent systems. I researched
+              I'm an AI/ML Software Engineer at Kaya Intelligence, where I build multi-agent systems. I researched
               AR assistants at NUS, fusing voice, vision, and gaze into a low-latency multimodal pipeline.
             </p>
             <p className="text-foreground leading-relaxed">
