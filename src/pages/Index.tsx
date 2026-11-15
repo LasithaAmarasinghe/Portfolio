@@ -12,7 +12,7 @@ import Skills from "@/components/Skills";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen lg:pl-64">
       <Navigation />
       <Hero />
       <About />

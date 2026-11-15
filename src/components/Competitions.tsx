@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, ExternalLink, Trophy } from "lucide-react";
@@ -248,67 +248,45 @@ const Competitions = () => {
 					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
 						Achievements
 					</h2>
-					<p className="text-muted-foreground text-base sm:text-lg px-4">
-						Achievements in competitive programming and machine learning challenges
-					</p>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+				<div className="mx-auto max-w-5xl flex flex-col gap-4 sm:gap-5">
 					{visibleCompetitions.map((competition, index) => (
 						<Card
-							key={index}
-							className="bg-gradient-card border-border hover:shadow-glow-primary transition-all duration-300 hover:scale-105 animate-fade-in overflow-hidden"
-							style={{ animationDelay: `${index * 0.1}s` }}
+							key={competition.title}
+							className="group bg-gradient-card border-border hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 animate-fade-in overflow-hidden"
+							style={{ animationDelay: `${index * 0.05}s` }}
 						>
-							<div className="aspect-video w-full overflow-hidden">
-								<img
-									src={competition.image}
-									alt={competition.title}
-									loading="lazy"
-									decoding="async"
-									className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-								/>
-							</div>
-							<CardHeader>
-								<div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-2">
-									<div className="flex items-center gap-2">
-										<Trophy className={`h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 ${competition.highlight ? "text-[hsl(var(--highlight))]" : "text-primary"}`} />
-										<Badge
-											variant="outline"
-											className={`text-xs font-semibold px-2 sm:px-3 py-1 rounded-full border-2 shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200 ${competition.highlight ? "border-[hsl(var(--highlight))] text-[hsl(var(--highlight-strong))] bg-[hsl(var(--highlight-soft))]" : "border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary"}`}
-										>
-											{competition.rank}
-										</Badge>
-									</div>
-									<div className="flex flex-wrap gap-1">
-									  {Array.isArray(competition.platform)
-										? competition.platform.map((plat, i) => (
-											<Badge key={i} variant="secondary" className="text-xs">
-												{plat}
+							<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-5">
+								<div className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted">
+									<img
+										src={competition.image}
+										alt={competition.title}
+										loading="lazy"
+										decoding="async"
+										className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+									/>
+								</div>
+								<div className="flex-1 min-w-0 flex flex-col">
+									<div className="flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
+										<h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">
+											{competition.title}
+										</h3>
+										<div className="flex items-center gap-2 shrink-0">
+											<Trophy className={`h-4 w-4 flex-shrink-0 ${competition.highlight ? "text-[hsl(var(--highlight))]" : "text-primary"}`} />
+											<Badge
+												variant="outline"
+												className={`text-xs font-semibold px-3 py-1 rounded-full border-2 ${competition.highlight ? "border-[hsl(var(--highlight))] text-[hsl(var(--highlight-strong))] bg-[hsl(var(--highlight-soft))]" : "border-primary/60 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary"}`}
+											>
+												{competition.rank}
 											</Badge>
-										  ))
-										: <Badge variant="secondary" className="text-xs">{competition.platform}</Badge>}
+										</div>
 									</div>
+									<p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
+										{competition.description}
+									</p>
 								</div>
-								<CardTitle className="text-xl">
-									{competition.title}
-								</CardTitle>
-								<CardDescription className="text-muted-foreground">
-									{competition.description}
-								</CardDescription>
-							</CardHeader>
-							<CardContent>
-								<div className="flex flex-wrap gap-2 mb-4">
-									{competition.tags.map((tag) => (
-										<Badge
-											key={tag}
-											variant="tag"
-										>
-											{tag}
-										</Badge>
-									))}
-								</div>
-							</CardContent>
+							</div>
 						</Card>
 					))}
 				</div>
