@@ -186,4 +186,11 @@ All colors MUST be HSL.
       scroll-margin-top: 5rem;
     }
   }
+
+  /* Sidebar replaces the top bar on large screens */
+  @media (min-width: 1024px) {
+    section[id] {
+      scroll-margin-top: 1rem;
+    }
+  }
 }

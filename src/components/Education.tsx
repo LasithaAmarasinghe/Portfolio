@@ -19,8 +19,8 @@ const educationData = [
     institution: "University of Moratuwa, Sri Lanka",
     location: "Sri Lanka",
     period: "Mar 2022 - Jun 2026",
-    description: "CGPA: 3.88/4.00",
-    achievements: ["Dean's List Award - 7 Semesters", "Batch Rank - 10/100", "Minor in Mathematics", "Most Outstanding Graduate, Engineering Faculty (2026) - Nominee"],
+    description: "First Class Honours | CGPA: 3.88/4.00",
+    achievements: ["Dean's List (7 Semesters)  |  Batch Rank: 10/100  |  Minor in Mathematics", "Most Outstanding Graduate, Faculty of Engineering (2026) - Nominee", "Most Outstanding Graduate, University of Moratuwa (2026) - Nominee" ],
     tags: [
       "Linear Algebra",
       "Calculus",
@@ -101,7 +101,7 @@ const Education = () => {
                       {edu.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex gap-2 text-sm text-muted-foreground">
                           <span className="text-primary">•</span>
-                          <span>{achievement}</span>
+                          <span className="whitespace-pre-wrap">{achievement}</span>
                         </div>
                       ))}
                     </div>

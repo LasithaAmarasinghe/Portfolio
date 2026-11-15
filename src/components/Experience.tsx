@@ -26,18 +26,15 @@ const experiences = [
       {
         name: "AI-Agentic Hiring Automation Platform",
         bullets: [
-          "Automated candidate sourcing, CV scoring, and shortlisting with Zoho Recruit integration",
-          "Engineered multi-agent CV-scoring workflows on the Kaya AI platform with custom scoring logic and threshold-based filtering",
-          "Built asynchronous request orchestration to process large candidate pools",
+          "Automated candidate sourcing, CV scoring, and shortlisting with multi-agent workflows on the Kaya AI platform, integrated with Zoho Recruit",
+          "Built asynchronous request orchestration with threshold-based filtering to process large candidate pools",
         ],
       },
       {
         name: "AI-Agentic Healthcare Provider Data Management Platform",
         bullets: [
-          "Developed backend services automating provider roster ingestion, validation, and transformation for a US client",
-          "Built and extended agentic AI workflows for document classification, data validation, rule execution, and status reporting, reducing manual effort.",
-          "Integrated external verification services and enterprise systems into agentic workflows",
-          "Collaborated with cross-functional teams in an Agile environment",
+          "Developed backend services and agentic AI workflows automating provider roster ingestion, validation, and document classification for a US client",
+          "Integrated external verification services and enterprise systems into agentic workflows, reducing manual effort",
         ],
       },
     ],
@@ -54,9 +51,8 @@ const experiences = [
       {
         name: "Undergraduate Laboratory Teaching and Mentoring",
         bullets: [
-          "Conducted laboratory sessions for EN3251 - Internet of Things",
-          "Facilitated hands-on learning for EN1094 - Laboratory Practice",
-          "Assisted students in understanding IoT concepts and practical implementations",
+          "Conducted laboratory sessions for EN3251 - Internet of Things and EN1094 - Laboratory Practice",
+          "Guided students from IoT concepts to practical, hands-on implementations",
         ],
       },
     ],
@@ -73,11 +69,7 @@ const experiences = [
       {
         name: "TOM Project - AI Assistant for Augmented Reality Glasses",
         bullets: [
-          "Developed the AiGet service enabling dynamic knowledge interaction in an augmented reality environment",
-          "Optimized a low-latency Unity client-Python server architecture using WebSockets and Protobufs",
-          "Utilized MRTK (Mixed Reality Toolkit) to enhance augmented reality interactions and user experience",
-          "Implemented a multimodal interaction pipeline fusing users' voice, vision, and gaze inputs",
-          "Participated in code reviews and wrote unit tests to minimize deployment bugs",
+          "Developed AiGet, an AR knowledge assistant fusing users' voice, vision, and gaze inputs over a Unity–Python architecture using WebSockets and Protobufs",
           "Presented the AiGet system at the Singapore HCI Meetup 2025 at Singapore Management University",
         ],
       },

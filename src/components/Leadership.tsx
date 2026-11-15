@@ -1,6 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import GalleryDialog from "@/components/ui/gallery-dialog";
 import { Users, Image as ImageIcon } from "lucide-react";
 
@@ -57,8 +55,7 @@ const leadership = [
 			<>
 				<ul className="list-disc pl-5 mb-2">
 					<li>
-						Leading Spark Branch focusing on innovations with sustainable
-						development of undergraduates.
+						Leading Spark Branch focusing on sustainable development goals.
 					</li>
 					<li>
 						Organized Spark Challenge featuring Sri Lanka's highest prize pool in
@@ -104,14 +101,14 @@ const leadership = [
 	},
 	{
 		title: "Event Facilitator",
-		organization: "Smart Systems Institute ",
-		period: "National University of Singapore • 2025",
+		organization: "Smart Systems Institute, National University of Singapore",
+		period: "2025",
 		description: (
 			<>
 				<ul className="list-disc pl-5 mb-2">
 					<li>
-						Organized a 6-day physical Bootcamp on smart glasses technology for
-						40+ participants from Singapore, China, and Vietnam.
+						Organized a 6-day physical Bootcamp on smart wearables for
+						40+ participants.
 					</li>
 					<li>
 						Facilitated hands-on learning, interactive workshops, and demonstrations.
@@ -159,7 +156,7 @@ const leadership = [
 			<>
 				<ul className="list-disc pl-5 mb-2">
 					<li>
-						Assisted in educational workshops for school children and various
+						Assisted in school workshops and various
 						community outreach initiatives.
 					</li>
 					<li>
@@ -214,12 +211,9 @@ const Leadership = () => {
 					>
 						Leadership & Volunteering
 					</h2>
-					<p className="text-muted-foreground text-base sm:text-lg leading-relaxed px-4">
-						Contributing to the community through leadership and volunteer efforts
-					</p>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+				<div className="mx-auto max-w-5xl flex flex-col gap-4 sm:gap-5">
 					{leadership.map((item, index) => {
 						const IconComponent = item.icon;
 
@@ -243,64 +237,69 @@ const Leadership = () => {
 						}
 						return (
 							<Card
-								key={index}
-								className="bg-gradient-card border-border hover:shadow-glow-primary transition-all duration-300 hover:scale-105 animate-fade-in"
-								style={{ animationDelay: `${index * 0.1}s` }}
+								key={item.title + item.organization}
+								className="group bg-gradient-card border-border hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 animate-fade-in overflow-hidden"
+								style={{ animationDelay: `${index * 0.05}s` }}
 							>
-								<CardHeader>
-									{item.image ? (
-										<div className="aspect-video w-full overflow-hidden mb-4">
+								<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-5">
+									{item.image && orderedGallery.length > 0 ? (
+										<GalleryDialog
+											title={item.title}
+											images={orderedGallery}
+											trigger={
+												<button
+													type="button"
+													aria-label={`Open ${item.title} gallery`}
+													className="group/thumb relative w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+												>
+													<img
+														src={item.image}
+														alt={item.title}
+														loading="lazy"
+														decoding="async"
+														className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+													/>
+													<span className="absolute inset-0 flex items-center justify-center bg-black/45 opacity-0 transition-opacity duration-300 group-hover/thumb:opacity-100 group-focus-visible/thumb:opacity-100">
+														<span className="flex items-center gap-2 text-sm font-medium text-white">
+															<ImageIcon className="h-4 w-4" />
+															View gallery
+														</span>
+													</span>
+												</button>
+											}
+										/>
+									) : item.image ? (
+										<div className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted">
 											<img
 												src={item.image}
 												alt={item.title}
 												loading="lazy"
 												decoding="async"
-												className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+												className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 											/>
 										</div>
 									) : (
-										<div className="p-3 rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mb-4">
+										<div className="p-3 rounded-lg bg-primary/10 w-16 h-16 shrink-0 self-start flex items-center justify-center">
 											<IconComponent className="h-8 w-8 text-primary" />
 										</div>
 									)}
-									<CardTitle className="text-lg sm:text-xl mb-1">
-										{item.title}
-									</CardTitle>
-									<div className="flex flex-wrap gap-2 items-center text-sm text-muted-foreground mb-2">
-										<span className="font-medium">{item.organization}</span>
-										<span>•</span>
-										<span>{item.period}</span>
-									</div>
-									<CardDescription className="text-muted-foreground">
-										{item.description}
-									</CardDescription>
-								</CardHeader>
-								<CardContent>
-									<div className="flex flex-wrap gap-2">
-										{item.tags.map((tag) => (
-											<Badge
-												key={tag}
-												variant="tag"
-											>
-												{tag}
-											</Badge>
-										))}
-									</div>
-										<div className="mt-4 flex gap-3">
-											{orderedGallery.length > 0 && (
-												<GalleryDialog
-													title={item.title}
-													images={orderedGallery}
-													trigger={
-														<Button variant="hero" size="sm" className="w-full flex items-center justify-center gap-2 border-2 border-primary/60 shadow-lg">
-															<ImageIcon className="h-4 w-4" />
-															Gallery
-														</Button>
-													}
-												/>
-											)}
+									<div className="flex-1 min-w-0 flex flex-col">
+										<div className="flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
+											<h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">
+												{item.title}
+											</h3>
+											<span className="text-sm font-medium text-primary sm:text-right sm:max-w-[40%] shrink-0">
+												{item.period}
+											</span>
 										</div>
-								</CardContent>
+										<p className="mt-1 text-sm sm:text-base text-primary/80">
+											{item.organization}
+										</p>
+										<div className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
+											{item.description}
+										</div>
+									</div>
+								</div>
 							</Card>
 						);
 					})}

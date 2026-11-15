@@ -1,8 +1,7 @@
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import aiAgentsImage from "@/assets/blog/ai agents.jpeg";
 import cnnImage from "@/assets/blog/CNN.jpeg";
 
@@ -135,51 +134,42 @@ const Blog = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary">
             Blog
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg px-4">
-            Thoughts and practical guides on modern technologies
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="mx-auto max-w-5xl flex flex-col gap-4 sm:gap-5">
           {visibleBlogPosts.map((article, index) => (
             <Card
               key={article.url}
-              className="overflow-hidden bg-gradient-card border-border hover:shadow-glow-primary transition-all duration-300 hover:scale-[1.02] animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group bg-gradient-card border-border hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 animate-fade-in overflow-hidden"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="aspect-video w-full overflow-hidden bg-muted">
-                <img
-                  src={article.image}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-lg leading-snug">{article.title}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">
-                  {article.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {article.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="tag"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-5">
+                <div className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted">
+                  <img
+                    src={article.image}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <Button asChild variant="outline">
-                  <a href={article.url} target="_blank" rel="noreferrer">
-                    Read on Medium
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardContent>
+                <div className="flex-1 min-w-0 flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">
+                    {article.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {article.description}
+                  </p>
+                  <div className="mt-4">
+                    <Button asChild variant="outline" size="sm">
+                      <a href={article.url} target="_blank" rel="noreferrer">
+                        Read on Medium
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
