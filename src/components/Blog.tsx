@@ -8,10 +8,42 @@ import cnnImage from "@/assets/blog/CNN.jpeg";
 
 const blogPosts = [
   {
+    title: "Deep Agents: Why Your AI Agent Gets Lost After 10 Steps",
+    description:
+      "Why long-running agents lose the plot, and how planning, sub-agents, and file-system memory give them the scaffolding to stay on track.",
+    image: "https://cdn-images-1.medium.com/max/1024/1*ngZoL6WMkpJBUeWgALsYiQ.png",
+    url: "https://medium.com/@amarasinghelra/deep-agents-why-your-ai-agent-gets-lost-after-10-steps-bdac760cf0ea",
+    tags: ["Deep Agents", "AI Agents", "LangChain"],
+  },
+  {
+    title: "RAG Doesn't Need a Vector Database (Sometimes)",
+    description:
+      "What happens when you stop chunking your PDFs and let an LLM navigate the table of contents instead — a look at vectorless RAG.",
+    image: "https://cdn-images-1.medium.com/max/1024/1*y3PJoZgD9_TmP2A7jN4xig.png",
+    url: "https://medium.com/@amarasinghelra/rag-doesnt-need-a-vector-database-sometimes-7aed9c513e05",
+    tags: ["RAG", "Vectorless RAG", "LLMs"],
+  },
+  {
+    title: "An Intuitive Guide to RAG: Part 2",
+    description:
+      "Retrieval strategies, reranking, and generation — how to reliably find the right chunks and turn them into grounded answers.",
+    image: "https://cdn-images-1.medium.com/max/1024/1*yAl6FfFwbFQxFm6smNZ2Yg.jpeg",
+    url: "https://medium.com/@amarasinghelra/an-intuitive-guide-to-rag-part-2-68afcb8c3268",
+    tags: ["RAG", "Retrieval", "Practical Guide"],
+  },
+  {
+    title: "An Intuitive Guide to RAG: Part 1",
+    description:
+      "Why LLMs hallucinate and go stale, and how to build the RAG foundation: parsing, chunking, embeddings, and vector indexes.",
+    image: "https://cdn-images-1.medium.com/max/1024/1*yAl6FfFwbFQxFm6smNZ2Yg.jpeg",
+    url: "https://medium.com/@amarasinghelra/an-intuitive-guide-to-rag-part-1-9c5e4b781ca7",
+    tags: ["RAG", "Vector Database", "Practical Guide"],
+  },
+  {
     title: "The Agent Integration Nightmare: How MCP Changes Everything",
     description:
       "Every developer building an LLM agent has hit the same wall. Learn how Model Context Protocol makes tools, resources, and prompts easier to integrate.",
-    image: "https://cdn-images-1.medium.com/max/1024/1*6_xXD_u9oufM4uw8awcTRA.png",
+    image: "https://cdn-images-1.medium.com/max/1024/1*IuwWHMrnQU42kBVz6wyglg.png",
     url: "https://medium.com/@amarasinghelra/the-agent-integration-nightmare-how-mcp-changes-everything-e5ebef57698d",
     tags: ["MCP", "AI Agents", "Practical Guide"],
   },
@@ -19,7 +51,7 @@ const blogPosts = [
     title: "Implementing PII Protection and Human-in-the-Loop Guardrails in Agents",
     description:
       "Explore practical safeguards for agents that work with customer records, send emails, and take actions in production environments.",
-    image: "https://miro.medium.com/v2/resize:fill:320:214/1*Me1QyRBqIk1iefZPYBonyg.png",
+    image: "https://cdn-images-1.medium.com/max/1024/1*O1Ng2GyRmeWiEGqx8Ki1zw.png",
     url: "https://medium.com/@amarasinghelra/production-ready-agents-implementing-pii-protection-and-human-in-the-loop-guardrails-fb55379186f1",
     tags: ["PII", "HITL", "Guardrails", "Practical Guide"],
   },
