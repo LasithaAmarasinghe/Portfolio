@@ -2,6 +2,7 @@ import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import GalleryDialog from "@/components/ui/gallery-dialog";
 import aiAgentsImage from "@/assets/blog/ai agents.jpeg";
 import cnnImage from "@/assets/blog/CNN.jpeg";
 
@@ -23,20 +24,20 @@ const blogPosts = [
     tags: ["RAG", "Vectorless RAG", "LLMs"],
   },
   {
-    title: "An Intuitive Guide to RAG: Part 2",
-    description:
-      "Retrieval strategies, reranking, and generation — how to reliably find the right chunks and turn them into grounded answers.",
-    image: "https://cdn-images-1.medium.com/max/1024/1*yAl6FfFwbFQxFm6smNZ2Yg.jpeg",
-    url: "https://medium.com/@amarasinghelra/an-intuitive-guide-to-rag-part-2-68afcb8c3268",
-    tags: ["RAG", "Retrieval", "Practical Guide"],
-  },
-  {
     title: "An Intuitive Guide to RAG: Part 1",
     description:
       "Why LLMs hallucinate and go stale, and how to build the RAG foundation: parsing, chunking, embeddings, and vector indexes.",
     image: "https://cdn-images-1.medium.com/max/1024/1*yAl6FfFwbFQxFm6smNZ2Yg.jpeg",
     url: "https://medium.com/@amarasinghelra/an-intuitive-guide-to-rag-part-1-9c5e4b781ca7",
     tags: ["RAG", "Vector Database", "Practical Guide"],
+  },
+  {
+    title: "An Intuitive Guide to RAG: Part 2",
+    description:
+      "Retrieval strategies, reranking, and generation — how to reliably find the right chunks and turn them into grounded answers.",
+    image: "https://cdn-images-1.medium.com/max/1024/1*yAl6FfFwbFQxFm6smNZ2Yg.jpeg",
+    url: "https://medium.com/@amarasinghelra/an-intuitive-guide-to-rag-part-2-68afcb8c3268",
+    tags: ["RAG", "Retrieval", "Practical Guide"],
   },
   {
     title: "The Agent Integration Nightmare: How MCP Changes Everything",
@@ -121,7 +122,7 @@ const blogPosts = [
   
 ];
 
-const INITIAL_VISIBLE_COUNT = 9;
+const INITIAL_VISIBLE_COUNT = 6;
 
 const Blog = () => {
   const [showAll, setShowAll] = useState(false);
@@ -144,15 +145,25 @@ const Blog = () => {
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-5">
-                <div className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted">
-                  <img
-                    src={article.image}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
+                <GalleryDialog
+                  title={article.title}
+                  images={[article.image]}
+                  trigger={
+                    <button
+                      type="button"
+                      aria-label={`View ${article.title} image`}
+                      className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    >
+                      <img
+                        src={article.image}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </button>
+                  }
+                />
                 <div className="flex-1 min-w-0 flex flex-col">
                   <h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">
                     {article.title}

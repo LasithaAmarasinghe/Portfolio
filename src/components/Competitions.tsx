@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import GalleryDialog from "@/components/ui/gallery-dialog";
 import { ChevronDown, ChevronUp, ExternalLink, Trophy } from "lucide-react";
 
 import IEEEXtreme19 from "@/assets/competitions/IEEEXtreme19.0.png";
@@ -51,7 +52,8 @@ const competitions = [
 	{
 		title: "Techno Xtreme 2023",
 		platform: ["IEEE","IESL"],
-		rank: "1st Place",
+		rank: "Champions",
+		highlight: true,
 		description:
 			"Team HelloWorld became champions at Techno Hackathon Xtreme organized by IESL surpassing 250+ teams.",
 		tags: ["Competitive Programming", "Problem Solving"],
@@ -60,7 +62,8 @@ const competitions = [
 	{
 		title: "CYPHER 1.0",
 		platform: ["WIE","KDU"],
-		rank: "1st Place",
+		rank: "Champions",
+		highlight: true,
 		description:
 			"Team HelloWorld became champions at CYPHER 1.0 organized by IEEE WIE Affinity group of Kothalawala Defence University.",
 		tags: ["Competitive Programming", "Teamwork"],
@@ -69,7 +72,8 @@ const competitions = [
 	{
 		title: "Brainstorm 2026",
 		platform: ["EMBS","UOM"],
-		rank: "1st Place",
+		rank: "Champions",
+		highlight: true,
 		description:
 			"Team NeoCare became champions at Brainstorm organized by IEEE EMBS Student Branch Chapter of the University of Moratuwa.",
 		tags: ["Healthcare", "Innovation", "Problem Solving"], 
@@ -79,6 +83,7 @@ const competitions = [
 		title: "ICE 2025",
 		platform: ["AH Lab","NUS"],
 		rank: "Best Team Dynamics",
+		highlight: true,
 		description:
 			"Team Big Hero 7 secured Best Team Dynamics Award at Innovation, Creativity & Entrepreneurship with AI bootcamp organized by AH Lab, NUS.",
 		tags: ["Entrepreneurship", "Innovation", "Teamwork"],
@@ -235,7 +240,7 @@ const competitions = [
 	
 ];
 
-const INITIAL_VISIBLE_COUNT = 9;
+const INITIAL_VISIBLE_COUNT = 6;
 
 const Competitions = () => {
 	const [showAll, setShowAll] = useState(false);
@@ -258,15 +263,25 @@ const Competitions = () => {
 							style={{ animationDelay: `${index * 0.05}s` }}
 						>
 							<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-5">
-								<div className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted">
-									<img
-										src={competition.image}
-										alt={competition.title}
-										loading="lazy"
-										decoding="async"
-										className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-									/>
-								</div>
+								<GalleryDialog
+									title={competition.title}
+									images={[competition.image]}
+									trigger={
+										<button
+											type="button"
+											aria-label={`View ${competition.title} image`}
+											className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+										>
+											<img
+												src={competition.image}
+												alt={competition.title}
+												loading="lazy"
+												decoding="async"
+												className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+											/>
+										</button>
+									}
+								/>
 								<div className="flex-1 min-w-0 flex flex-col">
 									<div className="flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
 										<h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">

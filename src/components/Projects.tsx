@@ -248,7 +248,7 @@ const projects = [
   
 ];
 
-const INITIAL_VISIBLE_COUNT = 9;
+const INITIAL_VISIBLE_COUNT = 6;
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -271,15 +271,79 @@ const Projects = () => {
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-5">
-                <div className="w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      type="button"
+                      aria-label={`Open ${project.title} ${project.preview ? "preview" : "gallery"}`}
+                      className="group/thumb relative w-full sm:w-56 md:w-64 shrink-0 self-start aspect-video overflow-hidden rounded-lg border border-border bg-muted cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <span className="absolute inset-0 flex items-center justify-center bg-black/45 opacity-0 transition-opacity duration-300 group-hover/thumb:opacity-100 group-focus-visible/thumb:opacity-100">
+                        <span className="flex items-center gap-2 text-sm font-medium text-white">
+                          {project.preview ? (
+                            <Video className="h-4 w-4" />
+                          ) : (
+                            <ImageIcon className="h-4 w-4" />
+                          )}
+                          {project.preview ? "Watch preview" : "View gallery"}
+                        </span>
+                      </span>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl">
+                    <DialogHeader>
+                      <DialogTitle>{project.title} - {project.preview ? "Preview" : "Gallery"}</DialogTitle>
+                    </DialogHeader>
+                    {project.preview ? (
+                      <div className="w-full flex items-center justify-center">
+                        <video
+                          aria-label={`${project.title} preview`}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          controls
+                          poster={project.image}
+                          className="w-full h-auto rounded-lg object-contain max-h-[70vh]"
+                        >
+                          <source src={project.preview} type="video/webm" />
+                          {"previewMp4" in project && project.previewMp4 && (
+                            <source src={project.previewMp4} type="video/mp4" />
+                          )}
+                        </video>
+                      </div>
+                    ) : (
+                      <Carousel className="w-full">
+                        <CarouselContent>
+                          {project.gallery.map((img, imgIndex) => (
+                            <CarouselItem key={imgIndex}>
+                              <div className="p-1">
+                                <img 
+                                  src={img} 
+                                  alt={`${project.title} screenshot ${imgIndex + 1}`}
+                                  className="w-full h-auto rounded-lg object-contain max-h-[70vh]"
+                                />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        {project.gallery.length > 1 && (
+                          <>
+                            <CarouselPrevious className="left-2 h-12 w-12 bg-primary/90 hover:bg-primary border-2 border-primary-foreground/20 shadow-lg" />
+                            <CarouselNext className="right-2 h-12 w-12 bg-primary/90 hover:bg-primary border-2 border-primary-foreground/20 shadow-lg" />
+                          </>
+                        )}
+                      </Carousel>
+                    )}
+                  </DialogContent>
+                </Dialog>
                 <div className="flex-1 min-w-0 flex flex-col">
                   <h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">
                     {project.title}
@@ -296,67 +360,6 @@ const Projects = () => {
                       <Github className="h-4 w-4 mr-2" />
                       GitHub
                     </Button>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button 
-                          variant="default"
-                          size="sm"
-                        >
-                          {project.preview ? (
-                            <Video className="h-4 w-4 mr-2" />
-                          ) : (
-                            <ImageIcon className="h-4 w-4 mr-2" />
-                          )}
-                          {project.preview ? "Preview" : "Gallery"}
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl">
-                        <DialogHeader>
-                          <DialogTitle>{project.title} - {project.preview ? "Preview" : "Gallery"}</DialogTitle>
-                        </DialogHeader>
-                        {project.preview ? (
-                          <div className="w-full flex items-center justify-center">
-                            <video
-                              aria-label={`${project.title} preview`}
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              controls
-                              poster={project.image}
-                              className="w-full h-auto rounded-lg object-contain max-h-[70vh]"
-                            >
-                              <source src={project.preview} type="video/webm" />
-                              {"previewMp4" in project && project.previewMp4 && (
-                                <source src={project.previewMp4} type="video/mp4" />
-                              )}
-                            </video>
-                          </div>
-                        ) : (
-                          <Carousel className="w-full">
-                            <CarouselContent>
-                              {project.gallery.map((img, imgIndex) => (
-                                <CarouselItem key={imgIndex}>
-                                  <div className="p-1">
-                                    <img 
-                                      src={img} 
-                                      alt={`${project.title} screenshot ${imgIndex + 1}`}
-                                      className="w-full h-auto rounded-lg object-contain max-h-[70vh]"
-                                    />
-                                  </div>
-                                </CarouselItem>
-                              ))}
-                            </CarouselContent>
-                            {project.gallery.length > 1 && (
-                              <>
-                                <CarouselPrevious className="left-2 h-12 w-12 bg-primary/90 hover:bg-primary border-2 border-primary-foreground/20 shadow-lg" />
-                                <CarouselNext className="right-2 h-12 w-12 bg-primary/90 hover:bg-primary border-2 border-primary-foreground/20 shadow-lg" />
-                              </>
-                            )}
-                          </Carousel>
-                        )}
-                      </DialogContent>
-                    </Dialog>
                   </div>
                 </div>
               </div>

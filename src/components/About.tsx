@@ -14,8 +14,8 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-6">
-          <div className="space-y-6 animate-fade-in">
+        <div className="flex flex-col gap-10 sm:gap-12 mb-6">
+          <div className="max-w-4xl mx-auto space-y-5 text-base sm:text-lg animate-fade-in">
             <p className="text-foreground leading-relaxed">
               I'm an AI/ML Software Engineer at Kaya Intelligence, where I build multi-agent systems. I researched
               AR assistants at NUS, fusing voice, vision, and gaze into a low-latency multimodal pipeline.
@@ -27,23 +27,23 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
               <Brain className="h-8 w-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">Machine Learning</h3>
               <p className="text-sm text-muted-foreground">Advanced ML Algorithms & Model Optimization</p>
             </div>
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
               <Code className="h-8 w-8 text-secondary mb-4" />
               <h3 className="font-semibold mb-2">Deep Learning</h3>
               <p className="text-sm text-muted-foreground">Neural Networks, Transformers & Vision Models</p>
             </div>
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
               <Bot className="h-8 w-8 text-accent mb-4" />
               <h3 className="font-semibold mb-2">AI Agents</h3>
               <p className="text-sm text-muted-foreground">Multi-Agent Systems & Orchestration</p>
             </div>
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
               <GitBranch className="h-8 w-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">MLOps</h3>
               <p className="text-sm text-muted-foreground">Model Deployment & Monitoring</p>
