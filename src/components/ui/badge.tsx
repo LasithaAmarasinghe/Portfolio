@@ -12,6 +12,10 @@ const badgeVariants = cva(
         secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
+        // Date ranges on Experience/Education/Leadership cards. Solid in light mode;
+        // a soft tint in dark mode so it doesn't overpower the dark card.
+        period:
+          "whitespace-nowrap px-3 py-1 text-sm border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 dark:border-secondary/40 dark:bg-secondary/15 dark:text-[hsl(262_90%_80%)] dark:hover:bg-secondary/20",
         tag: "border-transparent bg-primary/10 px-3 py-1 text-xs font-medium text-primary hover:bg-primary/15",
       },
     },

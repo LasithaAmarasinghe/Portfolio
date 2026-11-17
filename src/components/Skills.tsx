@@ -1,4 +1,5 @@
 import { FaDocker, FaAws, FaGit, FaReact } from 'react-icons/fa';
+import SectionHeading from "@/components/SectionHeading";
 import {
   SiCplusplus,
   SiNumpy,
@@ -104,18 +105,16 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-background" id="skills">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="skills">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">Skills</h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <SectionHeading title="Skills" />
+        <div className="mx-auto max-w-5xl grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillGroups.map((group) => (
-            <div key={group.title} className="bg-card rounded-2xl p-6 border border-border shadow-md hover:shadow-glow-primary transition-all duration-300 flex flex-col items-center">
+            <div key={group.title} className="bg-gradient-card rounded-lg p-5 border border-border shadow-sm hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 flex flex-col items-center">
                 <h3 className="text-lg font-bold mb-6 text-secondary tracking-wide uppercase">{group.title}</h3>
-              <div className="flex flex-wrap justify-center gap-8 mb-2">
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 mb-2">
                 {group.skills.map((skill) => (
-                  <div key={skill.name} className="flex flex-col items-center min-w-[80px]">
+                  <div key={skill.name} className="flex flex-col items-center min-w-[72px]">
                     {skill.imgSrc ? (
                       <img
                         src={skill.imgSrc}
@@ -142,7 +141,7 @@ const Skills = () => {
                     ) : (
                       skill.icon
                     )}
-                    <span className="mt-2 text-base text-foreground font-medium">{skill.name}</span>
+                    <span className="mt-2 text-sm text-foreground font-medium whitespace-nowrap">{skill.name}</span>
                   </div>
                 ))}
               </div>

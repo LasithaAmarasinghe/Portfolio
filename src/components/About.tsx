@@ -1,18 +1,12 @@
 import { Badge } from "@/components/ui/badge";
+import SectionHeading from "@/components/SectionHeading";
 import { Brain, Code, Bot, GitBranch } from "lucide-react";
 
 const About = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="about">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-            About Me
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate about leveraging AI to solve real-world problems
-          </p>
-        </div>
+      <div className="container mx-auto max-w-7xl">
+        <SectionHeading title="About Me" subtitle="Passionate about leveraging AI to solve real-world problems" />
 
         <div className="flex flex-col gap-10 sm:gap-12 mb-6">
           <div className="max-w-4xl mx-auto space-y-5 text-base sm:text-lg animate-fade-in">
@@ -27,23 +21,23 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+          <div className="mx-auto w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="bg-gradient-card p-5 sm:p-6 rounded-lg border border-border shadow-sm hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300">
               <Brain className="h-8 w-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">Machine Learning</h3>
               <p className="text-sm text-muted-foreground">Advanced ML Algorithms & Model Optimization</p>
             </div>
-            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+            <div className="bg-gradient-card p-5 sm:p-6 rounded-lg border border-border shadow-sm hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300">
               <Code className="h-8 w-8 text-secondary mb-4" />
               <h3 className="font-semibold mb-2">Deep Learning</h3>
               <p className="text-sm text-muted-foreground">Neural Networks, Transformers & Vision Models</p>
             </div>
-            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+            <div className="bg-gradient-card p-5 sm:p-6 rounded-lg border border-border shadow-sm hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300">
               <Bot className="h-8 w-8 text-accent mb-4" />
               <h3 className="font-semibold mb-2">AI Agents</h3>
               <p className="text-sm text-muted-foreground">Multi-Agent Systems & Orchestration</p>
             </div>
-            <div className="bg-card p-5 sm:p-6 rounded-lg border border-border hover:shadow-glow-primary transition-all duration-300">
+            <div className="bg-gradient-card p-5 sm:p-6 rounded-lg border border-border shadow-sm hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300">
               <GitBranch className="h-8 w-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">MLOps</h3>
               <p className="text-sm text-muted-foreground">Model Deployment & Monitoring</p>

@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import SectionHeading from "@/components/SectionHeading";
 import { Badge } from "@/components/ui/badge";
 import GalleryDialog from "@/components/ui/gallery-dialog";
 
@@ -43,8 +44,8 @@ const educationData = [
     institution: "Dharmaraja College, Kandy",
     location: "Kandy, Sri Lanka",
     period: "Jan 2012 - Dec 2020",
-    description: "Grade: AAA, Z-Score: 2.5972",
-    achievements: ["Island Rank: 100/35000 ( Top 0.3% )"],
+    description: "Grade: AAA | Z-Score: 2.5972",
+    achievements: ["Country Rank: 100/35000 (Top 0.3%)"],
     tags: ["Physics", "Chemistry","Combined Mathematics"],
     logo: dharmaraja
   }
@@ -54,17 +55,13 @@ const Education = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="education">
       <div className="container mx-auto max-w-7xl">
-				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary">
-            Education
-          </h2>
-        </div>
-        <div className="space-y-6">
+				<SectionHeading title="Education" />
+        <div className="mx-auto max-w-5xl space-y-6">
           {educationData.map((edu, index) => (
             <Card
               key={index}
-              className="bg-gradient-card border-border hover:shadow-glow-primary transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-gradient-card border-border hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               <CardHeader>
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
@@ -85,12 +82,12 @@ const Education = () => {
                   <div className="flex-1 w-full">
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                       <div>
-                        <CardTitle className="text-xl sm:text-2xl mb-1">{edu.institution}</CardTitle>
+                        <CardTitle className="text-lg sm:text-xl leading-snug tracking-normal mb-1">{edu.institution}</CardTitle>
                         <div className="flex flex-wrap gap-2 items-center text-muted-foreground">
                           <span className="font-semibold text-foreground">{edu.title}</span>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="text-sm whitespace-nowrap">
+                      <Badge variant="period">
                         {edu.period}
                       </Badge>
                     </div>
@@ -121,7 +118,7 @@ const Education = () => {
                         <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
                           Photos
                         </p>
-                        <div className="flex flex-wrap gap-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                           {edu.gallery.map((img, imgIndex) => (
                             <GalleryDialog
                               key={imgIndex}
@@ -134,7 +131,7 @@ const Education = () => {
                                   alt={`${edu.institution} photo ${imgIndex + 1}`}
                                   loading="lazy"
                                   decoding="async"
-                                  className="h-40 w-48 sm:h-49 sm:w-56 object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
+                                  className="w-full aspect-[4/3] object-cover rounded-md border border-border hover:scale-105 hover:shadow-glow-primary transition-transform duration-200 cursor-pointer"
                                 />
                               }
                             />

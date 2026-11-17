@@ -16,13 +16,13 @@ const Index = () => {
       <Navigation />
       <Hero />
       <About />
-      <Skills />
       <Experience />
       <Education />
       <Projects />
-      <Blog />
+      <Skills />
       <Competitions />
       <Leadership />
+      <Blog />
       <Contact />
       
       {/* Footer */}

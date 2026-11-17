@@ -1,4 +1,5 @@
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -129,13 +130,9 @@ const Blog = () => {
   const visibleBlogPosts = showAll ? blogPosts : blogPosts.slice(0, INITIAL_VISIBLE_COUNT);
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="blog">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="blog">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary">
-            Blog
-          </h2>
-        </div>
+        <SectionHeading title="Blog" />
 
         <div className="mx-auto max-w-5xl flex flex-col gap-4 sm:gap-5">
           {visibleBlogPosts.map((article, index) => (

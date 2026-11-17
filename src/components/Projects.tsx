@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SectionHeading from "@/components/SectionHeading";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -257,11 +258,7 @@ const Projects = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="projects">
       <div className="container mx-auto max-w-7xl">
-				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose" style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}>
-            Projects
-          </h2>
-        </div>
+				<SectionHeading title="Projects" />
 
         <div className="mx-auto max-w-5xl flex flex-col gap-4 sm:gap-5">
           {visibleProjects.map((project, index) => (

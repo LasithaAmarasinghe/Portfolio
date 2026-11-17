@@ -23,13 +23,13 @@ import profilePic from "@/assets/about/lasitha1.jpg";
 
 const navItems = [
   { label: "About", href: "#about", icon: User },
-  { label: "Skills", href: "#skills", icon: Wrench },
   { label: "Experience", href: "#experience", icon: Briefcase },
   { label: "Education", href: "#education", icon: GraduationCap },
   { label: "Projects", href: "#projects", icon: FolderGit2 },
-  { label: "Blog", href: "#blog", icon: PenLine },
-  { label: "Achievements", href: "#competitions", icon: Award },
+  { label: "Skills", href: "#skills", icon: Wrench },
+  { label: "Achievements", href: "#achievements", icon: Award },
   { label: "Leadership", href: "#leadership", icon: Users },
+  { label: "Blog", href: "#blog", icon: PenLine },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 

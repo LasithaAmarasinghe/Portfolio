@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card";
+import SectionHeading from "@/components/SectionHeading";
+import { Badge } from "@/components/ui/badge";
 import GalleryDialog from "@/components/ui/gallery-dialog";
 import { Users, Image as ImageIcon } from "lucide-react";
 
@@ -51,19 +53,10 @@ const leadership = [
 		title: "Vice President - Spark Branch",
 		organization: "Electronic Club of University of Moratuwa",
 		period: "2025 - 2026",
-		description: (
-			<>
-				<ul className="list-disc pl-5 mb-2">
-					<li>
-						Leading Spark Branch focusing on sustainable development goals.
-					</li>
-					<li>
-						Organized Spark Challenge featuring Sri Lanka's highest prize pool in
-						university competitions with 120 teams and 600 participants.
-					</li>
-				</ul>
-			</>
-		),
+		bullets: [
+			"Leading Spark Branch focusing on sustainable development goals.",
+			"Organized Spark Challenge featuring Sri Lanka's highest prize pool in university competitions with 120 teams and 600 participants.",
+		],
 		icon: Users,
 		image: spark1,
 		tags: [
@@ -77,18 +70,10 @@ const leadership = [
 		title: "Department Representative",
 		organization: "Electronic and Telecommunication Engineering",
 		period: "2023 - 2024",
-		description: (
-			<>
-				<ul className="list-disc pl-5 mb-2">
-					<li>
-						Provided leadership in organizing and coordinating flagship department
-						events, including EXMO 23, Abhina, SLRC, Tronic Awurudu, Trip Tronic,
-						Mewisuru, Tronic Dansal.
-					</li>
-					<li>Acted as a liaison between students and staff.</li>
-				</ul>
-			</>
-		),
+		bullets: [
+			"Provided leadership in organizing and coordinating flagship department events, including EXMO 23, Abhina, SLRC, Tronic Awurudu, Trip Tronic, Mewisuru, Tronic Dansal.",
+			"Acted as a liaison between students and staff.",
+		],
 		icon: Users,
 		image: rep1,
 		tags: [
@@ -103,19 +88,10 @@ const leadership = [
 		title: "Event Facilitator",
 		organization: "Smart Systems Institute, National University of Singapore",
 		period: "2025",
-		description: (
-			<>
-				<ul className="list-disc pl-5 mb-2">
-					<li>
-						Organized a 6-day physical Bootcamp on smart wearables for
-						40+ participants.
-					</li>
-					<li>
-						Facilitated hands-on learning, interactive workshops, and demonstrations.
-					</li>
-				</ul>
-			</>
-		),
+		bullets: [
+			"Organized a 6-day physical Bootcamp on smart wearables for 40+ participants.",
+			"Facilitated hands-on learning, interactive workshops, and demonstrations.",
+		],
 		icon: Users,
 		image: bootcamp1,
 		tags: [
@@ -128,21 +104,11 @@ const leadership = [
 	{
 		title: "Coordinator",
 		organization: "Kegalle Medicine Engineering Students Society",
-		period: "2021-2023",
-		description: (
-			<>
-				<ul className="list-disc pl-5 mb-2">
-					<li>
-						Conducted educational workshops and motivational sessions for school
-						children.
-					</li>
-					<li>
-						Organized donation programs and fundraising events to support
-						underprivileged communities.
-					</li>
-				</ul>
-			</>
-		),
+		period: "2021 - 2023",
+		bullets: [
+			"Conducted educational workshops and motivational sessions for school children.",
+			"Organized donation programs and fundraising events to support underprivileged communities.",
+		],
 		icon: Users,
 		image: kemess2,
 		tags: ["Teaching", "Motivation", "Donation"],
@@ -151,21 +117,11 @@ const leadership = [
 	{
 		title: "Volunteer",
 		organization: "Sasnaka Sansada Foundation",
-		period: "2021-2023",
-		description: (
-			<>
-				<ul className="list-disc pl-5 mb-2">
-					<li>
-						Assisted in school workshops and various
-						community outreach initiatives.
-					</li>
-					<li>
-						Contributed to developing website containing educational content and
-						resources.
-					</li>
-				</ul>
-			</>
-		),
+		period: "2021 - 2023",
+		bullets: [
+			"Assisted in school workshops and various community outreach initiatives.",
+			"Contributed to developing website containing educational content and resources.",
+		],
 		icon: Users,
 		image: sasnaka3,
 		tags: ["Teaching", "Mentoring", "Community"],
@@ -174,20 +130,11 @@ const leadership = [
 	{
 		title: "Member",
 		organization: "Gavel Club of University of Moratuwa",
-		period: "2022-2023",
-		description: (
-			<>
-				<ul className="list-disc pl-5 mb-2">
-					<li>
-						Participated in speech contests and workshops to enhance public
-						speaking abilities.
-					</li>
-					<li>
-						Contributed to the organization of club events and activities.
-					</li>
-				</ul>
-			</>
-		),
+		period: "2022 - 2023",
+		bullets: [
+			"Participated in speech contests and workshops to enhance public speaking abilities.",
+			"Contributed to the organization of club events and activities.",
+		],
 		icon: Users,
 		image: gavel2,
 		tags: [
@@ -202,16 +149,9 @@ const Leadership = () => {
 	// global list of leadership images (used as fallback when item-level galleries aren't provided)
 	const leadershipGallery = leadership.filter((i) => i.image).map((i) => i.image);
 	return (
-		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30" id="leadership">
+		<section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="leadership">
 			<div className="container mx-auto max-w-7xl">
-				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-					<h2
-						className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary leading-tight sm:leading-loose"
-						style={{ lineHeight: 1.3, paddingBottom: "0.2em" }}
-					>
-						Leadership & Volunteering
-					</h2>
-				</div>
+				<SectionHeading title="Leadership & Volunteering" />
 
 				<div className="mx-auto max-w-5xl flex flex-col gap-4 sm:gap-5">
 					{leadership.map((item, index) => {
@@ -220,9 +160,7 @@ const Leadership = () => {
 						// If the item provides its own gallery array, use it directly.
 						// Otherwise, fall back to the global leadershipGallery and rotate
 						// so the card's image appears first.
-						const itemGallery = Array.isArray((item as any).gallery) && (item as any).gallery.length
-							? (item as any).gallery
-							: null;
+						const itemGallery = item.gallery?.length ? item.gallery : null;
 
 						let orderedGallery: string[] = [];
 						if (itemGallery) {
@@ -284,19 +222,24 @@ const Leadership = () => {
 										</div>
 									)}
 									<div className="flex-1 min-w-0 flex flex-col">
-										<div className="flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
+										<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
 											<h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground">
 												{item.title}
 											</h3>
-											<span className="text-sm font-medium text-primary sm:text-right sm:max-w-[40%] shrink-0">
+											<Badge variant="period" className="self-start shrink-0">
 												{item.period}
-											</span>
+											</Badge>
 										</div>
-										<p className="mt-1 text-sm sm:text-base text-primary/80">
+										<p className="mt-1 font-semibold text-foreground">
 											{item.organization}
 										</p>
-										<div className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
-											{item.description}
+										<div className="mt-3 space-y-2">
+											{item.bullets.map((bullet) => (
+												<div key={bullet} className="flex gap-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
+													<span className="text-primary">•</span>
+													<span>{bullet}</span>
+												</div>
+											))}
 										</div>
 									</div>
 								</div>

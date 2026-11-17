@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/SectionHeading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, MessageSquare } from "lucide-react";
 import { SiMedium } from "react-icons/si";
@@ -7,14 +8,8 @@ const Contact = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background" id="contact">
       <div className="container mx-auto max-w-4xl">
-				<div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary">
-            Let's Connect
-          </h2>
-					<p className="text-muted-foreground text-base sm:text-lg px-4">
-						Interested in collaboration or have a project in mind? Let's talk!
-					</p>
-				</div>				<Card className="bg-gradient-card border-border shadow-glow-primary animate-fade-in-delay">
+				<SectionHeading title="Let's Connect" subtitle="Interested in collaboration or have a project in mind? Let's talk!" />
+				<Card className="bg-gradient-card border-border shadow-glow-primary animate-fade-in-delay">
           <CardContent className="p-4 sm:p-6 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="space-y-6">
